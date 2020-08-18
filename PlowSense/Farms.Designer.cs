@@ -35,8 +35,10 @@
             this.rightPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.tableLayoutPanel1.SuspendLayout();
             this.leftPanel.SuspendLayout();
+            this.rightPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -71,6 +73,7 @@
             // 
             // rightPanel
             // 
+            this.rightPanel.Controls.Add(this.cartesianChart1);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightPanel.Location = new System.Drawing.Point(459, 3);
             this.rightPanel.Name = "rightPanel";
@@ -94,6 +97,14 @@
             this.guna2Separator1.Size = new System.Drawing.Size(290, 10);
             this.guna2Separator1.TabIndex = 1;
             // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(86, 86);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(200, 100);
+            this.cartesianChart1.TabIndex = 0;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
             // Farms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -108,6 +119,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
+            this.rightPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -120,5 +132,6 @@
         private System.Windows.Forms.Panel rightPanel;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }
