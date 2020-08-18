@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlowSense
 {
-    public partial class Farms : Form
-    {
-        public Farms()
-        {
-            InitializeComponent();
-        }
+	public partial class Farms : Form
+	{
+		public Farms()
+		{
+			InitializeComponent();
+		}
 
-        private void Farms_Load(object sender, EventArgs e)
-        {
+		private void Farms_Load(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }
