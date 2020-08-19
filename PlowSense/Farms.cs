@@ -4,7 +4,6 @@ using System.Windows.Media;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
-using System.Drawing;
 
 namespace PlowSense
 {
@@ -44,10 +43,10 @@ namespace PlowSense
 					{
 						Title = "Line 1",
 						Values = new ChartValues<int> {56, 65, 77, 52, 65, 45, 35, 62, 74, 65},
-						Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80,9, 105, 54)),
+						Fill = new SolidColorBrush(Color.FromArgb(80,9, 105, 54)),
 						PointGeometry = null,
 						LineSmoothness = 100,
-						Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(9, 105, 54))
+						Stroke = new SolidColorBrush(Color.FromRgb(9, 105, 54))
 					},
 				};
 			}
@@ -63,10 +62,10 @@ namespace PlowSense
 					{
 						Title = "Line 1",
 						Values = new ChartValues<int> {54, 67, 87, 34, 54, 57, 67, 58, 76, 66},
-						Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80,9, 105, 54)),
+						Fill = new SolidColorBrush(Color.FromArgb(80,9, 105, 54)),
 						PointGeometry = null,
 						LineSmoothness = 100,
-						Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(9, 105, 54))
+						Stroke = new SolidColorBrush(Color.FromRgb(9, 105, 54))
 					},
 				};
 			}
@@ -82,10 +81,10 @@ namespace PlowSense
 					{
 						Title = "Line 1",
 						Values = new ChartValues<int> {71, 53, 47, 82, 47, 55, 75, 62, 56, 76},
-						Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80,9, 105, 54)),
+						Fill = new SolidColorBrush(Color.FromArgb(80,9, 105, 54)),
 						PointGeometry = null,
 						LineSmoothness = 100,
-						Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(9, 105, 54))
+						Stroke = new SolidColorBrush(Color.FromRgb(9, 105, 54))
 					},
 				};
 			}
@@ -93,8 +92,8 @@ namespace PlowSense
 
 		private void addFarmBtn_Click(object sender, EventArgs e)
 		{
-			Form nAddFarm = new AddFarmForm();
-			nAddFarm.Show();
+			AddFarmForm addFarmForm = new AddFarmForm();
+			addFarmForm.Show();
 		}
 	}
 }
