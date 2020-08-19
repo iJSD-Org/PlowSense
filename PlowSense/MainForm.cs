@@ -39,5 +39,10 @@ namespace PlowSense
 			dashBoardPanel.Controls.Add(staff);
 			staff.Show();
 		}
+
+		private void ExitButton_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }
