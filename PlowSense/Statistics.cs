@@ -20,7 +20,11 @@ namespace PlowSense
 		private void Statistics_Load(object sender, EventArgs e)
 		{
 			PieLoad();
+<<<<<<< HEAD
 			CropsLoad();
+=======
+			LineLoad();
+>>>>>>> DashboardDesign
 		}
 		
 		void PieLoad()
