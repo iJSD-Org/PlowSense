@@ -45,11 +45,11 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.farmChart = new LiveCharts.WinForms.CartesianChart();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.addFarmBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.myFarmsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.addFarmBtn = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -251,7 +251,7 @@
             // 
             this.leftPanel.Controls.Add(this.addFarmBtn);
             this.leftPanel.Controls.Add(this.guna2VSeparator1);
-            this.leftPanel.Controls.Add(this.flowLayoutPanel1);
+            this.leftPanel.Controls.Add(this.myFarmsFlowPanel);
             this.leftPanel.Controls.Add(this.guna2HtmlLabel1);
             this.leftPanel.Controls.Add(this.guna2Separator1);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -261,42 +261,6 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(502, 544);
             this.leftPanel.TabIndex = 0;
-            // 
-            // guna2VSeparator1
-            // 
-            this.guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(205)))), ((int)(((byte)(5)))));
-            this.guna2VSeparator1.FillThickness = 2;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(485, 18);
-            this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(14, 521);
-            this.guna2VSeparator1.TabIndex = 9;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(24, 67);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(459, 469);
-            this.flowLayoutPanel1.TabIndex = 8;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(24, 1);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(224, 57);
-            this.guna2HtmlLabel1.TabIndex = 6;
-            this.guna2HtmlLabel1.Text = "My Farms";
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(205)))), ((int)(((byte)(5)))));
-            this.guna2Separator1.FillThickness = 2;
-            this.guna2Separator1.Location = new System.Drawing.Point(24, 54);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(235, 10);
-            this.guna2Separator1.TabIndex = 7;
             // 
             // addFarmBtn
             // 
@@ -317,6 +281,42 @@
             this.addFarmBtn.TabIndex = 36;
             this.addFarmBtn.Text = "Add Farm";
             this.addFarmBtn.Click += new System.EventHandler(this.addFarmBtn_Click);
+            // 
+            // guna2VSeparator1
+            // 
+            this.guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(205)))), ((int)(((byte)(5)))));
+            this.guna2VSeparator1.FillThickness = 2;
+            this.guna2VSeparator1.Location = new System.Drawing.Point(485, 18);
+            this.guna2VSeparator1.Name = "guna2VSeparator1";
+            this.guna2VSeparator1.Size = new System.Drawing.Size(14, 521);
+            this.guna2VSeparator1.TabIndex = 9;
+            // 
+            // myFarmsFlowPanel
+            // 
+            this.myFarmsFlowPanel.Location = new System.Drawing.Point(24, 67);
+            this.myFarmsFlowPanel.Name = "myFarmsFlowPanel";
+            this.myFarmsFlowPanel.Size = new System.Drawing.Size(459, 469);
+            this.myFarmsFlowPanel.TabIndex = 8;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(24, 1);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(224, 57);
+            this.guna2HtmlLabel1.TabIndex = 6;
+            this.guna2HtmlLabel1.Text = "My Farms";
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(205)))), ((int)(((byte)(5)))));
+            this.guna2Separator1.FillThickness = 2;
+            this.guna2Separator1.Location = new System.Drawing.Point(24, 54);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(235, 10);
+            this.guna2Separator1.TabIndex = 7;
             // 
             // Farms
             // 
@@ -351,7 +351,7 @@
         private System.Windows.Forms.Panel leftPanel;
 		private System.Windows.Forms.Panel rightPanel;
 		private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+		private System.Windows.Forms.FlowLayoutPanel myFarmsFlowPanel;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
 		private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
