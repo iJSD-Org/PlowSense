@@ -50,7 +50,7 @@ namespace PlowSense
 
 		private void ExitButton_Click(object sender, EventArgs e)
 		{
-			this.Close();
+			Close();
 		}
 
 		private void linkSheetsTab_Click(object sender, EventArgs e)

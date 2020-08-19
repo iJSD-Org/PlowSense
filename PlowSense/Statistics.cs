@@ -7,18 +7,22 @@ using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
 using PlowSense.Models;
+using Brush = System.Windows.Media.Brush;
+using Brushes = System.Windows.Media.Brushes;
 using Color = System.Drawing.Color;
 
 namespace PlowSense
 {
-    public partial class Statistics : Form
-    {
-        public Statistics()
-        {
-            InitializeComponent();
-        }
-		BrushConverter converter = new System.Windows.Media.BrushConverter();
-		Func<ChartPoint, string> labelPoint = chartpoint => string.Format("{1:P}", chartpoint.Y, chartpoint.Participation);
+	public partial class Statistics : Form
+	{
+		private readonly BrushConverter _converter = new BrushConverter();
+		private readonly Func<ChartPoint, string> _labelPoint = chartPoint => $"{chartPoint.Participation:P}";
+
+		public Statistics()
+		{
+			InitializeComponent();
+		}
+
 		private void Statistics_Load(object sender, EventArgs e)
 		{
 			SetColors();
@@ -36,42 +40,40 @@ namespace PlowSense
 			statsDataGrid.Font = new Font("Proxima Soft", 11);
 			
 		}
+
 		void PieLoad()
 		{
-			statsPie.Series= new SeriesCollection
+			statsPie.Series = new SeriesCollection
 			{
 				new PieSeries
 				{
 					Title = "Title 1",
 					Values = new ChartValues<double> {100},
-					Fill = (System.Windows.Media.Brush)converter.ConvertFromString("#9CE74C"),
+					Fill = (Brush)_converter.ConvertFromString("#9CE74C"),
 					DataLabels = true,
-					LabelPoint = labelPoint,
+					LabelPoint = _labelPoint,
 					StrokeThickness = 0,
 				},
 				new PieSeries
 				{
 					Title = "Title 2",
 					Values = new ChartValues<double> {300},
-					Fill = (System.Windows.Media.Brush)converter.ConvertFromString("#DECD05"),
+					Fill = (Brush)_converter.ConvertFromString("#DECD05"),
 					DataLabels = true,
-					LabelPoint = labelPoint,
+					LabelPoint = _labelPoint,
 					StrokeThickness = 0
 				},
 				new PieSeries
 				{
 					Title = "Title 3",
 					Values = new ChartValues<double> {250},
-					Fill = (System.Windows.Media.Brush)converter.ConvertFromString("#BBB324"),
+					Fill = (Brush)_converter.ConvertFromString("#BBB324"),
 					DataLabels = true,
-					LabelPoint = labelPoint,
+					LabelPoint = _labelPoint,
 					StrokeThickness = 0
 				},
 			};
-			DefaultLegend customLegend = new DefaultLegend();
-			customLegend.BulletSize = 10;
-			customLegend.Foreground = System.Windows.Media.Brushes.White;
-			customLegend.FontSize = 15;
+			DefaultLegend customLegend = new DefaultLegend { BulletSize = 10, Foreground = Brushes.White, FontSize = 15 };
 			statsPie.DefaultLegend = customLegend;
 			statsPie.LegendLocation = LegendLocation.Right;
 		}
@@ -92,7 +94,6 @@ namespace PlowSense
 		void GenerateChartData(Dictionary<DateTime, TransactionHistory> values)
 		{
 			//Create filtered dictionary
-			
 			statsChart.Series.Clear();
 			statsChart.AxisX.Clear();
 

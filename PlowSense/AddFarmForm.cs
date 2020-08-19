@@ -14,6 +14,9 @@ namespace PlowSense
 {
 	public partial class AddFarmForm : Form
 	{
+		private string _fullEntry = string.Empty;
+		private int _tag;
+
 		public AddFarmForm()
 		{
 			InitializeComponent();
@@ -59,45 +62,50 @@ namespace PlowSense
 				ShelfLifeText.SelectAll();
 			});
 		}
-		string FullEntry = string.Empty;
-		int tag = 0;
+
 		private void addCropBtn_Click(object sender, EventArgs e)
 		{
 			if (!string.IsNullOrWhiteSpace(CropText.Text) && !string.IsNullOrWhiteSpace(LocationText.Text) && !string.IsNullOrWhiteSpace(farmNameText.Text))
 			{
-				Panel p = new Panel();
-				p.Tag = tag;
-				p.BackColor = System.Drawing.Color.FromArgb(222, 205, 5);
-				p.Location = new Point(0, 50);
-				p.ForeColor = System.Drawing.Color.White;
-				p.AutoSize = false;
-				p.Size = new Size(80, 95);
+				Panel p = new Panel
+				{
+					Tag = _tag,
+					BackColor = System.Drawing.Color.FromArgb(222, 205, 5),
+					Location = new Point(0, 50),
+					ForeColor = System.Drawing.Color.White,
+					AutoSize = false,
+					Size = new Size(80, 95)
+				};
 				CropsFlowPanel.Controls.Add(p);
-				Label name = new Label();
-				name.Tag = tag;
-				name.Font = new Font("Arial", 10);
-				name.Text = CropText.Text;
-				name.Location = new Point(5, 76);
-				name.ForeColor = System.Drawing.Color.White;
+				Label name = new Label
+				{
+					Tag = _tag,
+					Font = new Font("Arial", 10),
+					Text = CropText.Text,
+					Location = new Point(5, 76),
+					ForeColor = System.Drawing.Color.White
+				};
 				p.Controls.Add(name);
-				PictureBox reacPic = new PictureBox();
-				reacPic.Image = PlowSense.Properties.Resources.wfield_208px;
-				reacPic.SizeMode = PictureBoxSizeMode.AutoSize;
-				reacPic.Location = new Point(3, 3);
-				p.Controls.Add(reacPic);
-				p.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, p.Width, p.Height, 20, 20));
-				tag++;
+				PictureBox reactPic = new PictureBox
+				{
+					Image = Properties.Resources.wfield_208px,
+					SizeMode = PictureBoxSizeMode.AutoSize,
+					Location = new Point(3, 3)
+				};
+				p.Controls.Add(reactPic);
+				p.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, p.Width, p.Height, 20, 20));
+				_tag++;
 				string i = NameText.Text + "," + LocationText.Text + "," + farmNameText.Text + "," + CropText.Text + "," + ShelfLifeText.Text + "\n";
-				FullEntry += i;
+				_fullEntry += i;
 			}
 		}
 
 		private void confirmBtn_Click(object sender, EventArgs e)
 		{
-			StreamWriter CSVWrite = new StreamWriter("D:\\FarmsCSV.csv", true);
-			CSVWrite.WriteLine(FullEntry);
-			CSVWrite.Close();
-			this.Close();
+			StreamWriter csvWrite = new StreamWriter(@"D:\FarmsCSV.csv", true);
+			csvWrite.WriteLine(_fullEntry);
+			csvWrite.Close();
+			Close();
 		}
 	}
 }
