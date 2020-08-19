@@ -120,6 +120,7 @@ namespace PlowSense
 
 		void GenerateTableData(Dictionary<DateTime, TransactionHistory> values)
 		{
+			statsDataGrid.Rows.Clear();
 			foreach (var item in values)
 			{
 				statsDataGrid.Rows.Add(item.Key.ToString("MM/dd/yyyy"),
