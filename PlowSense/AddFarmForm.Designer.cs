@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.CropsPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.CropsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -44,16 +46,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ShelfLifeText = new Guna.UI2.WinForms.Guna2TextBox();
             this.CropText = new Guna.UI2.WinForms.Guna2TextBox();
-            this.CropsPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.CropsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.addCropBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.farmNameText = new Guna.UI2.WinForms.Guna2TextBox();
+            this.confirmBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.CropsPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.addCropPanel.SuspendLayout();
-            this.CropsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -65,6 +69,26 @@
             // 
             this.guna2Elipse2.BorderRadius = 20;
             this.guna2Elipse2.TargetControl = this.CropsPanel;
+            // 
+            // CropsPanel
+            // 
+            this.CropsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(151)))), ((int)(((byte)(77)))));
+            this.CropsPanel.BorderRadius = 20;
+            this.CropsPanel.Controls.Add(this.CropsFlowPanel);
+            this.CropsPanel.Location = new System.Drawing.Point(11, 289);
+            this.CropsPanel.Name = "CropsPanel";
+            this.CropsPanel.ShadowDecoration.Parent = this.CropsPanel;
+            this.CropsPanel.Size = new System.Drawing.Size(378, 110);
+            this.CropsPanel.TabIndex = 40;
+            // 
+            // CropsFlowPanel
+            // 
+            this.CropsFlowPanel.AutoScroll = true;
+            this.CropsFlowPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(151)))), ((int)(((byte)(77)))));
+            this.CropsFlowPanel.Location = new System.Drawing.Point(3, 5);
+            this.CropsFlowPanel.Name = "CropsFlowPanel";
+            this.CropsFlowPanel.Size = new System.Drawing.Size(370, 100);
+            this.CropsFlowPanel.TabIndex = 39;
             // 
             // panel1
             // 
@@ -103,6 +127,8 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.label7);
+            this.guna2Panel1.Controls.Add(this.farmNameText);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.NameText);
@@ -110,7 +136,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(12, 52);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(376, 144);
+            this.guna2Panel1.Size = new System.Drawing.Size(376, 206);
             this.guna2Panel1.TabIndex = 42;
             // 
             // label3
@@ -190,12 +216,13 @@
             // addCropPanel
             // 
             this.addCropPanel.BackColor = System.Drawing.Color.White;
+            this.addCropPanel.Controls.Add(this.confirmBtn);
             this.addCropPanel.Controls.Add(this.label5);
             this.addCropPanel.Controls.Add(this.label4);
             this.addCropPanel.Controls.Add(this.ShelfLifeText);
             this.addCropPanel.Controls.Add(this.CropText);
             this.addCropPanel.Controls.Add(this.addCropBtn);
-            this.addCropPanel.Location = new System.Drawing.Point(13, 343);
+            this.addCropPanel.Location = new System.Drawing.Point(13, 405);
             this.addCropPanel.Name = "addCropPanel";
             this.addCropPanel.ShadowDecoration.Parent = this.addCropPanel;
             this.addCropPanel.Size = new System.Drawing.Size(376, 151);
@@ -206,7 +233,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label5.Location = new System.Drawing.Point(5, 69);
+            this.label5.Location = new System.Drawing.Point(5, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 20);
             this.label5.TabIndex = 39;
@@ -217,7 +244,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label4.Location = new System.Drawing.Point(5, 7);
+            this.label4.Location = new System.Drawing.Point(5, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 20);
             this.label4.TabIndex = 38;
@@ -237,7 +264,7 @@
             this.ShelfLifeText.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ShelfLifeText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ShelfLifeText.HoverState.Parent = this.ShelfLifeText;
-            this.ShelfLifeText.Location = new System.Drawing.Point(9, 92);
+            this.ShelfLifeText.Location = new System.Drawing.Point(9, 100);
             this.ShelfLifeText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ShelfLifeText.Name = "ShelfLifeText";
             this.ShelfLifeText.PasswordChar = '\0';
@@ -263,7 +290,7 @@
             this.CropText.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.CropText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CropText.HoverState.Parent = this.CropText;
-            this.CropText.Location = new System.Drawing.Point(9, 30);
+            this.CropText.Location = new System.Drawing.Point(9, 37);
             this.CropText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CropText.Name = "CropText";
             this.CropText.PasswordChar = '\0';
@@ -274,37 +301,6 @@
             this.CropText.Size = new System.Drawing.Size(259, 36);
             this.CropText.TabIndex = 36;
             this.CropText.Enter += new System.EventHandler(this.CropText_Enter);
-            // 
-            // CropsPanel
-            // 
-            this.CropsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(151)))), ((int)(((byte)(77)))));
-            this.CropsPanel.BorderRadius = 20;
-            this.CropsPanel.Controls.Add(this.CropsFlowPanel);
-            this.CropsPanel.Location = new System.Drawing.Point(12, 227);
-            this.CropsPanel.Name = "CropsPanel";
-            this.CropsPanel.ShadowDecoration.Parent = this.CropsPanel;
-            this.CropsPanel.Size = new System.Drawing.Size(376, 110);
-            this.CropsPanel.TabIndex = 40;
-            // 
-            // CropsFlowPanel
-            // 
-            this.CropsFlowPanel.AutoScroll = true;
-            this.CropsFlowPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(151)))), ((int)(((byte)(77)))));
-            this.CropsFlowPanel.Location = new System.Drawing.Point(3, 5);
-            this.CropsFlowPanel.Name = "CropsFlowPanel";
-            this.CropsFlowPanel.Size = new System.Drawing.Size(370, 100);
-            this.CropsFlowPanel.TabIndex = 39;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label2.Location = new System.Drawing.Point(7, 199);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 25);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Select Crops";
             // 
             // addCropBtn
             // 
@@ -319,7 +315,7 @@
             this.addCropBtn.Image = global::PlowSense.Properties.Resources.gplus_math_208px;
             this.addCropBtn.ImageOffset = new System.Drawing.Point(0, 3);
             this.addCropBtn.ImageSize = new System.Drawing.Size(50, 50);
-            this.addCropBtn.Location = new System.Drawing.Point(274, 19);
+            this.addCropBtn.Location = new System.Drawing.Point(275, 7);
             this.addCropBtn.Name = "addCropBtn";
             this.addCropBtn.ShadowDecoration.Parent = this.addCropBtn;
             this.addCropBtn.Size = new System.Drawing.Size(85, 100);
@@ -327,6 +323,17 @@
             this.addCropBtn.Text = "Add Crop";
             this.addCropBtn.TextOffset = new System.Drawing.Point(0, 5);
             this.addCropBtn.Click += new System.EventHandler(this.addCropBtn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.label2.Location = new System.Drawing.Point(7, 261);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 25);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Select Crops";
             // 
             // guna2DragControl1
             // 
@@ -337,11 +344,68 @@
             this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
             this.guna2AnimateWindow1.TargetForm = this;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.label7.Location = new System.Drawing.Point(5, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 20);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Farm Name:";
+            // 
+            // farmNameText
+            // 
+            this.farmNameText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.farmNameText.DefaultText = "Enter Farm\'s Name";
+            this.farmNameText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.farmNameText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.farmNameText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.farmNameText.DisabledState.Parent = this.farmNameText;
+            this.farmNameText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.farmNameText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.farmNameText.FocusedState.Parent = this.farmNameText;
+            this.farmNameText.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.farmNameText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.farmNameText.HoverState.Parent = this.farmNameText;
+            this.farmNameText.Location = new System.Drawing.Point(7, 159);
+            this.farmNameText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.farmNameText.Name = "farmNameText";
+            this.farmNameText.PasswordChar = '\0';
+            this.farmNameText.PlaceholderText = "";
+            this.farmNameText.SelectedText = "";
+            this.farmNameText.ShadowDecoration.Parent = this.farmNameText;
+            this.farmNameText.Size = new System.Drawing.Size(365, 36);
+            this.farmNameText.TabIndex = 32;
+            // 
+            // confirmBtn
+            // 
+            this.confirmBtn.CheckedState.Parent = this.confirmBtn;
+            this.confirmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.confirmBtn.CustomImages.Parent = this.confirmBtn;
+            this.confirmBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.confirmBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmBtn.ForeColor = System.Drawing.Color.White;
+            this.confirmBtn.HoverState.Parent = this.confirmBtn;
+            this.confirmBtn.Location = new System.Drawing.Point(275, 113);
+            this.confirmBtn.Name = "confirmBtn";
+            this.confirmBtn.ShadowDecoration.Parent = this.confirmBtn;
+            this.confirmBtn.Size = new System.Drawing.Size(85, 30);
+            this.confirmBtn.TabIndex = 40;
+            this.confirmBtn.Text = "Confirm";
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.BorderRadius = 20;
+            this.guna2Elipse3.TargetControl = this.confirmBtn;
+            // 
             // AddFarmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 500);
+            this.ClientSize = new System.Drawing.Size(400, 570);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.addCropPanel);
@@ -349,14 +413,15 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddFarmForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddFarmForm";
+            this.CropsPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.addCropPanel.ResumeLayout(false);
             this.addCropPanel.PerformLayout();
-            this.CropsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,5 +450,9 @@
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
 		private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
 		private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+		private System.Windows.Forms.Label label7;
+		private Guna.UI2.WinForms.Guna2TextBox farmNameText;
+		private Guna.UI2.WinForms.Guna2Button confirmBtn;
+		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
 	}
 }

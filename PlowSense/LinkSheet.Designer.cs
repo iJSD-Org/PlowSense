@@ -33,6 +33,7 @@
             this.txtBoxSheetID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.okBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -94,6 +95,11 @@
             this.okBtn.Text = "OK";
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+            this.guna2AnimateWindow1.TargetForm = this;
+            // 
             // LinkSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,5 +124,6 @@
 		private Guna.UI2.WinForms.Guna2TextBox txtBoxSheetID;
 		private System.Windows.Forms.Label label1;
 		private Guna.UI2.WinForms.Guna2Button okBtn;
+		private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
 	}
 }
