@@ -18,6 +18,7 @@ namespace PlowSense
 		private void Statistics_Load(object sender, EventArgs e)
 		{
 			PieLoad();
+			LineLoad();
 		}
 		void LineLoad()
 		{
