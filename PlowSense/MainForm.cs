@@ -1,11 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using SheetToObjects.Adapters.GoogleSheets;
+using SheetToObjects.Core;
+using SheetToObjects.Lib;
 using System.Windows.Forms;
+using PlowSense.Models;
 
 namespace PlowSense
 {
 	public partial class MainForm : Form
 	{
-
+		internal static Dictionary<DateTime, TransactionHistory> transactions;
+		internal static Dictionary<DateTime, MonthlyHarvest> monthlyharvests;
 		public MainForm()
 		{
 			InitializeComponent();
@@ -38,6 +45,12 @@ namespace PlowSense
 			Staff staff = new Staff { TopLevel = false };
 			dashBoardPanel.Controls.Add(staff);
 			staff.Show();
+		}
+
+		private void linkSheetsTab_Click(object sender, EventArgs e)
+		{
+			LinkSheet sheetform = new LinkSheet();
+			sheetform.Show();
 		}
 	}
 }
