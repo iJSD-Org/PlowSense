@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Windows.Media;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
+using PlowSense.Models;
 
 namespace PlowSense
 {
@@ -18,33 +20,9 @@ namespace PlowSense
 		private void Statistics_Load(object sender, EventArgs e)
 		{
 			PieLoad();
+			CropsLoad();
 		}
-		void LineLoad()
-		{
-			statsChart.Series = new SeriesCollection
-			{
-				new LineSeries
-				{
-					Title = "Line 1",
-					Values = new ChartValues<int> {61, 63, 37, 62, 67, 75, 45, 52, 54, 45},
-					Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80,9, 105, 54)),
-					PointGeometry = null,
-					LineSmoothness = 100,
-					Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(9, 105, 54))
-				},
-			};
-			List<string> l = new List<string> { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
-			statsChart.AxisX.Add(new Axis
-			{
-				Title = "X",
-				Labels = l
-			});
-			statsChart.AxisY.Add(new Axis
-			{
-				Title = "Y",
-				MinValue = 0
-			});
-		}
+		
 		void PieLoad()
 		{
 			statsPie.Series= new SeriesCollection
@@ -83,6 +61,65 @@ namespace PlowSense
 			customLegend.FontSize = 15;
 			statsPie.DefaultLegend = customLegend;
 			statsPie.LegendLocation = LegendLocation.Right;
+		}
+
+		void CropsLoad()
+		{
+			List<string> availableCrops = new List<string>();
+			foreach (var farm in MainForm.Transactions.Values)
+			{
+				if (!availableCrops.Contains(farm.Crop))
+				{
+					availableCrops.Add(farm.Crop);
+					statsCmbBox.Items.Add(farm.Crop);
+				}
+			}
+		}
+
+		void GenerateChartData(Dictionary<DateTime, TransactionHistory> values)
+		{
+			//Create filtered dictionary
+			
+			statsChart.Series.Clear();
+			statsChart.AxisX.Clear();
+
+			//Add new values and labels
+			statsChart.Series = new SeriesCollection
+			{
+				new LineSeries
+				{
+					Title = statsCmbBox.SelectedItem.ToString(),
+					Values = new ChartValues<int>(values.Values.Select(o => o.AmountSold)),
+					Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80, 9, 105, 54)),
+					PointGeometry = DefaultGeometries.Square,
+					LineSmoothness = 100,
+					Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(9, 105, 54))
+				},
+			};
+
+			statsChart.AxisX.Add(new Axis
+			{
+				Title = "Month",
+				Labels = values.Keys.Select(a => a.ToString("MM/dd/yyyy")).ToList()
+			});
+		}
+
+		void GenerateTableData(Dictionary<DateTime, TransactionHistory> values)
+		{
+			foreach (var item in values)
+			{
+				statsDataGrid.Rows.Add(item.Key.ToString("MM/dd/yyyy"),
+					item.Value.FarmRep, item.Value.Crop, item.Value.AmountSold);
+			}
+		}
+		private void statsCmbBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Dictionary<DateTime, TransactionHistory> filteredValues = MainForm.Transactions
+				.Where(o => o.Value.Crop == statsCmbBox.SelectedItem.ToString())
+				.ToDictionary(x => x.Key, x => x.Value);
+
+			GenerateChartData(filteredValues);
+			GenerateTableData(filteredValues);
 		}
 	}
 }
