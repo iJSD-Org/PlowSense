@@ -48,10 +48,16 @@ namespace PlowSense
 			staff.Show();
 		}
 
+		private void ExitButton_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
+
 		private void linkSheetsTab_Click(object sender, EventArgs e)
 		{
 			LinkSheet sheetForm = new LinkSheet();
 			sheetForm.Show();
 		}
+
 	}
 }

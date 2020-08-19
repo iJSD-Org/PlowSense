@@ -44,7 +44,7 @@ namespace PlowSense
 
 			List<TransactionHistory> tranInfo = sheetMapper.Map<TransactionHistory>(transactionSheet.Result)
 				.ParsedModels
-				.Select(o => o.Value).ToList();
+				.Select(o => o.Value).OrderBy(o => o.Crop).ToList();
 			List<DateTime> transDates = transactionSheet.Result.Rows.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
 				.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
 
@@ -59,6 +59,16 @@ namespace PlowSense
 			MainForm.Transactions = Enumerable.Range(0, transDates.Count)
 				.ToDictionary(i => transDates[i], i => tranInfo[i]);
 			Close();
+		}
+
+		private void txtBoxSheetID_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
