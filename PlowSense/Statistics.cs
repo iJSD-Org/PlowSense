@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Windows.Media;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
 using PlowSense.Models;
+using Color = System.Drawing.Color;
 
 namespace PlowSense
 {
@@ -19,14 +21,21 @@ namespace PlowSense
 		Func<ChartPoint, string> labelPoint = chartpoint => string.Format("{1:P}", chartpoint.Y, chartpoint.Participation);
 		private void Statistics_Load(object sender, EventArgs e)
 		{
+			SetColors();
 			PieLoad();
-<<<<<<< HEAD
 			CropsLoad();
-=======
-			LineLoad();
->>>>>>> DashboardDesign
 		}
-		
+
+		void SetColors()
+		{
+			statsDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(9, 105, 54);
+			statsDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Proxima Soft", 14, FontStyle.Bold);
+			statsDataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(56, 231, 76);
+			statsDataGrid.GridColor = Color.White;
+			statsDataGrid.DefaultCellStyle.SelectionBackColor = Color.LightGray;
+			statsDataGrid.Font = new Font("Proxima Soft", 11);
+			
+		}
 		void PieLoad()
 		{
 			statsPie.Series= new SeriesCollection
@@ -124,6 +133,12 @@ namespace PlowSense
 
 			GenerateChartData(filteredValues);
 			GenerateTableData(filteredValues);
+		}
+
+
+		private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+		{
+
 		}
 	}
 }

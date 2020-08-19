@@ -33,6 +33,8 @@
             this.txtBoxSheetID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.okBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -54,7 +56,7 @@
             this.txtBoxSheetID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBoxSheetID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBoxSheetID.HoverState.Parent = this.txtBoxSheetID;
-            this.txtBoxSheetID.Location = new System.Drawing.Point(77, 121);
+            this.txtBoxSheetID.Location = new System.Drawing.Point(77, 195);
             this.txtBoxSheetID.Name = "txtBoxSheetID";
             this.txtBoxSheetID.PasswordChar = '\0';
             this.txtBoxSheetID.PlaceholderText = "";
@@ -62,25 +64,28 @@
             this.txtBoxSheetID.ShadowDecoration.Parent = this.txtBoxSheetID;
             this.txtBoxSheetID.Size = new System.Drawing.Size(200, 36);
             this.txtBoxSheetID.TabIndex = 0;
+            this.txtBoxSheetID.TextChanged += new System.EventHandler(this.txtBoxSheetID_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Proxima Soft Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 71);
+            this.label1.Location = new System.Drawing.Point(12, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(351, 34);
             this.label1.TabIndex = 1;
             this.label1.Text = "Please enter your sheetID";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // okBtn
             // 
             this.okBtn.CheckedState.Parent = this.okBtn;
             this.okBtn.CustomImages.Parent = this.okBtn;
-            this.okBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.okBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.okBtn.Font = new System.Drawing.Font("Proxima Soft Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.okBtn.ForeColor = System.Drawing.Color.White;
             this.okBtn.HoverState.Parent = this.okBtn;
-            this.okBtn.Location = new System.Drawing.Point(147, 196);
+            this.okBtn.Location = new System.Drawing.Point(147, 270);
             this.okBtn.Name = "okBtn";
             this.okBtn.ShadowDecoration.Parent = this.okBtn;
             this.okBtn.Size = new System.Drawing.Size(51, 45);
@@ -88,11 +93,23 @@
             this.okBtn.Text = "OK";
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PlowSense.Properties.Resources.sun_208px;
+            this.pictureBox1.Location = new System.Drawing.Point(134, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // LinkSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
             this.ClientSize = new System.Drawing.Size(369, 403);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxSheetID);
@@ -100,6 +117,7 @@
             this.Name = "LinkSheet";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.LinkSheet_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +129,6 @@
 		private Guna.UI2.WinForms.Guna2TextBox txtBoxSheetID;
 		private System.Windows.Forms.Label label1;
 		private Guna.UI2.WinForms.Guna2Button okBtn;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }

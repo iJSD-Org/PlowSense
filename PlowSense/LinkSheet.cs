@@ -60,5 +60,15 @@ namespace PlowSense
 				.ToDictionary(i => transDates[i], i => tranInfo[i]);
 			Close();
 		}
+
+		private void txtBoxSheetID_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
