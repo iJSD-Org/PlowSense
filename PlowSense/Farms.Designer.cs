@@ -49,6 +49,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.addFarmBtn = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -248,6 +249,7 @@
             // 
             // leftPanel
             // 
+            this.leftPanel.Controls.Add(this.addFarmBtn);
             this.leftPanel.Controls.Add(this.guna2VSeparator1);
             this.leftPanel.Controls.Add(this.flowLayoutPanel1);
             this.leftPanel.Controls.Add(this.guna2HtmlLabel1);
@@ -264,9 +266,9 @@
             // 
             this.guna2VSeparator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(205)))), ((int)(((byte)(5)))));
             this.guna2VSeparator1.FillThickness = 2;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(485, 44);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(485, 18);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(12, 499);
+            this.guna2VSeparator1.Size = new System.Drawing.Size(14, 521);
             this.guna2VSeparator1.TabIndex = 9;
             // 
             // flowLayoutPanel1
@@ -295,6 +297,26 @@
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(235, 10);
             this.guna2Separator1.TabIndex = 7;
+            // 
+            // addFarmBtn
+            // 
+            this.addFarmBtn.Animated = true;
+            this.addFarmBtn.CheckedState.Parent = this.addFarmBtn;
+            this.addFarmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addFarmBtn.CustomImages.Parent = this.addFarmBtn;
+            this.addFarmBtn.FillColor = System.Drawing.Color.Transparent;
+            this.addFarmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addFarmBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.addFarmBtn.HoverState.Parent = this.addFarmBtn;
+            this.addFarmBtn.Image = global::PlowSense.Properties.Resources.gplus_math_208px;
+            this.addFarmBtn.ImageSize = new System.Drawing.Size(30, 30);
+            this.addFarmBtn.Location = new System.Drawing.Point(349, 18);
+            this.addFarmBtn.Name = "addFarmBtn";
+            this.addFarmBtn.ShadowDecoration.Parent = this.addFarmBtn;
+            this.addFarmBtn.Size = new System.Drawing.Size(130, 40);
+            this.addFarmBtn.TabIndex = 36;
+            this.addFarmBtn.Text = "Add Farm";
+            this.addFarmBtn.Click += new System.EventHandler(this.addFarmBtn_Click);
             // 
             // Farms
             // 
@@ -344,5 +366,6 @@
 		private Guna.UI2.WinForms.Guna2Button farmChartOneBtn;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
 		private LiveCharts.WinForms.CartesianChart farmChart;
+		private Guna.UI2.WinForms.Guna2Button addFarmBtn;
 	}
 }

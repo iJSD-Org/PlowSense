@@ -63,6 +63,16 @@ namespace PlowSense.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gplus_math_208px {
+            get {
+                object obj = ResourceManager.GetObject("gplus_math_208px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wexit_48px {
             get {
                 object obj = ResourceManager.GetObject("wexit_48px", resourceCulture);

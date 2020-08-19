@@ -90,5 +90,11 @@ namespace PlowSense
 				};
 			}
 		}
+
+		private void addFarmBtn_Click(object sender, EventArgs e)
+		{
+			Form nAddFarm = new AddFarmForm();
+			nAddFarm.Show();
+		}
 	}
 }
