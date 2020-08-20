@@ -103,9 +103,9 @@ namespace PlowSense.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap minus_480px {
+        internal static System.Drawing.Bitmap icons8_exit_208px {
             get {
-                object obj = ResourceManager.GetObject("minus_480px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_exit_208px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace PlowSense.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_exit_208px {
+        internal static System.Drawing.Bitmap minus_480px {
             get {
-                object obj = ResourceManager.GetObject("icons8_exit_208px", resourceCulture);
+                object obj = ResourceManager.GetObject("minus_480px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
