@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Forms;
 using Point = System.Drawing.Point;
@@ -8,7 +9,6 @@ namespace PlowSense
 {
 	public partial class Staff : Form
 	{
-		private int _tag = 0;
 
 		public Staff()
 		{
@@ -24,7 +24,7 @@ namespace PlowSense
 		{
 			Panel p = new Panel
 			{
-				Tag = _tag,
+				Tag = $"{guna2TextBox1.Text},{guna2TextBox2.Text},{guna2TextBox3.Text},",
 				BackColor = System.Drawing.Color.FromArgb(222, 205, 5),
 				Location = new Point(0, 50),
 				ForeColor = System.Drawing.Color.White,
@@ -32,16 +32,22 @@ namespace PlowSense
 				Size = new Size(80, 95)
 			};
 
-			p.Click += new System.EventHandler(panel1_Click);
+			p.Click += new EventHandler(panel1_Click);
 			flowLayoutPanel1.Controls.Add(p);
-			_tag++;
 		}
+
 
 		
 		private void panel1_Click(object sender, EventArgs e)
 		{
 			Panel staff = (Panel) sender;
-			
+			string[] values = staff.Tag.ToString().Split(',');
+			guna2TextBox1.Text = values[0];
+			guna2TextBox2.Text = values[1];
+			guna2TextBox3.Text = values[2];
+			guna2TextBox1.Enabled = false;
+			guna2TextBox2.Enabled = false;
+			guna2TextBox3.Enabled = false;
 		}
 
 		private void panel1_Paint(object sender, PaintEventArgs e)
