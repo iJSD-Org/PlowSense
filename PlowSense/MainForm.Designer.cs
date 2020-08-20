@@ -30,7 +30,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.formElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.sidebarPanel = new System.Windows.Forms.Panel();
 			this.linkSheetsButton = new Guna.UI2.WinForms.Guna2Button();
 			this.staffTileButton = new Guna.UI2.WinForms.Guna2TileButton();
 			this.farmsTileButton = new Guna.UI2.WinForms.Guna2TileButton();
@@ -42,7 +42,7 @@
 			this.Statistics = new System.Windows.Forms.TabPage();
 			this.Staff = new System.Windows.Forms.TabPage();
 			this.formDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-			this.panel1.SuspendLayout();
+			this.sidebarPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.dashboardTabControl.SuspendLayout();
 			this.SuspendLayout();
@@ -52,21 +52,21 @@
 			this.formElipse.BorderRadius = 35;
 			this.formElipse.TargetControl = this;
 			// 
-			// panel1
+			// sidebarPanel
 			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-			this.panel1.Controls.Add(this.linkSheetsButton);
-			this.panel1.Controls.Add(this.staffTileButton);
-			this.panel1.Controls.Add(this.farmsTileButton);
-			this.panel1.Controls.Add(this.statsTileButton);
-			this.panel1.Controls.Add(this.ExitButton);
-			this.panel1.Controls.Add(this.pictureBox1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Margin = new System.Windows.Forms.Padding(2);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(100, 576);
-			this.panel1.TabIndex = 0;
+			this.sidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+			this.sidebarPanel.Controls.Add(this.linkSheetsButton);
+			this.sidebarPanel.Controls.Add(this.staffTileButton);
+			this.sidebarPanel.Controls.Add(this.farmsTileButton);
+			this.sidebarPanel.Controls.Add(this.statsTileButton);
+			this.sidebarPanel.Controls.Add(this.ExitButton);
+			this.sidebarPanel.Controls.Add(this.pictureBox1);
+			this.sidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
+			this.sidebarPanel.Location = new System.Drawing.Point(0, 0);
+			this.sidebarPanel.Margin = new System.Windows.Forms.Padding(2);
+			this.sidebarPanel.Name = "sidebarPanel";
+			this.sidebarPanel.Size = new System.Drawing.Size(100, 576);
+			this.sidebarPanel.TabIndex = 0;
 			// 
 			// linkSheetsButton
 			// 
@@ -243,7 +243,7 @@
 			// 
 			// formDragControl
 			// 
-			this.formDragControl.TargetControl = this.panel1;
+			this.formDragControl.TargetControl = this.sidebarPanel;
 			this.formDragControl.UseTransparentDrag = true;
 			// 
 			// MainForm
@@ -253,14 +253,14 @@
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
 			this.ClientSize = new System.Drawing.Size(1024, 576);
 			this.Controls.Add(this.dashboardTabControl);
-			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.sidebarPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.IsMdiContainer = true;
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "MainForm";
 			this.Text = "MainForm";
 			this.Load += new System.EventHandler(this.MainForm_Load);
-			this.panel1.ResumeLayout(false);
+			this.sidebarPanel.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.dashboardTabControl.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -270,7 +270,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Elipse formElipse;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel sidebarPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
 		private Guna.UI2.WinForms.Guna2Button ExitButton;
 		private System.Windows.Forms.TabControl dashboardTabControl;
