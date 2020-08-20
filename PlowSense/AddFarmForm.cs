@@ -102,7 +102,7 @@ namespace PlowSense
 
 		private void confirmBtn_Click(object sender, EventArgs e)
 		{
-			StreamWriter csvWrite = new StreamWriter(@"D:\FarmsCSV.csv", true);
+			StreamWriter csvWrite = new StreamWriter(@"C:\FarmsCSV.csv", true);
 			csvWrite.WriteLine(_fullEntry);
 			csvWrite.Close();
 			Close();
