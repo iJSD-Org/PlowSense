@@ -10,6 +10,8 @@ namespace PlowSense
 	public partial class AddFarmForm : Form
 	{
 		private int _tag;
+		private string _folderPath = null;
+		private string _directory = null;
 
 		public AddFarmForm()
 		{
@@ -97,7 +99,7 @@ namespace PlowSense
 				p.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, p.Width, p.Height, 20, 20));
 				_tag++;
 				string fullEntry = NameText.Text + "," + LocationText.Text + "," + farmNameText.Text + "," + CropText.Text + "," + ShelfLifeText.Text;
-				string fileName = "D:\\N" + NameText.Text + "L" + LocationText.Text + "FN" + farmNameText.Text + ".csv";
+				string fileName = _directory + "\\N" + NameText.Text + "L" + LocationText.Text + "FN" + farmNameText.Text + ".csv";
 				StreamWriter csvWrite = new StreamWriter(@fileName, true);
 				csvWrite.WriteLine(fullEntry);
 				csvWrite.Close();
@@ -116,9 +118,23 @@ namespace PlowSense
 			LocationText.Enabled = false;
 			farmNameText.Enabled = false;
 			string fullEntry = NameText.Text + "," + LocationText.Text + "," + farmNameText.Text;
-			StreamWriter csvWrite = new StreamWriter(@"D:\FarmsCSV.csv", true);
+			StreamWriter csvWrite = new StreamWriter(_directory+"\\FarmsCSV.csv", true);
 			csvWrite.WriteLine(fullEntry);
 			csvWrite.Close();
+		}
+
+		private void AddFarmForm_Load(object sender, EventArgs e)
+		{
+			if (Directory.Exists("D:\\"))
+			{
+				_folderPath = "D:\\";
+				_directory = Path.Combine(_folderPath, "PlowSenseFiles");
+			}
+			else if (Directory.Exists("C:\\"))
+			{
+				_folderPath = "C:\\";
+				_directory = Path.Combine(_folderPath, "PlowSenseFiles");
+			}
 		}
 	}
 }

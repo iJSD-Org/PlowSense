@@ -442,6 +442,7 @@
             this.Name = "AddFarmForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddFarmForm";
+            this.Load += new System.EventHandler(this.AddFarmForm_Load);
             this.CropsPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
