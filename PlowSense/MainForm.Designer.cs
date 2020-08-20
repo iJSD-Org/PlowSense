@@ -41,7 +41,7 @@
 			this.Farms = new System.Windows.Forms.TabPage();
 			this.Statistics = new System.Windows.Forms.TabPage();
 			this.Staff = new System.Windows.Forms.TabPage();
-			this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+			this.formDragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.dashboardTabControl.SuspendLayout();
@@ -241,6 +241,11 @@
 			this.Staff.TabIndex = 2;
 			this.Staff.Text = "Staff";
 			// 
+			// formDragControl
+			// 
+			this.formDragControl.TargetControl = this.panel1;
+			this.formDragControl.UseTransparentDrag = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,7 +281,7 @@
 		private Guna.UI2.WinForms.Guna2TileButton farmsTileButton;
 		private Guna.UI2.WinForms.Guna2TileButton staffTileButton;
 		private Guna.UI2.WinForms.Guna2Button linkSheetsButton;
-		private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+		private Guna.UI2.WinForms.Guna2DragControl formDragControl;
 	}
 }
 
