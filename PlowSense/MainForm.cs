@@ -5,6 +5,7 @@ using SheetToObjects.Adapters.GoogleSheets;
 using SheetToObjects.Core;
 using SheetToObjects.Lib;
 using System.Windows.Forms;
+using Guna.UI2.WinForms.Suite;
 using PlowSense.Models;
 
 namespace PlowSense
@@ -29,7 +30,7 @@ namespace PlowSense
 			dashBoardPanel.Controls.Clear();
 			if (MainForm.Transactions.Count != 0)
 			{
-				Farms farms = new Farms {TopLevel = false};
+				Farms farms = new Farms { TopLevel = false };
 				dashBoardPanel.Controls.Add(farms);
 				farms.Show();
 			}
@@ -41,7 +42,7 @@ namespace PlowSense
 			if (MainForm.Transactions.Count != 0)
 			{
 				dashBoardPanel.Controls.Clear();
-				Statistics stats = new Statistics {TopLevel = false};
+				Statistics stats = new Statistics { TopLevel = false };
 				dashBoardPanel.Controls.Add(stats);
 				stats.Show();
 			}
@@ -64,6 +65,7 @@ namespace PlowSense
 		private void linkSheetsTab_Click(object sender, EventArgs e)
 		{
 			LinkSheet sheetForm = new LinkSheet();
+			_ = new ShadowForm(sheetForm);
 			sheetForm.Show();
 		}
 

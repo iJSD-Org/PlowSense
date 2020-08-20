@@ -74,14 +74,9 @@ namespace PlowSense
 			Close();
 		}
 
-		private void txtBoxSheetID_TextChanged(object sender, EventArgs e)
+		private void guna2ImageButton1_Click(object sender, EventArgs e)
 		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
+			Close();
 		}
 	}
 }
