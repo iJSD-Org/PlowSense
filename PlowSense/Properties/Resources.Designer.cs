@@ -93,6 +93,16 @@ namespace PlowSense.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap field {
+            get {
+                object obj = ResourceManager.GetObject("field", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gplus_math_208px {
             get {
                 object obj = ResourceManager.GetObject("gplus_math_208px", resourceCulture);
@@ -103,9 +113,9 @@ namespace PlowSense.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap minus_480px {
+        internal static System.Drawing.Bitmap graph_line_screen {
             get {
-                object obj = ResourceManager.GetObject("minus_480px", resourceCulture);
+                object obj = ResourceManager.GetObject("graph-line-screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +126,16 @@ namespace PlowSense.Properties {
         internal static System.Drawing.Bitmap icons8_exit_208px {
             get {
                 object obj = ResourceManager.GetObject("icons8_exit_208px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minus_480px {
+            get {
+                object obj = ResourceManager.GetObject("minus_480px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace PlowSense.Properties {
         internal static System.Drawing.Bitmap sun_208px {
             get {
                 object obj = ResourceManager.GetObject("sun_208px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap target {
+            get {
+                object obj = ResourceManager.GetObject("target", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
