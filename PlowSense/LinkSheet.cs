@@ -73,7 +73,7 @@ namespace PlowSense
 			catch
 			{
 				CustomMessageBox msBox = new CustomMessageBox("Error",
-					"Please complete the details first!", CustomMessageBoxStatus.Alert);
+					"Please enter a valid sheetID!", CustomMessageBoxStatus.Alert);
 				msBox.ShowDialog();
 			}
 

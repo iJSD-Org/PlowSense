@@ -36,7 +36,7 @@ namespace PlowSense
 			else
 			{
 				CustomMessageBox msBox = new CustomMessageBox("Error",
-					"Please complete the details first!", CustomMessageBoxStatus.Alert);
+					"Please enter a sheetID first!", CustomMessageBoxStatus.Alert);
 				msBox.ShowDialog();
 			}
 		}
@@ -53,7 +53,7 @@ namespace PlowSense
 			else
 			{
 				CustomMessageBox msBox = new CustomMessageBox("Error",
-					"Please complete the details first!", CustomMessageBoxStatus.Alert);
+					"Please enter a sheetID first!", CustomMessageBoxStatus.Alert);
 				msBox.ShowDialog();
 			}
 		}

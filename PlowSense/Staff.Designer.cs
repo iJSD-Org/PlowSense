@@ -193,7 +193,7 @@
             this.taskCmbBox.ItemHeight = 30;
             this.taskCmbBox.Items.AddRange(new object[] {
             "Buy",
-            "Sell"});
+            "Inventory Check"});
             this.taskCmbBox.ItemsAppearance.Parent = this.taskCmbBox;
             this.taskCmbBox.Location = new System.Drawing.Point(16, 206);
             this.taskCmbBox.Name = "taskCmbBox";
@@ -404,7 +404,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.taskDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.taskDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.taskDataGrid.ColumnHeadersHeight = 27;
             this.taskDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sName,
             this.Task,
@@ -439,7 +439,7 @@
             this.taskDataGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.taskDataGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.taskDataGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.taskDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.taskDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.taskDataGrid.ThemeStyle.HeaderStyle.Height = 27;
             this.taskDataGrid.ThemeStyle.ReadOnly = false;
             this.taskDataGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;

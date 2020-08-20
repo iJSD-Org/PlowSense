@@ -81,9 +81,8 @@ namespace PlowSense
 			taskDataGrid.Rows.Add(s.Name, s.Task, s.Deadline.ToString("MM/dd/yyyy"));
 		}
 
-		private void addStaffBtn_Click(object sender, EventArgs e)
+		void AddStaff()
 		{
-			EnableControls();
 			Panel p = new Panel
 			{
 				Tag = _tag,
@@ -97,6 +96,11 @@ namespace PlowSense
 			p.Click += new EventHandler(panel1_Click);
 			staffPanel.Controls.Add(p);
 			_tag++;
+
+		}
+		private void addStaffBtn_Click(object sender, EventArgs e)
+		{
+			EnableControls();
 		}
 
 
@@ -124,9 +128,9 @@ namespace PlowSense
 		private void continueBtn_Click(object sender, EventArgs e)
 		{
 			if (nameTxtBox.Text != string.Empty && farmCmbBox.SelectedItem != null
-			                                    && cropCmbBox.SelectedItem != null
 			                                    && taskCmbBox.SelectedItem != null)
 			{
+				AddStaff();
 				StaffInfo staff = new StaffInfo();
 				AddData(staff);
 
@@ -134,6 +138,7 @@ namespace PlowSense
 				{
 					staffList.Add(staff);
 				}
+
 
 				UpdateTable(staff);
 				DisableControls();
