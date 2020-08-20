@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Drawing.Imaging;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
-using System.Windows.Media;
 using Color = System.Drawing.Color;
 
 namespace PlowSense
@@ -18,6 +15,7 @@ namespace PlowSense
 		public CustomMessageBox(string title, string desc, CustomMessageBoxStatus icon)
 		{
 			InitializeComponent();
+
 			titleLabel.Text = title;
 			descLabel.Text = desc;
 			switch (icon)
