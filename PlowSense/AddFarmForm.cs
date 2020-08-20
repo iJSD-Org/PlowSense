@@ -12,7 +12,6 @@ namespace PlowSense
 		private int _tag;
 		private string _folderPath = null;
 		private string _directory = null;
-
 		public AddFarmForm()
 		{
 			InitializeComponent();

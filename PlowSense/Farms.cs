@@ -15,7 +15,6 @@ namespace PlowSense
 {
 	public partial class Farms : Form
 	{
-
 		public Farms()
 		{
 			InitializeComponent();
@@ -30,7 +29,6 @@ namespace PlowSense
 			int nWidthEllipse,
 			int nHeightEllipse
 		);
-
 		private void Farms_Load(object sender, EventArgs e)
 		{
 			FarmLoad();
@@ -214,6 +212,10 @@ namespace PlowSense
 		{
 			AddFarmForm addFarmForm = new AddFarmForm();
 			addFarmForm.Show();
+		} 
+		void _ButtonClicked(object sender, EventArgs e)
+		{
+			this.Refresh();
 		}
 	}
 }
