@@ -50,7 +50,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.refreshBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addFarmBtn = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -178,6 +178,7 @@
             this.farmChartThreeBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.farmChartThreeBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(214)))), ((int)(((byte)(174)))));
             this.farmChartThreeBtn.CheckedState.Parent = this.farmChartThreeBtn;
+            this.farmChartThreeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.farmChartThreeBtn.CustomImages.Parent = this.farmChartThreeBtn;
             this.farmChartThreeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(227)))));
             this.farmChartThreeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,6 +198,7 @@
             this.farmChartTwoBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.farmChartTwoBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(214)))), ((int)(((byte)(174)))));
             this.farmChartTwoBtn.CheckedState.Parent = this.farmChartTwoBtn;
+            this.farmChartTwoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.farmChartTwoBtn.CustomImages.Parent = this.farmChartTwoBtn;
             this.farmChartTwoBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(227)))));
             this.farmChartTwoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,6 +218,7 @@
             this.farmChartOneBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.farmChartOneBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(214)))), ((int)(((byte)(174)))));
             this.farmChartOneBtn.CheckedState.Parent = this.farmChartOneBtn;
+            this.farmChartOneBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.farmChartOneBtn.CustomImages.Parent = this.farmChartOneBtn;
             this.farmChartOneBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(242)))), ((int)(((byte)(227)))));
             this.farmChartOneBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,7 +254,7 @@
             // 
             // leftPanel
             // 
-            this.leftPanel.Controls.Add(this.guna2Button1);
+            this.leftPanel.Controls.Add(this.refreshBtn);
             this.leftPanel.Controls.Add(this.addFarmBtn);
             this.leftPanel.Controls.Add(this.guna2VSeparator1);
             this.leftPanel.Controls.Add(this.myFarmsFlowPanel);
@@ -306,26 +309,26 @@
             // 
             this.guna2Elipse2.BorderRadius = 30;
             // 
-            // guna2Button1
+            // refreshBtn
             // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = global::PlowSense.Properties.Resources.grefresh_480px;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button1.Location = new System.Drawing.Point(378, 18);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(121, 40);
-            this.guna2Button1.TabIndex = 37;
-            this.guna2Button1.Text = "Refresh";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.refreshBtn.Animated = true;
+            this.refreshBtn.CheckedState.Parent = this.refreshBtn;
+            this.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshBtn.CustomImages.Parent = this.refreshBtn;
+            this.refreshBtn.FillColor = System.Drawing.Color.Transparent;
+            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.refreshBtn.HoverState.Parent = this.refreshBtn;
+            this.refreshBtn.Image = global::PlowSense.Properties.Resources.grefresh_480px;
+            this.refreshBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.refreshBtn.ImageSize = new System.Drawing.Size(40, 40);
+            this.refreshBtn.Location = new System.Drawing.Point(423, 21);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.ShadowDecoration.Parent = this.refreshBtn;
+            this.refreshBtn.Size = new System.Drawing.Size(60, 40);
+            this.refreshBtn.TabIndex = 37;
+            this.refreshBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // addFarmBtn
             // 
@@ -339,13 +342,12 @@
             this.addFarmBtn.HoverState.Parent = this.addFarmBtn;
             this.addFarmBtn.Image = global::PlowSense.Properties.Resources.gplus_math_208px;
             this.addFarmBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.addFarmBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.addFarmBtn.Location = new System.Drawing.Point(249, 18);
+            this.addFarmBtn.ImageSize = new System.Drawing.Size(40, 40);
+            this.addFarmBtn.Location = new System.Drawing.Point(357, 21);
             this.addFarmBtn.Name = "addFarmBtn";
             this.addFarmBtn.ShadowDecoration.Parent = this.addFarmBtn;
-            this.addFarmBtn.Size = new System.Drawing.Size(130, 40);
+            this.addFarmBtn.Size = new System.Drawing.Size(60, 40);
             this.addFarmBtn.TabIndex = 36;
-            this.addFarmBtn.Text = "Add Farm";
             this.addFarmBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.addFarmBtn.Click += new System.EventHandler(this.addFarmBtn_Click);
             // 
@@ -399,6 +401,6 @@
 		private LiveCharts.WinForms.CartesianChart farmChart;
 		private Guna.UI2.WinForms.Guna2Button addFarmBtn;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-		private Guna.UI2.WinForms.Guna2Button guna2Button1;
+		private Guna.UI2.WinForms.Guna2Button refreshBtn;
 	}
 }

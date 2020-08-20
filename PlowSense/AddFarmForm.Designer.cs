@@ -50,12 +50,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ShelfLifeText = new Guna.UI2.WinForms.Guna2TextBox();
             this.CropText = new Guna.UI2.WinForms.Guna2TextBox();
-            this.addCropBtn = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.addCropBtn = new Guna.UI2.WinForms.Guna2Button();
             this.CropsPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -144,6 +142,8 @@
             // 
             // confirmFarmerInfBtn
             // 
+            this.confirmFarmerInfBtn.AutoRoundedCorners = true;
+            this.confirmFarmerInfBtn.BorderRadius = 14;
             this.confirmFarmerInfBtn.CheckedState.Parent = this.confirmFarmerInfBtn;
             this.confirmFarmerInfBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmFarmerInfBtn.CustomImages.Parent = this.confirmFarmerInfBtn;
@@ -287,6 +287,8 @@
             // 
             // confirmBtn
             // 
+            this.confirmBtn.AutoRoundedCorners = true;
+            this.confirmBtn.BorderRadius = 14;
             this.confirmBtn.CheckedState.Parent = this.confirmBtn;
             this.confirmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmBtn.CustomImages.Parent = this.confirmBtn;
@@ -376,6 +378,26 @@
             this.CropText.TabIndex = 36;
             this.CropText.Enter += new System.EventHandler(this.CropText_Enter);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.label2.Location = new System.Drawing.Point(7, 311);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 25);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Select Crops";
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.TargetControl = this.panel1;
+            // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+            this.guna2AnimateWindow1.TargetForm = this;
+            // 
             // addCropBtn
             // 
             this.addCropBtn.Animated = true;
@@ -397,36 +419,6 @@
             this.addCropBtn.Text = "Add Crop";
             this.addCropBtn.TextOffset = new System.Drawing.Point(0, 5);
             this.addCropBtn.Click += new System.EventHandler(this.addCropBtn_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label2.Location = new System.Drawing.Point(7, 311);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 25);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Select Crops";
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.TargetControl = this.panel1;
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
-            this.guna2AnimateWindow1.TargetForm = this;
-            // 
-            // guna2Elipse3
-            // 
-            this.guna2Elipse3.BorderRadius = 20;
-            this.guna2Elipse3.TargetControl = this.confirmBtn;
-            // 
-            // guna2Elipse4
-            // 
-            this.guna2Elipse4.BorderRadius = 20;
-            this.guna2Elipse4.TargetControl = this.confirmFarmerInfBtn;
             // 
             // AddFarmForm
             // 
@@ -481,8 +473,6 @@
 		private System.Windows.Forms.Label label7;
 		private Guna.UI2.WinForms.Guna2TextBox farmNameText;
 		private Guna.UI2.WinForms.Guna2Button confirmBtn;
-		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
 		private Guna.UI2.WinForms.Guna2Button confirmFarmerInfBtn;
-		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
 	}
 }

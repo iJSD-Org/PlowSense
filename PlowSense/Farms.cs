@@ -207,13 +207,12 @@ namespace PlowSense
 				};
 			}
 		}
-
 		private void addFarmBtn_Click(object sender, EventArgs e)
 		{
 			AddFarmForm addFarmForm = new AddFarmForm();
 			addFarmForm.Show();
 		} 
-		void _ButtonClicked(object sender, EventArgs e)
+		private void refreshBtn_Click(object sender, EventArgs e)
 		{
 			this.Refresh();
 		}
