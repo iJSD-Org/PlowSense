@@ -30,11 +30,14 @@ namespace PlowSense
 		{
 			SheetId = txtBoxSheetID.Text;
 			SheetMapper sheetMapper = new SheetMapper().AddConfigFor<TransactionHistory>(cfg
-				=> cfg.MapColumn(column => column.WithHeader("Crop").IsRequired().MapTo(t => t.Crop))
-					.MapColumn(column => column.WithHeader("Farm Representative").IsRequired().MapTo(t => t.FarmRep))
-					.MapColumn(column => column.WithHeader("Amount Sold").IsRequired().MapTo(t => t.AmountSold)))
-				.AddConfigFor<MonthlyHarvest>(cfg => cfg.MapColumn(column => column.WithHeader("Crop").IsRequired().MapTo(m => m.Crop))
-					.MapColumn(column => column.WithHeader("Amount Harvested").IsRequired().MapTo(m => m.AmountHarvest)));
+					=> cfg.MapColumn(column => column.WithHeader("Crop").IsRequired().MapTo(t => t.Crop))
+						.MapColumn(
+							column => column.WithHeader("Farm Representative").IsRequired().MapTo(t => t.FarmRep))
+						.MapColumn(column => column.WithHeader("Amount Sold").IsRequired().MapTo(t => t.AmountSold)))
+				.AddConfigFor<MonthlyHarvest>(cfg => cfg
+					.MapColumn(column => column.WithHeader("Crop").IsRequired().MapTo(m => m.Crop))
+					.MapColumn(column =>
+						column.WithHeader("Amount Harvested").IsRequired().MapTo(m => m.AmountHarvest)));
 
 			GoogleSheetAdapter adapter = new GoogleSheetAdapter();
 
@@ -50,14 +53,16 @@ namespace PlowSense
 				List<TransactionHistory> tranInfo = sheetMapper.Map<TransactionHistory>(transactionSheet.Result)
 					.ParsedModels
 					.Select(o => o.Value).OrderBy(o => o.Crop).ToList();
-				List<DateTime> transDates = transactionSheet.Result.Rows.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
-					.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
+				List<DateTime> transDates = transactionSheet.Result.Rows
+					.Where(o => DateTime.TryParse((string) o.Cells[0].Value, out _) && o.Cells.Count != 1)
+					.Select(o => DateTime.Parse((string) o.Cells[0].Value)).ToList();
 
 				List<MonthlyHarvest> monthlyHarvestsInfo = sheetMapper.Map<MonthlyHarvest>(harvestSheet.Result)
 					.ParsedModels
 					.Select(o => o.Value).ToList();
-				List<DateTime> monthDates = harvestSheet.Result.Rows.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
-					.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
+				List<DateTime> monthDates = harvestSheet.Result.Rows
+					.Where(o => DateTime.TryParse((string) o.Cells[0].Value, out _) && o.Cells.Count != 1)
+					.Select(o => DateTime.Parse((string) o.Cells[0].Value)).ToList();
 
 				MainForm.MonthlyHarvests = Enumerable.Range(0, monthDates.Count)
 					.ToDictionary(i => monthDates[i], i => monthlyHarvestsInfo[i]);
@@ -67,10 +72,11 @@ namespace PlowSense
 
 			catch
 			{
-				MessageBox.Show("Please enter a valid sheetID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				CustomMessageBox msBox = new CustomMessageBox("Error",
+					"Please complete the details first!", CustomMessageBoxStatus.Alert);
+				msBox.ShowDialog();
 			}
 
-			
 			Close();
 		}
 

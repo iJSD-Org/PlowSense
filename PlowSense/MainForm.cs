@@ -33,7 +33,12 @@ namespace PlowSense
 				dashBoardPanel.Controls.Add(farms);
 				farms.Show();
 			}
-			else MessageBox.Show("Enter a sheetID first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			else
+			{
+				CustomMessageBox msBox = new CustomMessageBox("Error",
+					"Please complete the details first!", CustomMessageBoxStatus.Alert);
+				msBox.ShowDialog();
+			}
 		}
 
 		private void statsTab_Click(object sender, EventArgs e)
@@ -45,7 +50,12 @@ namespace PlowSense
 				dashBoardPanel.Controls.Add(stats);
 				stats.Show();
 			}
-			else MessageBox.Show("Enter a sheetID first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			else
+			{
+				CustomMessageBox msBox = new CustomMessageBox("Error",
+					"Please complete the details first!", CustomMessageBoxStatus.Alert);
+				msBox.ShowDialog();
+			}
 		}
 
 		private void staffTab_Click(object sender, EventArgs e)
