@@ -35,6 +35,7 @@
 			this.okBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.exitImageButton = new Guna.UI2.WinForms.Guna2ImageButton();
+			this.formShadowForm = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -137,6 +138,10 @@
 			this.exitImageButton.TabIndex = 4;
 			this.exitImageButton.Click += new System.EventHandler(this.guna2ImageButton1_Click);
 			// 
+			// formShadowForm
+			// 
+			this.formShadowForm.TargetForm = this;
+			// 
 			// LinkSheet
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,5 +173,6 @@
 		private Guna.UI2.WinForms.Guna2Button okBtn;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private Guna.UI2.WinForms.Guna2ImageButton exitImageButton;
+		private Guna.UI2.WinForms.Guna2ShadowForm formShadowForm;
 	}
 }

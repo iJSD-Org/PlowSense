@@ -65,8 +65,7 @@ namespace PlowSense
 		private void linkSheetsTab_Click(object sender, EventArgs e)
 		{
 			LinkSheet sheetForm = new LinkSheet();
-			_ = new ShadowForm(sheetForm);
-			sheetForm.Show();
+			sheetForm.ShowDialog();
 		}
 
 	}
