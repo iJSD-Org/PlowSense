@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using SheetToObjects.Adapters.GoogleSheets;
-using SheetToObjects.Core;
-using SheetToObjects.Lib;
 using System.Windows.Forms;
 using PlowSense.Models;
 
@@ -27,9 +23,9 @@ namespace PlowSense
 		private void farmsTab_Click(object sender, EventArgs e)
 		{
 			dashBoardPanel.Controls.Clear();
-			if (MainForm.Transactions.Count != 0)
+			if (Transactions.Count != 0)
 			{
-				Farms farms = new Farms {TopLevel = false};
+				Farms farms = new Farms { TopLevel = false };
 				dashBoardPanel.Controls.Add(farms);
 				farms.Show();
 			}
@@ -43,10 +39,10 @@ namespace PlowSense
 
 		private void statsTab_Click(object sender, EventArgs e)
 		{
-			if (MainForm.Transactions.Count != 0)
+			if (Transactions.Count != 0)
 			{
 				dashBoardPanel.Controls.Clear();
-				Statistics stats = new Statistics {TopLevel = false};
+				Statistics stats = new Statistics { TopLevel = false };
 				dashBoardPanel.Controls.Add(stats);
 				stats.Show();
 			}

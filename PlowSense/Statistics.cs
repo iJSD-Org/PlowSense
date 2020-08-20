@@ -127,6 +127,7 @@ namespace PlowSense
 					item.Value.FarmRep, item.Value.Crop, item.Value.AmountSold);
 			}
 		}
+		
 		private void statsCmbBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			Dictionary<DateTime, TransactionHistory> filteredValues = MainForm.Transactions
@@ -135,12 +136,6 @@ namespace PlowSense
 
 			GenerateChartData(filteredValues);
 			GenerateTableData(filteredValues);
-		}
-
-
-		private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-		{
-
 		}
 	}
 }

@@ -65,7 +65,6 @@
             this.txtBoxSheetID.ShadowDecoration.Parent = this.txtBoxSheetID;
             this.txtBoxSheetID.Size = new System.Drawing.Size(200, 36);
             this.txtBoxSheetID.TabIndex = 0;
-            this.txtBoxSheetID.TextChanged += new System.EventHandler(this.txtBoxSheetID_TextChanged);
             // 
             // label1
             // 
@@ -76,7 +75,6 @@
             this.label1.Size = new System.Drawing.Size(351, 34);
             this.label1.TabIndex = 1;
             this.label1.Text = "Please enter your sheetID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // okBtn
             // 

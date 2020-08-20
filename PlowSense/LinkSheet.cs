@@ -54,15 +54,15 @@ namespace PlowSense
 					.ParsedModels
 					.Select(o => o.Value).OrderBy(o => o.Crop).ToList();
 				List<DateTime> transDates = transactionSheet.Result.Rows
-					.Where(o => DateTime.TryParse((string) o.Cells[0].Value, out _) && o.Cells.Count != 1)
-					.Select(o => DateTime.Parse((string) o.Cells[0].Value)).ToList();
+					.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
+					.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
 
 				List<MonthlyHarvest> monthlyHarvestsInfo = sheetMapper.Map<MonthlyHarvest>(harvestSheet.Result)
 					.ParsedModels
 					.Select(o => o.Value).ToList();
 				List<DateTime> monthDates = harvestSheet.Result.Rows
-					.Where(o => DateTime.TryParse((string) o.Cells[0].Value, out _) && o.Cells.Count != 1)
-					.Select(o => DateTime.Parse((string) o.Cells[0].Value)).ToList();
+					.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
+					.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
 
 				MainForm.MonthlyHarvests = Enumerable.Range(0, monthDates.Count)
 					.ToDictionary(i => monthDates[i], i => monthlyHarvestsInfo[i]);
@@ -78,16 +78,6 @@ namespace PlowSense
 			}
 
 			Close();
-		}
-
-		private void txtBoxSheetID_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
 		}
 	}
 }

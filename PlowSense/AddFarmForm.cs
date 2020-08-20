@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Windows.Media;
-using System.Collections.Generic;
-using System.Linq;
 using System.Drawing;
 using System.IO;
-using System.Net;
 using System.Windows.Forms;
 using LiveCharts;
-using LiveCharts.Wpf;
 using System.Runtime.InteropServices;
 
 namespace PlowSense
