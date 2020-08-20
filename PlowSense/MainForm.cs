@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Guna.UI2.WinForms.Suite;
 using PlowSense.Models;
 
 namespace PlowSense
@@ -18,17 +17,31 @@ namespace PlowSense
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-
+			Statistics statistics = new Statistics()
+			{
+				MdiParent = this,
+				Parent = dashboardTabControl.TabPages[1]
+			};
+			statistics.Show();
+			Staff staff = new Staff
+			{
+				MdiParent = this,
+				Parent = dashboardTabControl.TabPages[2]
+			};
+			staff.Show();
+			Farms farms = new Farms
+			{
+				MdiParent = this,
+				Parent = dashboardTabControl.TabPages[0]
+			};
+			farms.Show();
 		}
 
 		private void farmsTab_Click(object sender, EventArgs e)
 		{
-			dashBoardPanel.Controls.Clear();
 			if (Transactions.Count != 0)
 			{
-				Farms farms = new Farms { TopLevel = false };
-				dashBoardPanel.Controls.Add(farms);
-				farms.Show();
+				dashboardTabControl.SelectedIndex = 0;
 			}
 			else
 			{
@@ -42,10 +55,7 @@ namespace PlowSense
 		{
 			if (Transactions.Count != 0)
 			{
-				dashBoardPanel.Controls.Clear();
-				Statistics stats = new Statistics { TopLevel = false };
-				dashBoardPanel.Controls.Add(stats);
-				stats.Show();
+				dashboardTabControl.SelectedIndex = 1;
 			}
 			else
 			{
@@ -57,10 +67,7 @@ namespace PlowSense
 
 		private void staffTab_Click(object sender, EventArgs e)
 		{
-			dashBoardPanel.Controls.Clear();
-			Staff staff = new Staff { TopLevel = false };
-			dashBoardPanel.Controls.Add(staff);
-			staff.Show();
+			dashboardTabControl.SelectedIndex = 2;
 		}
 
 		private void ExitButton_Click(object sender, EventArgs e)
@@ -73,6 +80,5 @@ namespace PlowSense
 			LinkSheet sheetForm = new LinkSheet();
 			sheetForm.ShowDialog();
 		}
-
 	}
 }

@@ -37,9 +37,13 @@
 			this.linkSheetsTab = new Guna.UI2.WinForms.Guna2Button();
 			this.ExitButton = new Guna.UI2.WinForms.Guna2Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.dashBoardPanel = new System.Windows.Forms.Panel();
+			this.dashboardTabControl = new System.Windows.Forms.TabControl();
+			this.Farms = new System.Windows.Forms.TabPage();
+			this.Statistics = new System.Windows.Forms.TabPage();
+			this.Staff = new System.Windows.Forms.TabPage();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.dashboardTabControl.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// guna2Elipse1
@@ -180,13 +184,50 @@
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
 			// 
-			// dashBoardPanel
+			// dashboardTabControl
 			// 
-			this.dashBoardPanel.Location = new System.Drawing.Point(105, 11);
-			this.dashBoardPanel.Margin = new System.Windows.Forms.Padding(2);
-			this.dashBoardPanel.Name = "dashBoardPanel";
-			this.dashBoardPanel.Size = new System.Drawing.Size(909, 554);
-			this.dashBoardPanel.TabIndex = 1;
+			this.dashboardTabControl.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+			this.dashboardTabControl.Controls.Add(this.Farms);
+			this.dashboardTabControl.Controls.Add(this.Statistics);
+			this.dashboardTabControl.Controls.Add(this.Staff);
+			this.dashboardTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dashboardTabControl.ItemSize = new System.Drawing.Size(0, 1);
+			this.dashboardTabControl.Location = new System.Drawing.Point(100, 0);
+			this.dashboardTabControl.Margin = new System.Windows.Forms.Padding(0);
+			this.dashboardTabControl.Name = "dashboardTabControl";
+			this.dashboardTabControl.SelectedIndex = 0;
+			this.dashboardTabControl.Size = new System.Drawing.Size(924, 576);
+			this.dashboardTabControl.TabIndex = 0;
+			// 
+			// Farms
+			// 
+			this.Farms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
+			this.Farms.Location = new System.Drawing.Point(4, 5);
+			this.Farms.Margin = new System.Windows.Forms.Padding(0);
+			this.Farms.Name = "Farms";
+			this.Farms.Size = new System.Drawing.Size(916, 567);
+			this.Farms.TabIndex = 0;
+			this.Farms.Text = "Farms";
+			// 
+			// Statistics
+			// 
+			this.Statistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
+			this.Statistics.Location = new System.Drawing.Point(4, 5);
+			this.Statistics.Margin = new System.Windows.Forms.Padding(0);
+			this.Statistics.Name = "Statistics";
+			this.Statistics.Size = new System.Drawing.Size(916, 567);
+			this.Statistics.TabIndex = 1;
+			this.Statistics.Text = "Statistics";
+			// 
+			// Staff
+			// 
+			this.Staff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
+			this.Staff.Location = new System.Drawing.Point(4, 5);
+			this.Staff.Margin = new System.Windows.Forms.Padding(0);
+			this.Staff.Name = "Staff";
+			this.Staff.Size = new System.Drawing.Size(916, 567);
+			this.Staff.TabIndex = 2;
+			this.Staff.Text = "Staff";
 			// 
 			// MainForm
 			// 
@@ -194,15 +235,17 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
 			this.ClientSize = new System.Drawing.Size(1024, 576);
-			this.Controls.Add(this.dashBoardPanel);
+			this.Controls.Add(this.dashboardTabControl);
 			this.Controls.Add(this.panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.IsMdiContainer = true;
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "MainForm";
 			this.Text = "MainForm";
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.dashboardTabControl.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -212,12 +255,15 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel dashBoardPanel;
 		private Guna.UI2.WinForms.Guna2Button ExitButton;
 		private Guna.UI2.WinForms.Guna2Button linkSheetsTab;
 		private Guna.UI2.WinForms.Guna2Button staffTab;
 		private Guna.UI2.WinForms.Guna2Button statsTab;
 		private Guna.UI2.WinForms.Guna2Button farmsTab;
+		private System.Windows.Forms.TabControl dashboardTabControl;
+		private System.Windows.Forms.TabPage Farms;
+		private System.Windows.Forms.TabPage Statistics;
+		private System.Windows.Forms.TabPage Staff;
 	}
 }
 
