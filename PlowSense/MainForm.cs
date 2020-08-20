@@ -31,7 +31,7 @@ namespace PlowSense
 			}
 			else
 			{
-				CustomMessageBox msBox = new CustomMessageBox("Error",
+				CustomMessageBox msBox = new CustomMessageBox("No sheetID",
 					"Please enter a sheetID first!", CustomMessageBoxStatus.Alert);
 				msBox.ShowDialog();
 			}
@@ -48,7 +48,7 @@ namespace PlowSense
 			}
 			else
 			{
-				CustomMessageBox msBox = new CustomMessageBox("Error",
+				CustomMessageBox msBox = new CustomMessageBox("No sheetID",
 					"Please enter a sheetID first!", CustomMessageBoxStatus.Alert);
 				msBox.ShowDialog();
 			}

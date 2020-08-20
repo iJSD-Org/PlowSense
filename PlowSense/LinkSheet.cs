@@ -73,9 +73,14 @@ namespace PlowSense
 			catch
 			{
 				CustomMessageBox msBox = new CustomMessageBox("Error",
-					"Please enter a valid sheetID!", CustomMessageBoxStatus.Alert);
+					"Please enter a valid sheetID!", CustomMessageBoxStatus.Cross);
 				msBox.ShowDialog();
+				return;
 			}
+
+			CustomMessageBox msSuccessBox = new CustomMessageBox("Success!",
+				"Connected to sheet", CustomMessageBoxStatus.Check);
+			msSuccessBox.ShowDialog();
 
 			Close();
 		}
