@@ -14,7 +14,6 @@ namespace PlowSense
 {
 	public partial class AddFarmForm : Form
 	{
-		private string _fullEntry = string.Empty;
 		private int _tag;
 
 		public AddFarmForm()
@@ -63,9 +62,16 @@ namespace PlowSense
 			});
 		}
 
+		private void farmNameText_Enter(object sender, EventArgs e)
+		{
+			BeginInvoke((Action)delegate
+			{
+				farmNameText.SelectAll();
+			});
+		}
 		private void addCropBtn_Click(object sender, EventArgs e)
 		{
-			if (!string.IsNullOrWhiteSpace(CropText.Text) && !string.IsNullOrWhiteSpace(LocationText.Text) && !string.IsNullOrWhiteSpace(farmNameText.Text))
+			if (!string.IsNullOrWhiteSpace(CropText.Text) && !string.IsNullOrWhiteSpace(LocationText.Text) && !string.IsNullOrWhiteSpace(farmNameText.Text) && !string.IsNullOrWhiteSpace(CropText.Text) && !string.IsNullOrWhiteSpace(ShelfLifeText.Text))
 			{
 				Panel p = new Panel
 				{
@@ -86,26 +92,38 @@ namespace PlowSense
 					ForeColor = System.Drawing.Color.White
 				};
 				p.Controls.Add(name);
-				PictureBox reactPic = new PictureBox
+				PictureBox cropPic = new PictureBox
 				{
 					Image = Properties.Resources.wfield_208px,
 					SizeMode = PictureBoxSizeMode.AutoSize,
 					Location = new Point(3, 3)
 				};
-				p.Controls.Add(reactPic);
+				p.Controls.Add(cropPic);
 				p.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, p.Width, p.Height, 20, 20));
 				_tag++;
-				string i = NameText.Text + "," + LocationText.Text + "," + farmNameText.Text + "," + CropText.Text + "," + ShelfLifeText.Text + "\n";
-				_fullEntry += i;
+				string fullEntry = NameText.Text + "," + LocationText.Text + "," + farmNameText.Text + "," + CropText.Text + "," + ShelfLifeText.Text;
+				string fileName = "D:\\N" + NameText.Text + "L" + LocationText.Text + "FN" + farmNameText.Text + ".csv";
+				StreamWriter csvWrite = new StreamWriter(@fileName, true);
+				csvWrite.WriteLine(fullEntry);
+				csvWrite.Close();
 			}
 		}
 
 		private void confirmBtn_Click(object sender, EventArgs e)
 		{
-			StreamWriter csvWrite = new StreamWriter(@"C:\FarmsCSV.csv", true);
-			csvWrite.WriteLine(_fullEntry);
-			csvWrite.Close();
 			Close();
+		}
+
+		private void confirmFarmerInfBtn_Click(object sender, EventArgs e)
+		{
+			confirmFarmerInfBtn.Enabled = false;
+			NameText.Enabled = false;
+			LocationText.Enabled = false;
+			farmNameText.Enabled = false;
+			string fullEntry = NameText.Text + "," + LocationText.Text + "," + farmNameText.Text;
+			StreamWriter csvWrite = new StreamWriter(@"D:\FarmsCSV.csv", true);
+			csvWrite.WriteLine(fullEntry);
+			csvWrite.Close();
 		}
 	}
 }

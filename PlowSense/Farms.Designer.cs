@@ -50,6 +50,7 @@
             this.myFarmsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -293,6 +294,7 @@
             // 
             // myFarmsFlowPanel
             // 
+            this.myFarmsFlowPanel.AutoScroll = true;
             this.myFarmsFlowPanel.Location = new System.Drawing.Point(24, 67);
             this.myFarmsFlowPanel.Name = "myFarmsFlowPanel";
             this.myFarmsFlowPanel.Size = new System.Drawing.Size(459, 469);
@@ -317,6 +319,10 @@
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(235, 10);
             this.guna2Separator1.TabIndex = 7;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 30;
             // 
             // Farms
             // 
@@ -367,5 +373,6 @@
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
 		private LiveCharts.WinForms.CartesianChart farmChart;
 		private Guna.UI2.WinForms.Guna2Button addFarmBtn;
+		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
 	}
 }
