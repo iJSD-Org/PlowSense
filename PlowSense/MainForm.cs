@@ -37,7 +37,7 @@ namespace PlowSense
 			farms.Show();
 		}
 
-		private void farmsTab_Click(object sender, EventArgs e)
+		private void farmsTileButton_Click(object sender, EventArgs e)
 		{
 			if (Transactions.Count != 0)
 			{
@@ -51,7 +51,7 @@ namespace PlowSense
 			}
 		}
 
-		private void statsTab_Click(object sender, EventArgs e)
+		private void statsTileButton_Click(object sender, EventArgs e)
 		{
 			if (Transactions.Count != 0)
 			{
@@ -65,7 +65,7 @@ namespace PlowSense
 			}
 		}
 
-		private void staffTab_Click(object sender, EventArgs e)
+		private void staffTileButton_Click(object sender, EventArgs e)
 		{
 			dashboardTabControl.SelectedIndex = 2;
 		}
@@ -75,7 +75,7 @@ namespace PlowSense
 			Close();
 		}
 
-		private void linkSheetsTab_Click(object sender, EventArgs e)
+		private void linkSheetsButton_Click(object sender, EventArgs e)
 		{
 			LinkSheet sheetForm = new LinkSheet();
 			sheetForm.ShowDialog();

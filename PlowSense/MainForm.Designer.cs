@@ -29,35 +29,36 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+			this.formElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.farmsTab = new Guna.UI2.WinForms.Guna2Button();
-			this.statsTab = new Guna.UI2.WinForms.Guna2Button();
-			this.staffTab = new Guna.UI2.WinForms.Guna2Button();
-			this.linkSheetsTab = new Guna.UI2.WinForms.Guna2Button();
+			this.linkSheetsButton = new Guna.UI2.WinForms.Guna2Button();
+			this.staffTileButton = new Guna.UI2.WinForms.Guna2TileButton();
+			this.farmsTileButton = new Guna.UI2.WinForms.Guna2TileButton();
+			this.statsTileButton = new Guna.UI2.WinForms.Guna2TileButton();
 			this.ExitButton = new Guna.UI2.WinForms.Guna2Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.dashboardTabControl = new System.Windows.Forms.TabControl();
 			this.Farms = new System.Windows.Forms.TabPage();
 			this.Statistics = new System.Windows.Forms.TabPage();
 			this.Staff = new System.Windows.Forms.TabPage();
+			this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.dashboardTabControl.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// guna2Elipse1
+			// formElipse
 			// 
-			this.guna2Elipse1.BorderRadius = 15;
-			this.guna2Elipse1.TargetControl = this;
+			this.formElipse.BorderRadius = 35;
+			this.formElipse.TargetControl = this;
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-			this.panel1.Controls.Add(this.farmsTab);
-			this.panel1.Controls.Add(this.statsTab);
-			this.panel1.Controls.Add(this.staffTab);
-			this.panel1.Controls.Add(this.linkSheetsTab);
+			this.panel1.Controls.Add(this.linkSheetsButton);
+			this.panel1.Controls.Add(this.staffTileButton);
+			this.panel1.Controls.Add(this.farmsTileButton);
+			this.panel1.Controls.Add(this.statsTileButton);
 			this.panel1.Controls.Add(this.ExitButton);
 			this.panel1.Controls.Add(this.pictureBox1);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -67,92 +68,103 @@
 			this.panel1.Size = new System.Drawing.Size(100, 576);
 			this.panel1.TabIndex = 0;
 			// 
-			// farmsTab
+			// linkSheetsButton
 			// 
-			this.farmsTab.Animated = true;
-			this.farmsTab.CheckedState.Parent = this.farmsTab;
-			this.farmsTab.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.farmsTab.CustomImages.Parent = this.farmsTab;
-			this.farmsTab.FillColor = System.Drawing.Color.Transparent;
-			this.farmsTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.farmsTab.ForeColor = System.Drawing.Color.White;
-			this.farmsTab.HoverState.Parent = this.farmsTab;
-			this.farmsTab.Image = global::PlowSense.Properties.Resources.wfield_208px;
-			this.farmsTab.ImageOffset = new System.Drawing.Point(0, 8);
-			this.farmsTab.ImageSize = new System.Drawing.Size(50, 50);
-			this.farmsTab.Location = new System.Drawing.Point(8, 115);
-			this.farmsTab.Name = "farmsTab";
-			this.farmsTab.ShadowDecoration.Parent = this.farmsTab;
-			this.farmsTab.Size = new System.Drawing.Size(85, 85);
-			this.farmsTab.TabIndex = 6;
-			this.farmsTab.Text = "Farms     .";
-			this.farmsTab.TextOffset = new System.Drawing.Point(0, 13);
-			this.farmsTab.Click += new System.EventHandler(this.farmsTab_Click);
+			this.linkSheetsButton.Animated = true;
+			this.linkSheetsButton.AutoRoundedCorners = true;
+			this.linkSheetsButton.BorderRadius = 15;
+			this.linkSheetsButton.CheckedState.Parent = this.linkSheetsButton;
+			this.linkSheetsButton.CustomImages.Image = global::PlowSense.Properties.Resources.wlink_96px;
+			this.linkSheetsButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.linkSheetsButton.CustomImages.Parent = this.linkSheetsButton;
+			this.linkSheetsButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(218)))), ((int)(((byte)(113)))));
+			this.linkSheetsButton.Font = new System.Drawing.Font("Proxima Soft", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.linkSheetsButton.ForeColor = System.Drawing.Color.White;
+			this.linkSheetsButton.HoverState.Parent = this.linkSheetsButton;
+			this.linkSheetsButton.Location = new System.Drawing.Point(0, 437);
+			this.linkSheetsButton.Name = "linkSheetsButton";
+			this.linkSheetsButton.ShadowDecoration.Parent = this.linkSheetsButton;
+			this.linkSheetsButton.Size = new System.Drawing.Size(101, 33);
+			this.linkSheetsButton.TabIndex = 0;
+			this.linkSheetsButton.Text = "Link Sheets";
+			this.linkSheetsButton.TextOffset = new System.Drawing.Point(13, 0);
+			this.linkSheetsButton.Click += new System.EventHandler(this.linkSheetsButton_Click);
 			// 
-			// statsTab
+			// staffTileButton
 			// 
-			this.statsTab.Animated = true;
-			this.statsTab.CheckedState.Parent = this.statsTab;
-			this.statsTab.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.statsTab.CustomImages.Parent = this.statsTab;
-			this.statsTab.FillColor = System.Drawing.Color.Transparent;
-			this.statsTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.statsTab.ForeColor = System.Drawing.Color.White;
-			this.statsTab.HoverState.Parent = this.statsTab;
-			this.statsTab.Image = global::PlowSense.Properties.Resources.wstatistics_208px;
-			this.statsTab.ImageOffset = new System.Drawing.Point(0, 8);
-			this.statsTab.ImageSize = new System.Drawing.Size(50, 50);
-			this.statsTab.Location = new System.Drawing.Point(8, 206);
-			this.statsTab.Name = "statsTab";
-			this.statsTab.ShadowDecoration.Parent = this.statsTab;
-			this.statsTab.Size = new System.Drawing.Size(85, 85);
-			this.statsTab.TabIndex = 5;
-			this.statsTab.Text = "Statistics  .";
-			this.statsTab.TextOffset = new System.Drawing.Point(0, 13);
-			this.statsTab.Click += new System.EventHandler(this.statsTab_Click);
+			this.staffTileButton.Animated = true;
+			this.staffTileButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
+			this.staffTileButton.BorderRadius = 12;
+			this.staffTileButton.BorderThickness = 1;
+			this.staffTileButton.CheckedState.Parent = this.staffTileButton;
+			this.staffTileButton.CustomImages.Parent = this.staffTileButton;
+			this.staffTileButton.FillColor = System.Drawing.Color.Transparent;
+			this.staffTileButton.Font = new System.Drawing.Font("Proxima Soft Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.staffTileButton.ForeColor = System.Drawing.Color.White;
+			this.staffTileButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
+			this.staffTileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
+			this.staffTileButton.HoverState.Parent = this.staffTileButton;
+			this.staffTileButton.Image = global::PlowSense.Properties.Resources.wstaff_96px;
+			this.staffTileButton.ImageOffset = new System.Drawing.Point(0, 10);
+			this.staffTileButton.ImageSize = new System.Drawing.Size(55, 55);
+			this.staffTileButton.Location = new System.Drawing.Point(8, 291);
+			this.staffTileButton.Name = "staffTileButton";
+			this.staffTileButton.ShadowDecoration.Parent = this.staffTileButton;
+			this.staffTileButton.Size = new System.Drawing.Size(85, 89);
+			this.staffTileButton.TabIndex = 8;
+			this.staffTileButton.Text = "Staff";
+			this.staffTileButton.TextOffset = new System.Drawing.Point(0, -5);
+			this.staffTileButton.Click += new System.EventHandler(this.staffTileButton_Click);
 			// 
-			// staffTab
+			// farmsTileButton
 			// 
-			this.staffTab.Animated = true;
-			this.staffTab.CheckedState.Parent = this.staffTab;
-			this.staffTab.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.staffTab.CustomImages.Parent = this.staffTab;
-			this.staffTab.FillColor = System.Drawing.Color.Transparent;
-			this.staffTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.staffTab.ForeColor = System.Drawing.Color.White;
-			this.staffTab.HoverState.Parent = this.staffTab;
-			this.staffTab.Image = global::PlowSense.Properties.Resources.wstaff_96px;
-			this.staffTab.ImageOffset = new System.Drawing.Point(0, 8);
-			this.staffTab.ImageSize = new System.Drawing.Size(50, 50);
-			this.staffTab.Location = new System.Drawing.Point(8, 297);
-			this.staffTab.Name = "staffTab";
-			this.staffTab.ShadowDecoration.Parent = this.staffTab;
-			this.staffTab.Size = new System.Drawing.Size(85, 85);
-			this.staffTab.TabIndex = 4;
-			this.staffTab.Text = "Staff       .";
-			this.staffTab.TextOffset = new System.Drawing.Point(0, 13);
-			this.staffTab.Click += new System.EventHandler(this.staffTab_Click);
+			this.farmsTileButton.Animated = true;
+			this.farmsTileButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
+			this.farmsTileButton.BorderRadius = 12;
+			this.farmsTileButton.BorderThickness = 1;
+			this.farmsTileButton.CheckedState.Parent = this.farmsTileButton;
+			this.farmsTileButton.CustomImages.Parent = this.farmsTileButton;
+			this.farmsTileButton.FillColor = System.Drawing.Color.Transparent;
+			this.farmsTileButton.Font = new System.Drawing.Font("Proxima Soft Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.farmsTileButton.ForeColor = System.Drawing.Color.White;
+			this.farmsTileButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
+			this.farmsTileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
+			this.farmsTileButton.HoverState.Parent = this.farmsTileButton;
+			this.farmsTileButton.Image = global::PlowSense.Properties.Resources.wfield_208px;
+			this.farmsTileButton.ImageOffset = new System.Drawing.Point(0, 10);
+			this.farmsTileButton.ImageSize = new System.Drawing.Size(50, 50);
+			this.farmsTileButton.Location = new System.Drawing.Point(8, 114);
+			this.farmsTileButton.Name = "farmsTileButton";
+			this.farmsTileButton.ShadowDecoration.Parent = this.farmsTileButton;
+			this.farmsTileButton.Size = new System.Drawing.Size(85, 89);
+			this.farmsTileButton.TabIndex = 7;
+			this.farmsTileButton.Text = "Farms";
+			this.farmsTileButton.Click += new System.EventHandler(this.farmsTileButton_Click);
 			// 
-			// linkSheetsTab
+			// statsTileButton
 			// 
-			this.linkSheetsTab.Animated = true;
-			this.linkSheetsTab.CheckedState.Parent = this.linkSheetsTab;
-			this.linkSheetsTab.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.linkSheetsTab.CustomImages.Parent = this.linkSheetsTab;
-			this.linkSheetsTab.FillColor = System.Drawing.Color.Transparent;
-			this.linkSheetsTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-			this.linkSheetsTab.ForeColor = System.Drawing.Color.White;
-			this.linkSheetsTab.HoverState.Parent = this.linkSheetsTab;
-			this.linkSheetsTab.Image = global::PlowSense.Properties.Resources.wlink_96px;
-			this.linkSheetsTab.ImageOffset = new System.Drawing.Point(0, 3);
-			this.linkSheetsTab.ImageSize = new System.Drawing.Size(50, 50);
-			this.linkSheetsTab.Location = new System.Drawing.Point(8, 388);
-			this.linkSheetsTab.Name = "linkSheetsTab";
-			this.linkSheetsTab.ShadowDecoration.Parent = this.linkSheetsTab;
-			this.linkSheetsTab.Size = new System.Drawing.Size(85, 85);
-			this.linkSheetsTab.TabIndex = 3;
-			this.linkSheetsTab.Text = "Link Sheets";
-			this.linkSheetsTab.Click += new System.EventHandler(this.linkSheetsTab_Click);
+			this.statsTileButton.Animated = true;
+			this.statsTileButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
+			this.statsTileButton.BorderRadius = 12;
+			this.statsTileButton.BorderThickness = 1;
+			this.statsTileButton.CheckedState.Parent = this.statsTileButton;
+			this.statsTileButton.CustomImages.Parent = this.statsTileButton;
+			this.statsTileButton.FillColor = System.Drawing.Color.Transparent;
+			this.statsTileButton.Font = new System.Drawing.Font("Proxima Soft Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.statsTileButton.ForeColor = System.Drawing.Color.White;
+			this.statsTileButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
+			this.statsTileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
+			this.statsTileButton.HoverState.Parent = this.statsTileButton;
+			this.statsTileButton.Image = global::PlowSense.Properties.Resources.wstatistics_208px;
+			this.statsTileButton.ImageOffset = new System.Drawing.Point(0, 10);
+			this.statsTileButton.ImageSize = new System.Drawing.Size(50, 50);
+			this.statsTileButton.Location = new System.Drawing.Point(8, 202);
+			this.statsTileButton.Name = "statsTileButton";
+			this.statsTileButton.ShadowDecoration.Parent = this.statsTileButton;
+			this.statsTileButton.Size = new System.Drawing.Size(85, 89);
+			this.statsTileButton.TabIndex = 0;
+			this.statsTileButton.Text = "Statistics";
+			this.statsTileButton.Click += new System.EventHandler(this.statsTileButton_Click);
 			// 
 			// ExitButton
 			// 
@@ -166,10 +178,10 @@
 			this.ExitButton.Image = global::PlowSense.Properties.Resources.wexit_48px;
 			this.ExitButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.ExitButton.ImageOffset = new System.Drawing.Point(0, -2);
-			this.ExitButton.Location = new System.Drawing.Point(5, 518);
+			this.ExitButton.Location = new System.Drawing.Point(0, 518);
 			this.ExitButton.Name = "ExitButton";
 			this.ExitButton.ShadowDecoration.Parent = this.ExitButton;
-			this.ExitButton.Size = new System.Drawing.Size(90, 35);
+			this.ExitButton.Size = new System.Drawing.Size(101, 35);
 			this.ExitButton.TabIndex = 2;
 			this.ExitButton.Text = "Exit";
 			this.ExitButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -252,18 +264,19 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Elipse formElipse;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
 		private Guna.UI2.WinForms.Guna2Button ExitButton;
-		private Guna.UI2.WinForms.Guna2Button linkSheetsTab;
-		private Guna.UI2.WinForms.Guna2Button staffTab;
-		private Guna.UI2.WinForms.Guna2Button statsTab;
-		private Guna.UI2.WinForms.Guna2Button farmsTab;
 		private System.Windows.Forms.TabControl dashboardTabControl;
 		private System.Windows.Forms.TabPage Farms;
 		private System.Windows.Forms.TabPage Statistics;
 		private System.Windows.Forms.TabPage Staff;
+		private Guna.UI2.WinForms.Guna2TileButton statsTileButton;
+		private Guna.UI2.WinForms.Guna2TileButton farmsTileButton;
+		private Guna.UI2.WinForms.Guna2TileButton staffTileButton;
+		private Guna.UI2.WinForms.Guna2Button linkSheetsButton;
+		private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
 	}
 }
 
