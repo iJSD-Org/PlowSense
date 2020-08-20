@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace PlowSense
 
 		private void LinkSheet_Load(object sender, EventArgs e)
 		{
+			txtBoxSheetID.BackColor = Color.FromArgb(217, 234, 211);
 			SheetId = string.Empty;
 		}
 
@@ -36,28 +38,39 @@ namespace PlowSense
 
 			GoogleSheetAdapter adapter = new GoogleSheetAdapter();
 
-			Task<Sheet> transactionSheet = adapter.GetAsync(SheetId, "'Transaction History'!A1:ZZ", "AIzaSyCkssJLOPN-8WdM3HX_8N3kdq62_9hn_wA");
-			Task<Sheet> harvestSheet = adapter.GetAsync(SheetId,
-				"'Monthly Harvest'!A1:ZZ", "AIzaSyCkssJLOPN-8WdM3HX_8N3kdq62_9hn_wA");
+			try
+			{
+				Task<Sheet> transactionSheet = adapter.GetAsync(SheetId, "'Transaction History'!A1:ZZ",
+					"AIzaSyCkssJLOPN-8WdM3HX_8N3kdq62_9hn_wA");
+				Task<Sheet> harvestSheet = adapter.GetAsync(SheetId,
+					"'Monthly Harvest'!A1:ZZ", "AIzaSyCkssJLOPN-8WdM3HX_8N3kdq62_9hn_wA");
 
-			await Task.WhenAll(transactionSheet, harvestSheet);
+				await Task.WhenAll(transactionSheet, harvestSheet);
 
-			List<TransactionHistory> tranInfo = sheetMapper.Map<TransactionHistory>(transactionSheet.Result)
-				.ParsedModels
-				.Select(o => o.Value).OrderBy(o => o.Crop).ToList();
-			List<DateTime> transDates = transactionSheet.Result.Rows.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
-				.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
+				List<TransactionHistory> tranInfo = sheetMapper.Map<TransactionHistory>(transactionSheet.Result)
+					.ParsedModels
+					.Select(o => o.Value).OrderBy(o => o.Crop).ToList();
+				List<DateTime> transDates = transactionSheet.Result.Rows.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
+					.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
 
-			List<MonthlyHarvest> monthlyHarvestsInfo = sheetMapper.Map<MonthlyHarvest>(harvestSheet.Result)
-				.ParsedModels
-				.Select(o => o.Value).ToList();
-			List<DateTime> monthDates = harvestSheet.Result.Rows.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
-				.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
+				List<MonthlyHarvest> monthlyHarvestsInfo = sheetMapper.Map<MonthlyHarvest>(harvestSheet.Result)
+					.ParsedModels
+					.Select(o => o.Value).ToList();
+				List<DateTime> monthDates = harvestSheet.Result.Rows.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
+					.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
 
-			MainForm.MonthlyHarvests = Enumerable.Range(0, monthDates.Count)
-				.ToDictionary(i => monthDates[i], i => monthlyHarvestsInfo[i]);
-			MainForm.Transactions = Enumerable.Range(0, transDates.Count)
-				.ToDictionary(i => transDates[i], i => tranInfo[i]);
+				MainForm.MonthlyHarvests = Enumerable.Range(0, monthDates.Count)
+					.ToDictionary(i => monthDates[i], i => monthlyHarvestsInfo[i]);
+				MainForm.Transactions = Enumerable.Range(0, transDates.Count)
+					.ToDictionary(i => transDates[i], i => tranInfo[i]);
+			}
+
+			catch
+			{
+				MessageBox.Show("Please enter a valid sheetID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
+			
 			Close();
 		}
 

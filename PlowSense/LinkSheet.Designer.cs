@@ -44,6 +44,7 @@
             // 
             // txtBoxSheetID
             // 
+            this.txtBoxSheetID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
             this.txtBoxSheetID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBoxSheetID.DefaultText = "";
             this.txtBoxSheetID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -107,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(369, 403);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.okBtn);
