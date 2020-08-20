@@ -147,7 +147,7 @@
 			this.linkSheetsTab.ShadowDecoration.Parent = this.linkSheetsTab;
 			this.linkSheetsTab.Size = new System.Drawing.Size(85, 85);
 			this.linkSheetsTab.TabIndex = 3;
-			this.linkSheetsTab.Text = "Linked Sheets";
+			this.linkSheetsTab.Text = "Link Sheets";
 			this.linkSheetsTab.Click += new System.EventHandler(this.linkSheetsTab_Click);
 			// 
 			// ExitButton
