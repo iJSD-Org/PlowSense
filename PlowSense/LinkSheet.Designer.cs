@@ -93,6 +93,7 @@
             this.okBtn.AutoRoundedCorners = true;
             this.okBtn.BorderRadius = 14;
             this.okBtn.CheckedState.Parent = this.okBtn;
+            this.okBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.okBtn.CustomImages.Parent = this.okBtn;
             this.okBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
             this.okBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
