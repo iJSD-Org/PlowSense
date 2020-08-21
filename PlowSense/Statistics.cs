@@ -142,5 +142,10 @@ namespace PlowSense
 		{
 
 		}
+
+		private void statsChart_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+		{
+
+		}
 	}
 }

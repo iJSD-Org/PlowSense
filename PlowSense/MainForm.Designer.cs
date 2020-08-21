@@ -137,7 +137,7 @@
             this.linkSheetsButton.Image = global::PlowSense.Properties.Resources.wlink_96px;
             this.linkSheetsButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.linkSheetsButton.Location = new System.Drawing.Point(0, 556);
-            this.linkSheetsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.linkSheetsButton.Margin = new System.Windows.Forms.Padding(4);
             this.linkSheetsButton.Name = "linkSheetsButton";
             this.linkSheetsButton.ShadowDecoration.Parent = this.linkSheetsButton;
             this.linkSheetsButton.Size = new System.Drawing.Size(135, 38);
@@ -166,13 +166,14 @@
             this.staffTileButton.ImageOffset = new System.Drawing.Point(0, 10);
             this.staffTileButton.ImageSize = new System.Drawing.Size(55, 55);
             this.staffTileButton.Location = new System.Drawing.Point(11, 358);
-            this.staffTileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.staffTileButton.Margin = new System.Windows.Forms.Padding(4);
             this.staffTileButton.Name = "staffTileButton";
             this.staffTileButton.ShadowDecoration.Parent = this.staffTileButton;
             this.staffTileButton.Size = new System.Drawing.Size(113, 110);
             this.staffTileButton.TabIndex = 8;
             this.staffTileButton.Text = "Staff";
             this.staffTileButton.TextOffset = new System.Drawing.Point(0, -5);
+            this.guna2HtmlToolTip1.SetToolTip(this.staffTileButton, "View/Add staff");
             this.staffTileButton.Click += new System.EventHandler(this.staffTileButton_Click);
             // 
             // farmsTileButton
@@ -194,12 +195,13 @@
             this.farmsTileButton.ImageOffset = new System.Drawing.Point(0, 10);
             this.farmsTileButton.ImageSize = new System.Drawing.Size(50, 50);
             this.farmsTileButton.Location = new System.Drawing.Point(11, 140);
-            this.farmsTileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.farmsTileButton.Margin = new System.Windows.Forms.Padding(4);
             this.farmsTileButton.Name = "farmsTileButton";
             this.farmsTileButton.ShadowDecoration.Parent = this.farmsTileButton;
             this.farmsTileButton.Size = new System.Drawing.Size(113, 110);
             this.farmsTileButton.TabIndex = 7;
             this.farmsTileButton.Text = "Farms";
+            this.guna2HtmlToolTip1.SetToolTip(this.farmsTileButton, "View/Add registered farms");
             this.farmsTileButton.Click += new System.EventHandler(this.farmsTileButton_Click);
             // 
             // statsTileButton
@@ -221,12 +223,13 @@
             this.statsTileButton.ImageOffset = new System.Drawing.Point(0, 10);
             this.statsTileButton.ImageSize = new System.Drawing.Size(50, 50);
             this.statsTileButton.Location = new System.Drawing.Point(11, 249);
-            this.statsTileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statsTileButton.Margin = new System.Windows.Forms.Padding(4);
             this.statsTileButton.Name = "statsTileButton";
             this.statsTileButton.ShadowDecoration.Parent = this.statsTileButton;
             this.statsTileButton.Size = new System.Drawing.Size(113, 110);
             this.statsTileButton.TabIndex = 0;
             this.statsTileButton.Text = "Statistics";
+            this.guna2HtmlToolTip1.SetToolTip(this.statsTileButton, "View the general statistics");
             this.statsTileButton.Click += new System.EventHandler(this.statsTileButton_Click);
             // 
             // ExitButton
@@ -243,7 +246,7 @@
             this.ExitButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ExitButton.ImageOffset = new System.Drawing.Point(0, -2);
             this.ExitButton.Location = new System.Drawing.Point(0, 638);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.ShadowDecoration.Parent = this.ExitButton;
             this.ExitButton.Size = new System.Drawing.Size(135, 43);
