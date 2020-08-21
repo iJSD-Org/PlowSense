@@ -34,24 +34,18 @@ namespace PlowSense
 			FarmLoad();
 			LineLoad();
 		}
-		int tag = 0;
+		int _tag;
+
 		void FarmLoad()
 		{
-			string folderPath = null;
-			string directory = null;
-			if (Directory.Exists("D:\\"))
-			{
-				folderPath = "D:\\";
-				directory = Path.Combine(folderPath, "PlowSenseFiles");
-			}
-			else if (Directory.Exists("C:\\"))
-			{
-				folderPath = "C:\\";
-				directory = Path.Combine(folderPath, "PlowSenseFiles");
-			}
-			System.IO.Directory.CreateDirectory(directory);
-			string path = directory + "\\FarmsCSV.csv";
+			string directory = Directory.Exists(@"D:\") ? @"D:\PlowSenseFiles" : @"C:\PlowSenseFiles";
+
+			Directory.CreateDirectory(directory);
+			string path = Path.Combine(directory, "FarmsCSV.csv");
+
 			if (!File.Exists(path)) File.Create(path);
+
+			//Extract data
 			StreamReader csvReader = new StreamReader(path);
 			while (csvReader.Peek() != -1)
 			{
@@ -60,7 +54,7 @@ namespace PlowSense
 				int cTag = 0;
 				Panel p = new Panel
 				{
-					Tag = tag,
+					Tag = _tag,
 					BackColor = System.Drawing.Color.FromArgb(9, 105, 54),
 					Size = new Size(452, 150),
 					ForeColor = System.Drawing.Color.White,
@@ -68,17 +62,17 @@ namespace PlowSense
 				};
 				Label name = new Label
 				{
-					Tag = tag,
+					Tag = _tag,
 					Font = new Font("Arial", 18),
 					Text = entry[2],
 					Location = new Point(10, 15),
 					ForeColor = System.Drawing.Color.White,
 					AutoSize = true
 				};
-				p.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, p.Width, p.Height, 30, 30));
+				p.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, p.Width, p.Height, 30, 30));
 				FlowLayoutPanel fp = new FlowLayoutPanel
 				{
-					Tag = tag,
+					Tag = _tag,
 					BackColor = System.Drawing.Color.FromArgb(196, 222, 186),
 					Location = new Point(10, 45),
 					Size = new Size(430, 120),
@@ -90,15 +84,15 @@ namespace PlowSense
 				fp.VerticalScroll.Enabled = false;
 				fp.VerticalScroll.Visible = false;
 				fp.HorizontalScroll.Visible = false;
-				fp.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, fp.Width, fp.Height, 30, 30));
+				fp.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, fp.Width, fp.Height, 30, 30));
 				myFarmsFlowPanel.Controls.Add(p);
 				p.Controls.Add(name);
 				p.Controls.Add(fp);
 				string fileName = directory + "\\N" + entry[0] + "L" + entry[1] + "FN" + entry[2] + ".csv";
-				StreamReader cropinfo = new StreamReader(@fileName);
-				while (cropinfo.Peek() != -1)
+				StreamReader cropInfo = new StreamReader(@fileName);
+				while (cropInfo.Peek() != -1)
 				{
-					string cEntryString = cropinfo.ReadLine();
+					string cEntryString = cropInfo.ReadLine();
 					string[] cEntry = cEntryString.Split(',');
 					Panel cp = new Panel
 					{
@@ -131,8 +125,8 @@ namespace PlowSense
 					cp.Controls.Add(nName);
 					cTag++;
 				}
-				cropinfo.Close();
-				tag++;
+				cropInfo.Close();
+				_tag++;
 			}
 			csvReader.Close();
 		}
