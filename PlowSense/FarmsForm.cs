@@ -34,8 +34,21 @@ namespace PlowSense
 
 		private void Farms_Load(object sender, EventArgs e)
 		{
-			FarmLoad();
+			//FarmLoad();
 			LineLoad();
+			GenerateUC();//Temporary
+		}
+		int _tag;
+		void GenerateUC() //delete once uc properly implemented
+		{
+			for (int i = 0; i != 10; i++)
+			{
+				FarmPanelUserControl a = new FarmPanelUserControl();
+				a.AutoSize = false;
+				a.Size = new Size(452, 150);
+				a.BringToFront();
+				myFarmsFlowPanel.Controls.Add(a);
+			}
 		}
 
 		#region P/Invoke
