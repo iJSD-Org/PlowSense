@@ -10,11 +10,15 @@ using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading;
+using Ganss.Excel;
+using PlowSense.Models;
+
 
 namespace PlowSense
 {
 	public partial class Farms : Form
 	{
+		private List<FarmInfo> _farms;
 		public Farms()
 		{
 			InitializeComponent();
@@ -36,15 +40,39 @@ namespace PlowSense
 		}
 		int _tag;
 
+		#region ExcelHelpers
+		//should be only run once
+		private void GetExcelData()
+		{
+			ExcelMapper excelFile = new ExcelMapper(@"D:\PlowSenseFiles\Farms.xlsx");
+			_farms = excelFile.Fetch<FarmInfo>().ToList();
+			List<CropInfo> crops = excelFile.Fetch<CropInfo>(1).ToList();
+			foreach (FarmInfo farm in _farms)
+			{
+				farm.Crops = crops.Where(c => c.Farm == farm.Farm).ToList();
+			}
+		}
+
+		private void SaveDataToExcel()
+		{
+			List<CropInfo> crops = _farms.SelectMany(f => f.Crops).ToList();
+			if (!File.Exists(@"E:\PlowSenseFiles\Farms.xlsx"))
+			{
+				File.Create(@"E:\PlowSenseFiles\Farms.xlsx").Dispose();
+			}
+			ExcelMapper excelFile = new ExcelMapper();
+			excelFile.Save(@"E:\PlowSenseFiles\Farms.xlsx", _farms);
+			excelFile.Save(@"E:\PlowSenseFiles\Farms.xlsx", crops, 1);
+		}
+		#endregion
+
 		void FarmLoad()
 		{
 			string directory = Directory.Exists(@"D:\") ? @"D:\PlowSenseFiles" : @"C:\PlowSenseFiles";
-
 			Directory.CreateDirectory(directory);
 			string path = Path.Combine(directory, "FarmsCSV.csv");
 
 			if (!File.Exists(path)) File.Create(path);
-
 			//Extract data
 			StreamReader csvReader = new StreamReader(path);
 			while (csvReader.Peek() != -1)
