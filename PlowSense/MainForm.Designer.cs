@@ -61,11 +61,11 @@
             this.dashboardTabControl.Controls.Add(this.Staff);
             this.dashboardTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardTabControl.ItemSize = new System.Drawing.Size(0, 1);
-            this.dashboardTabControl.Location = new System.Drawing.Point(100, 0);
+            this.dashboardTabControl.Location = new System.Drawing.Point(133, 0);
             this.dashboardTabControl.Margin = new System.Windows.Forms.Padding(0);
             this.dashboardTabControl.Name = "dashboardTabControl";
             this.dashboardTabControl.SelectedIndex = 0;
-            this.dashboardTabControl.Size = new System.Drawing.Size(924, 576);
+            this.dashboardTabControl.Size = new System.Drawing.Size(1232, 709);
             this.dashboardTabControl.TabIndex = 0;
             // 
             // Farms
@@ -74,7 +74,7 @@
             this.Farms.Location = new System.Drawing.Point(4, 5);
             this.Farms.Margin = new System.Windows.Forms.Padding(0);
             this.Farms.Name = "Farms";
-            this.Farms.Size = new System.Drawing.Size(916, 567);
+            this.Farms.Size = new System.Drawing.Size(1224, 700);
             this.Farms.TabIndex = 0;
             this.Farms.Text = "Farms";
             // 
@@ -84,7 +84,7 @@
             this.Statistics.Location = new System.Drawing.Point(4, 5);
             this.Statistics.Margin = new System.Windows.Forms.Padding(0);
             this.Statistics.Name = "Statistics";
-            this.Statistics.Size = new System.Drawing.Size(916, 567);
+            this.Statistics.Size = new System.Drawing.Size(1224, 700);
             this.Statistics.TabIndex = 1;
             this.Statistics.Text = "Statistics";
             // 
@@ -94,7 +94,7 @@
             this.Staff.Location = new System.Drawing.Point(4, 5);
             this.Staff.Margin = new System.Windows.Forms.Padding(0);
             this.Staff.Name = "Staff";
-            this.Staff.Size = new System.Drawing.Size(916, 567);
+            this.Staff.Size = new System.Drawing.Size(1224, 700);
             this.Staff.TabIndex = 2;
             this.Staff.Text = "Staff";
             // 
@@ -113,10 +113,10 @@
             this.sidebarPanel.FillColor3 = System.Drawing.Color.DarkGreen;
             this.sidebarPanel.FillColor4 = System.Drawing.Color.DarkGreen;
             this.sidebarPanel.Location = new System.Drawing.Point(0, 0);
-            this.sidebarPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.sidebarPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sidebarPanel.Name = "sidebarPanel";
             this.sidebarPanel.ShadowDecoration.Parent = this.sidebarPanel;
-            this.sidebarPanel.Size = new System.Drawing.Size(100, 576);
+            this.sidebarPanel.Size = new System.Drawing.Size(133, 709);
             this.sidebarPanel.TabIndex = 0;
             // 
             // linkSheetsButton
@@ -134,10 +134,11 @@
             this.linkSheetsButton.HoverState.Parent = this.linkSheetsButton;
             this.linkSheetsButton.Image = global::PlowSense.Properties.Resources.wlink_96px;
             this.linkSheetsButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.linkSheetsButton.Location = new System.Drawing.Point(0, 452);
+            this.linkSheetsButton.Location = new System.Drawing.Point(0, 556);
+            this.linkSheetsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.linkSheetsButton.Name = "linkSheetsButton";
             this.linkSheetsButton.ShadowDecoration.Parent = this.linkSheetsButton;
-            this.linkSheetsButton.Size = new System.Drawing.Size(101, 60);
+            this.linkSheetsButton.Size = new System.Drawing.Size(135, 74);
             this.linkSheetsButton.TabIndex = 0;
             this.linkSheetsButton.Text = "Link Sheets     .";
             this.linkSheetsButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -158,13 +159,14 @@
             this.staffTileButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
             this.staffTileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
             this.staffTileButton.HoverState.Parent = this.staffTileButton;
-            this.staffTileButton.Image = global::PlowSense.Properties.Resources.wstaff_96px;
+            this.staffTileButton.Image = global::PlowSense.Properties.Resources.target;
             this.staffTileButton.ImageOffset = new System.Drawing.Point(0, 10);
             this.staffTileButton.ImageSize = new System.Drawing.Size(55, 55);
-            this.staffTileButton.Location = new System.Drawing.Point(8, 291);
+            this.staffTileButton.Location = new System.Drawing.Point(11, 358);
+            this.staffTileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.staffTileButton.Name = "staffTileButton";
             this.staffTileButton.ShadowDecoration.Parent = this.staffTileButton;
-            this.staffTileButton.Size = new System.Drawing.Size(85, 89);
+            this.staffTileButton.Size = new System.Drawing.Size(113, 110);
             this.staffTileButton.TabIndex = 8;
             this.staffTileButton.Text = "Staff";
             this.staffTileButton.TextOffset = new System.Drawing.Point(0, -5);
@@ -181,18 +183,19 @@
             this.farmsTileButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.farmsTileButton.CustomImages.Parent = this.farmsTileButton;
             this.farmsTileButton.FillColor = System.Drawing.Color.Transparent;
-            this.farmsTileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.farmsTileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.farmsTileButton.ForeColor = System.Drawing.Color.White;
             this.farmsTileButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
             this.farmsTileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
             this.farmsTileButton.HoverState.Parent = this.farmsTileButton;
-            this.farmsTileButton.Image = global::PlowSense.Properties.Resources.wfield_208px;
+            this.farmsTileButton.Image = global::PlowSense.Properties.Resources.field;
             this.farmsTileButton.ImageOffset = new System.Drawing.Point(0, 10);
             this.farmsTileButton.ImageSize = new System.Drawing.Size(50, 50);
-            this.farmsTileButton.Location = new System.Drawing.Point(8, 114);
+            this.farmsTileButton.Location = new System.Drawing.Point(11, 140);
+            this.farmsTileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.farmsTileButton.Name = "farmsTileButton";
             this.farmsTileButton.ShadowDecoration.Parent = this.farmsTileButton;
-            this.farmsTileButton.Size = new System.Drawing.Size(85, 89);
+            this.farmsTileButton.Size = new System.Drawing.Size(113, 110);
             this.farmsTileButton.TabIndex = 7;
             this.farmsTileButton.Text = "Farms";
             this.guna2HtmlToolTip1.SetToolTip(this.farmsTileButton, "View/Add registered farms");
@@ -213,13 +216,14 @@
             this.statsTileButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
             this.statsTileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
             this.statsTileButton.HoverState.Parent = this.statsTileButton;
-            this.statsTileButton.Image = global::PlowSense.Properties.Resources.wstatistics_208px;
+            this.statsTileButton.Image = global::PlowSense.Properties.Resources.graph_line_screen;
             this.statsTileButton.ImageOffset = new System.Drawing.Point(0, 10);
             this.statsTileButton.ImageSize = new System.Drawing.Size(50, 50);
-            this.statsTileButton.Location = new System.Drawing.Point(8, 202);
+            this.statsTileButton.Location = new System.Drawing.Point(11, 249);
+            this.statsTileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statsTileButton.Name = "statsTileButton";
             this.statsTileButton.ShadowDecoration.Parent = this.statsTileButton;
-            this.statsTileButton.Size = new System.Drawing.Size(85, 89);
+            this.statsTileButton.Size = new System.Drawing.Size(113, 110);
             this.statsTileButton.TabIndex = 0;
             this.statsTileButton.Text = "Statistics";
             this.guna2HtmlToolTip1.SetToolTip(this.statsTileButton, "View the general statistics");
@@ -238,10 +242,11 @@
             this.ExitButton.Image = global::PlowSense.Properties.Resources.wexit_48px;
             this.ExitButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ExitButton.ImageOffset = new System.Drawing.Point(0, -2);
-            this.ExitButton.Location = new System.Drawing.Point(0, 518);
+            this.ExitButton.Location = new System.Drawing.Point(0, 638);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.ShadowDecoration.Parent = this.ExitButton;
-            this.ExitButton.Size = new System.Drawing.Size(101, 35);
+            this.ExitButton.Size = new System.Drawing.Size(135, 43);
             this.ExitButton.TabIndex = 2;
             this.ExitButton.Text = "Exit";
             this.ExitButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -250,10 +255,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox1.Size = new System.Drawing.Size(113, 105);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -269,15 +274,15 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(1024, 576);
+            this.ClientSize = new System.Drawing.Size(1365, 709);
             this.Controls.Add(this.dashboardTabControl);
             this.Controls.Add(this.sidebarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
