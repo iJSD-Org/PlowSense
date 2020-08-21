@@ -34,21 +34,8 @@ namespace PlowSense
 
 		private void Farms_Load(object sender, EventArgs e)
 		{
-			//FarmLoad();
+			FarmLoad();
 			LineLoad();
-			GenerateUC();//Temporary
-		}
-		int _tag;
-		void GenerateUC() //delete once uc properly implemented
-		{
-			for (int i = 0; i != 10; i++)
-			{
-				FarmPanelUserControl a = new FarmPanelUserControl();
-				a.AutoSize = false;
-				a.Size = new Size(452, 150);
-				a.BringToFront();
-				myFarmsFlowPanel.Controls.Add(a);
-			}
 		}
 
 		#region P/Invoke
@@ -81,42 +68,14 @@ namespace PlowSense
 			foreach (FarmInfo farm in Farms)
 			{
 				#region Create Farm Panel
-				Panel p = new Panel
-				{
-					BackColor = System.Drawing.Color.FromArgb(9, 105, 54),
-					Size = new Size(452, 150),
-					ForeColor = System.Drawing.Color.White,
-					AutoSize = false,
-				};
-				Label name = new Label
-				{
-					Font = new Font("Arial", 18),
-					Text = farm.Farm,
-					Location = new Point(10, 15),
-					ForeColor = System.Drawing.Color.White,
-					AutoSize = true
-				};
-				p.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, p.Width, p.Height, 30, 30));
-				FlowLayoutPanel fp = new FlowLayoutPanel
-				{
-					BackColor = System.Drawing.Color.FromArgb(196, 222, 186),
-					Location = new Point(10, 45),
-					Size = new Size(430, 120),
-					ForeColor = System.Drawing.Color.White,
-					AutoSize = false,
-					AutoScroll = true,
-					WrapContents = false,
-				};
+				FarmPanelUserControl farmPanel = new FarmPanelUserControl();
+				farmPanel.AutoSize = false;
+				farmPanel.flowPanel.VerticalScroll.Enabled = false;
+				farmPanel.flowPanel.VerticalScroll.Visible = false;
+				farmPanel.flowPanel.HorizontalScroll.Visible = false;
+				farmPanel.FarmName.Text = farm.Farm;
+				myFarmsFlowPanel.Controls.Add(farmPanel);
 				#endregion
-
-				fp.VerticalScroll.Enabled = false;
-				fp.VerticalScroll.Visible = false;
-				fp.HorizontalScroll.Visible = false;
-				fp.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, fp.Width, fp.Height, 30, 30));
-				myFarmsFlowPanel.Controls.Add(p);
-				p.Controls.Add(name);
-				p.Controls.Add(fp);
-
 				foreach (CropInfo crop in farm.Crops)
 				{
 					#region Create Crop Panel
@@ -146,7 +105,7 @@ namespace PlowSense
 					};
 					#endregion
 
-					fp.Controls.Add(cp);
+					farmPanel.flowPanel.Controls.Add(cp);
 					cp.Controls.Add(cropPic);
 					cp.Controls.Add(nName);
 				}

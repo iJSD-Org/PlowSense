@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.FarmName = new System.Windows.Forms.Label();
             this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
             this.SuspendLayout();
             // 
@@ -44,26 +44,26 @@
             // guna2Elipse2
             // 
             this.guna2Elipse2.BorderRadius = 30;
-            this.guna2Elipse2.TargetControl = this.flowLayoutPanel1;
+            this.guna2Elipse2.TargetControl = this.flowPanel;
             // 
-            // flowLayoutPanel1
+            // flowPanel
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 39);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(430, 105);
-            this.flowLayoutPanel1.TabIndex = 16;
+            this.flowPanel.BackColor = System.Drawing.Color.White;
+            this.flowPanel.Location = new System.Drawing.Point(12, 39);
+            this.flowPanel.Name = "flowPanel";
+            this.flowPanel.Size = new System.Drawing.Size(430, 105);
+            this.flowPanel.TabIndex = 16;
             // 
-            // label1
+            // FarmName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 25);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Farm Name";
+            this.FarmName.AutoSize = true;
+            this.FarmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FarmName.ForeColor = System.Drawing.Color.White;
+            this.FarmName.Location = new System.Drawing.Point(10, 7);
+            this.FarmName.Name = "FarmName";
+            this.FarmName.Size = new System.Drawing.Size(132, 25);
+            this.FarmName.TabIndex = 14;
+            this.FarmName.Text = "Farm Name";
             // 
             // guna2Separator4
             // 
@@ -77,11 +77,10 @@
             // 
             // FarmPanelUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(143)))), ((int)(((byte)(74)))));
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.flowPanel);
+            this.Controls.Add(this.FarmName);
             this.Controls.Add(this.guna2Separator4);
             this.Name = "FarmPanelUserControl";
             this.Size = new System.Drawing.Size(452, 150);
@@ -93,9 +92,9 @@
 		#endregion
 
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-		private System.Windows.Forms.Label label1;
 		private Guna.UI2.WinForms.Guna2Separator guna2Separator4;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+		public System.Windows.Forms.FlowLayoutPanel flowPanel;
+		public System.Windows.Forms.Label FarmName;
 	}
 }
