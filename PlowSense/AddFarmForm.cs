@@ -108,6 +108,7 @@ namespace PlowSense
 		private void confirmBtn_Click(object sender, EventArgs e)
 		{
 			Close();
+			
 		}
 
 		private void confirmFarmerInfBtn_Click(object sender, EventArgs e)

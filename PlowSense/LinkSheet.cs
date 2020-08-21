@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PlowSense.Models;
@@ -28,6 +29,7 @@ namespace PlowSense
 
 		private async void okBtn_Click(object sender, EventArgs e)
 		{
+			okBtn.Enabled = false;
 			SheetId = txtBoxSheetID.Text;
 			SheetMapper sheetMapper = new SheetMapper().AddConfigFor<TransactionHistory>(cfg
 					=> cfg.MapColumn(column => column.WithHeader("Crop").IsRequired().MapTo(t => t.Crop))
@@ -81,7 +83,7 @@ namespace PlowSense
 			CustomMessageBox msSuccessBox = new CustomMessageBox("Success!",
 				"Connected to sheet", CustomMessageBoxStatus.Check);
 			msSuccessBox.ShowDialog();
-
+			okBtn.Enabled = true;
 			Close();
 		}
 

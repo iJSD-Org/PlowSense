@@ -209,8 +209,26 @@ namespace PlowSense
 		}
 		private void addFarmBtn_Click(object sender, EventArgs e)
 		{
-			AddFarmForm addFarmForm = new AddFarmForm();
-			addFarmForm.Show();
+			bool isOpen = false;
+			FormCollection fc = Application.OpenForms;
+			foreach (Form frm in fc)
+			{
+				if (frm.Name == "AddFarmForm")
+				{
+					isOpen = true;
+				}
+			}
+			if (isOpen)
+			{
+				CustomMessageBox msBox = new CustomMessageBox("Error",
+					"Form Already Opened!", CustomMessageBoxStatus.Cross);
+				msBox.ShowDialog();
+			}
+			else
+			{
+				AddFarmForm addFarmForm = new AddFarmForm();
+				addFarmForm.Show();
+			}
 		} 
 		private void refreshBtn_Click(object sender, EventArgs e)
 		{
