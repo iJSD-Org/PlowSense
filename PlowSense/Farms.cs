@@ -37,7 +37,22 @@ namespace PlowSense
 		int tag = 0;
 		void FarmLoad()
 		{
-			StreamReader csvReader = new StreamReader(@"D:\FarmsCSV.csv");
+			string folderPath = null;
+			string directory = null;
+			if (Directory.Exists("D:\\"))
+			{
+				folderPath = "D:\\";
+				directory = Path.Combine(folderPath, "PlowSenseFiles");
+			}
+			else if (Directory.Exists("C:\\"))
+			{
+				folderPath = "C:\\";
+				directory = Path.Combine(folderPath, "PlowSenseFiles");
+			}
+			System.IO.Directory.CreateDirectory(directory);
+			string path = directory + "\\FarmsCSV.csv";
+			if (!File.Exists(path)) File.Create(path);
+			StreamReader csvReader = new StreamReader(path);
 			while (csvReader.Peek() != -1)
 			{
 				string entryString = csvReader.ReadLine();
@@ -79,7 +94,7 @@ namespace PlowSense
 				myFarmsFlowPanel.Controls.Add(p);
 				p.Controls.Add(name);
 				p.Controls.Add(fp);
-				string fileName = "D:\\N" + entry[0] + "L" + entry[1] + "FN" + entry[2] + ".csv";
+				string fileName = directory + "\\N" + entry[0] + "L" + entry[1] + "FN" + entry[2] + ".csv";
 				StreamReader cropinfo = new StreamReader(@fileName);
 				while (cropinfo.Peek() != -1)
 				{
@@ -192,11 +207,14 @@ namespace PlowSense
 				};
 			}
 		}
-
 		private void addFarmBtn_Click(object sender, EventArgs e)
 		{
 			AddFarmForm addFarmForm = new AddFarmForm();
 			addFarmForm.Show();
+		} 
+		private void refreshBtn_Click(object sender, EventArgs e)
+		{
+			this.Refresh();
 		}
 	}
 }
