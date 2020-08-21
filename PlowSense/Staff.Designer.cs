@@ -57,8 +57,19 @@
             this.sName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Task = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskDataGrid)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -68,7 +79,8 @@
             // staffPanel
             // 
             this.staffPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.staffPanel.Location = new System.Drawing.Point(16, 21);
+            this.staffPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.staffPanel.Location = new System.Drawing.Point(7, 11);
             this.staffPanel.Margin = new System.Windows.Forms.Padding(2);
             this.staffPanel.Name = "staffPanel";
             this.staffPanel.Size = new System.Drawing.Size(395, 216);
@@ -93,10 +105,10 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(423, 21);
+            this.panel1.Location = new System.Drawing.Point(407, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(473, 216);
+            this.panel1.Size = new System.Drawing.Size(473, 244);
             this.panel1.TabIndex = 2;
             // 
             // removeBtn
@@ -112,7 +124,7 @@
             this.removeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeBtn.ForeColor = System.Drawing.Color.White;
             this.removeBtn.HoverState.Parent = this.removeBtn;
-            this.removeBtn.Location = new System.Drawing.Point(345, 170);
+            this.removeBtn.Location = new System.Drawing.Point(341, 188);
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.ShadowDecoration.Parent = this.removeBtn;
             this.removeBtn.Size = new System.Drawing.Size(110, 30);
@@ -133,7 +145,7 @@
             this.continueBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.continueBtn.ForeColor = System.Drawing.Color.White;
             this.continueBtn.HoverState.Parent = this.continueBtn;
-            this.continueBtn.Location = new System.Drawing.Point(229, 170);
+            this.continueBtn.Location = new System.Drawing.Point(225, 188);
             this.continueBtn.Name = "continueBtn";
             this.continueBtn.ShadowDecoration.Parent = this.continueBtn;
             this.continueBtn.Size = new System.Drawing.Size(110, 30);
@@ -143,6 +155,9 @@
             // 
             // datePicker
             // 
+            this.datePicker.Animated = true;
+            this.datePicker.AutoRoundedCorners = true;
+            this.datePicker.BorderRadius = 14;
             this.datePicker.CheckedState.Parent = this.datePicker;
             this.datePicker.Enabled = false;
             this.datePicker.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
@@ -150,7 +165,7 @@
             this.datePicker.ForeColor = System.Drawing.Color.White;
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.datePicker.HoverState.Parent = this.datePicker;
-            this.datePicker.Location = new System.Drawing.Point(20, 170);
+            this.datePicker.Location = new System.Drawing.Point(21, 188);
             this.datePicker.Margin = new System.Windows.Forms.Padding(2);
             this.datePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -174,7 +189,7 @@
             this.cropCmbBox.HoverState.Parent = this.cropCmbBox;
             this.cropCmbBox.ItemHeight = 30;
             this.cropCmbBox.ItemsAppearance.Parent = this.cropCmbBox;
-            this.cropCmbBox.Location = new System.Drawing.Point(174, 106);
+            this.cropCmbBox.Location = new System.Drawing.Point(174, 115);
             this.cropCmbBox.Margin = new System.Windows.Forms.Padding(2);
             this.cropCmbBox.Name = "cropCmbBox";
             this.cropCmbBox.ShadowDecoration.Parent = this.cropCmbBox;
@@ -198,7 +213,7 @@
             "Buy",
             "Inventory Check"});
             this.taskCmbBox.ItemsAppearance.Parent = this.taskCmbBox;
-            this.taskCmbBox.Location = new System.Drawing.Point(21, 106);
+            this.taskCmbBox.Location = new System.Drawing.Point(21, 115);
             this.taskCmbBox.Margin = new System.Windows.Forms.Padding(2);
             this.taskCmbBox.Name = "taskCmbBox";
             this.taskCmbBox.ShadowDecoration.Parent = this.taskCmbBox;
@@ -224,7 +239,7 @@
             "Oof",
             "Aaaa"});
             this.farmCmbBox.ItemsAppearance.Parent = this.farmCmbBox;
-            this.farmCmbBox.Location = new System.Drawing.Point(294, 42);
+            this.farmCmbBox.Location = new System.Drawing.Point(294, 43);
             this.farmCmbBox.Margin = new System.Windows.Forms.Padding(2);
             this.farmCmbBox.Name = "farmCmbBox";
             this.farmCmbBox.ShadowDecoration.Parent = this.farmCmbBox;
@@ -246,7 +261,7 @@
             this.amountTxtBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.amountTxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.amountTxtBox.HoverState.Parent = this.amountTxtBox;
-            this.amountTxtBox.Location = new System.Drawing.Point(339, 106);
+            this.amountTxtBox.Location = new System.Drawing.Point(339, 115);
             this.amountTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.amountTxtBox.Name = "amountTxtBox";
             this.amountTxtBox.PasswordChar = '\0';
@@ -271,7 +286,7 @@
             this.nameTxtBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nameTxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.nameTxtBox.HoverState.Parent = this.nameTxtBox;
-            this.nameTxtBox.Location = new System.Drawing.Point(21, 42);
+            this.nameTxtBox.Location = new System.Drawing.Point(21, 43);
             this.nameTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.PasswordChar = '\0';
@@ -296,7 +311,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label7.Location = new System.Drawing.Point(170, 80);
+            this.label7.Location = new System.Drawing.Point(170, 89);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 24);
@@ -318,7 +333,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label6.Location = new System.Drawing.Point(17, 80);
+            this.label6.Location = new System.Drawing.Point(17, 89);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 24);
@@ -330,7 +345,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label5.Location = new System.Drawing.Point(17, 144);
+            this.label5.Location = new System.Drawing.Point(18, 162);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 24);
@@ -342,7 +357,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label8.Location = new System.Drawing.Point(335, 80);
+            this.label8.Location = new System.Drawing.Point(335, 89);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 24);
@@ -354,7 +369,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label2.Location = new System.Drawing.Point(290, 16);
+            this.label2.Location = new System.Drawing.Point(290, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(169, 24);
@@ -366,7 +381,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(17, 16);
+            this.label1.Location = new System.Drawing.Point(17, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 24);
@@ -379,20 +394,20 @@
             this.addStaffBtn.AutoRoundedCorners = true;
             this.addStaffBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
             this.addStaffBtn.BorderRadius = 14;
-            this.addStaffBtn.BorderThickness = 1;
+            this.addStaffBtn.BorderThickness = 2;
             this.addStaffBtn.CheckedState.Parent = this.addStaffBtn;
             this.addStaffBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addStaffBtn.CustomImages.Parent = this.addStaffBtn;
             this.addStaffBtn.CustomizableEdges.TopRight = false;
             this.addStaffBtn.FillColor = System.Drawing.Color.Transparent;
-            this.addStaffBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addStaffBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Bold);
             this.addStaffBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
             this.addStaffBtn.HoverState.Parent = this.addStaffBtn;
             this.addStaffBtn.Image = global::PlowSense.Properties.Resources.gplus_math_208px;
-            this.addStaffBtn.Location = new System.Drawing.Point(250, 236);
+            this.addStaffBtn.Location = new System.Drawing.Point(7, 226);
             this.addStaffBtn.Name = "addStaffBtn";
             this.addStaffBtn.ShadowDecoration.Parent = this.addStaffBtn;
-            this.addStaffBtn.Size = new System.Drawing.Size(161, 31);
+            this.addStaffBtn.Size = new System.Drawing.Size(395, 31);
             this.addStaffBtn.TabIndex = 36;
             this.addStaffBtn.Text = "Add Staff";
             this.addStaffBtn.Click += new System.EventHandler(this.addStaffBtn_Click);
@@ -439,14 +454,14 @@
             this.taskDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.taskDataGrid.EnableHeadersVisualStyles = false;
             this.taskDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.taskDataGrid.Location = new System.Drawing.Point(16, 272);
+            this.taskDataGrid.Location = new System.Drawing.Point(9, 40);
             this.taskDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.taskDataGrid.Name = "taskDataGrid";
             this.taskDataGrid.RowHeadersVisible = false;
             this.taskDataGrid.RowHeadersWidth = 51;
             this.taskDataGrid.RowTemplate.Height = 24;
             this.taskDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.taskDataGrid.Size = new System.Drawing.Size(880, 274);
+            this.taskDataGrid.Size = new System.Drawing.Size(870, 224);
             this.taskDataGrid.TabIndex = 38;
             this.taskDataGrid.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.taskDataGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -492,17 +507,86 @@
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Controls.Add(this.staffPanel);
+            this.guna2Panel1.Controls.Add(this.addStaffBtn);
+            this.guna2Panel1.Controls.Add(this.panel1);
+            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
+            this.guna2Panel1.Location = new System.Drawing.Point(12, 12);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(888, 265);
+            this.guna2Panel1.TabIndex = 39;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 30;
+            this.guna2Elipse2.TargetControl = this.guna2Panel1;
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.BorderRadius = 30;
+            this.guna2Elipse3.TargetControl = this.panel1;
+            // 
+            // guna2Elipse4
+            // 
+            this.guna2Elipse4.BorderRadius = 30;
+            this.guna2Elipse4.TargetControl = this.panel1;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
+            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2Panel2.Controls.Add(this.taskDataGrid);
+            this.guna2Panel2.Controls.Add(this.guna2Separator4);
+            this.guna2Panel2.Location = new System.Drawing.Point(12, 283);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
+            this.guna2Panel2.Size = new System.Drawing.Size(888, 271);
+            this.guna2Panel2.TabIndex = 40;
+            // 
+            // guna2Elipse5
+            // 
+            this.guna2Elipse5.BorderRadius = 30;
+            this.guna2Elipse5.TargetControl = this.guna2Panel2;
+            // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.BorderRadius = 30;
+            this.guna2Elipse6.TargetControl = this.taskDataGrid;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(327, 3);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(234, 31);
+            this.guna2HtmlLabel2.TabIndex = 39;
+            this.guna2HtmlLabel2.Text = "Staff Assigned Task";
+            // 
+            // guna2Separator4
+            // 
+            this.guna2Separator4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Separator4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(143)))), ((int)(((byte)(74)))));
+            this.guna2Separator4.FillThickness = 2;
+            this.guna2Separator4.Location = new System.Drawing.Point(317, 30);
+            this.guna2Separator4.Name = "guna2Separator4";
+            this.guna2Separator4.Size = new System.Drawing.Size(255, 10);
+            this.guna2Separator4.TabIndex = 40;
+            // 
             // Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
-            this.ClientSize = new System.Drawing.Size(912, 548);
-            this.Controls.Add(this.taskDataGrid);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.ClientSize = new System.Drawing.Size(912, 566);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.tagLabel);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.staffPanel);
-            this.Controls.Add(this.addStaffBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Staff";
@@ -511,6 +595,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskDataGrid)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,5 +630,14 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn sName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Task;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
+		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
+		private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
+		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
+		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+		private Guna.UI2.WinForms.Guna2Separator guna2Separator4;
 	}
 }

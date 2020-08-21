@@ -70,7 +70,7 @@
             // 
             // Farms
             // 
-            this.Farms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
+            this.Farms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
             this.Farms.Location = new System.Drawing.Point(4, 5);
             this.Farms.Margin = new System.Windows.Forms.Padding(0);
             this.Farms.Name = "Farms";
@@ -129,7 +129,7 @@
             this.linkSheetsButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.linkSheetsButton.CustomImages.Parent = this.linkSheetsButton;
             this.linkSheetsButton.FillColor = System.Drawing.Color.Transparent;
-            this.linkSheetsButton.Font = new System.Drawing.Font("Proxima Soft", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkSheetsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkSheetsButton.ForeColor = System.Drawing.Color.White;
             this.linkSheetsButton.HoverState.Parent = this.linkSheetsButton;
             this.linkSheetsButton.Image = global::PlowSense.Properties.Resources.wlink_96px;
@@ -153,7 +153,7 @@
             this.staffTileButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.staffTileButton.CustomImages.Parent = this.staffTileButton;
             this.staffTileButton.FillColor = System.Drawing.Color.Transparent;
-            this.staffTileButton.Font = new System.Drawing.Font("Proxima Soft", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffTileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffTileButton.ForeColor = System.Drawing.Color.White;
             this.staffTileButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
             this.staffTileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
@@ -181,7 +181,7 @@
             this.farmsTileButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.farmsTileButton.CustomImages.Parent = this.farmsTileButton;
             this.farmsTileButton.FillColor = System.Drawing.Color.Transparent;
-            this.farmsTileButton.Font = new System.Drawing.Font("Proxima Soft", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.farmsTileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.farmsTileButton.ForeColor = System.Drawing.Color.White;
             this.farmsTileButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
             this.farmsTileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
@@ -208,7 +208,7 @@
             this.statsTileButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.statsTileButton.CustomImages.Parent = this.statsTileButton;
             this.statsTileButton.FillColor = System.Drawing.Color.Transparent;
-            this.statsTileButton.Font = new System.Drawing.Font("Proxima Soft", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statsTileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statsTileButton.ForeColor = System.Drawing.Color.White;
             this.statsTileButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
             this.statsTileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(167)))), ((int)(((byte)(86)))));
@@ -232,7 +232,7 @@
             this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExitButton.CustomImages.Parent = this.ExitButton;
             this.ExitButton.FillColor = System.Drawing.Color.Transparent;
-            this.ExitButton.Font = new System.Drawing.Font("Proxima Soft", 14F, System.Drawing.FontStyle.Bold);
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.ExitButton.ForeColor = System.Drawing.Color.White;
             this.ExitButton.HoverState.Parent = this.ExitButton;
             this.ExitButton.Image = global::PlowSense.Properties.Resources.wexit_48px;
@@ -271,7 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(211)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1024, 576);
             this.Controls.Add(this.dashboardTabControl);
             this.Controls.Add(this.sidebarPanel);

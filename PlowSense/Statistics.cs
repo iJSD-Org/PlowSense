@@ -49,7 +49,7 @@ namespace PlowSense
 				{
 					Title = "Title 1",
 					Values = new ChartValues<double> {100},
-					Fill = (Brush)_converter.ConvertFromString("#9CE74C"),
+					Fill = (Brush)_converter.ConvertFromString("#096936"),
 					DataLabels = true,
 					LabelPoint = _labelPoint,
 					StrokeThickness = 0,
@@ -58,7 +58,7 @@ namespace PlowSense
 				{
 					Title = "Title 2",
 					Values = new ChartValues<double> {300},
-					Fill = (Brush)_converter.ConvertFromString("#DECD05"),
+					Fill = (Brush)_converter.ConvertFromString("#71AA85"),
 					DataLabels = true,
 					LabelPoint = _labelPoint,
 					StrokeThickness = 0
@@ -67,7 +67,7 @@ namespace PlowSense
 				{
 					Title = "Title 3",
 					Values = new ChartValues<double> {250},
-					Fill = (Brush)_converter.ConvertFromString("#BBB324"),
+					Fill = (Brush)_converter.ConvertFromString("#A5CAAC"),
 					DataLabels = true,
 					LabelPoint = _labelPoint,
 					StrokeThickness = 0
