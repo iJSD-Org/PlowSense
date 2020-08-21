@@ -137,5 +137,10 @@ namespace PlowSense
 			GenerateChartData(filteredValues);
 			GenerateTableData(filteredValues);
 		}
+
+		private void statsPie_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+		{
+
+		}
 	}
 }
