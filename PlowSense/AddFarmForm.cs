@@ -1,17 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using LiveCharts;
 using System.Runtime.InteropServices;
+using System.Windows.Documents;
+using PlowSense.Models;
 
 namespace PlowSense
 {
 	public partial class AddFarmForm : Form
 	{
-		private int _tag;
-		private string _folderPath = null;
-		private string _directory = null;
 		public AddFarmForm()
 		{
 			InitializeComponent();
@@ -69,23 +69,22 @@ namespace PlowSense
 		{
 			if (!string.IsNullOrWhiteSpace(CropText.Text) && !string.IsNullOrWhiteSpace(LocationText.Text) && !string.IsNullOrWhiteSpace(farmNameText.Text) && !string.IsNullOrWhiteSpace(CropText.Text) && !string.IsNullOrWhiteSpace(ShelfLifeText.Text))
 			{
+				#region Create Crop Item Panel
 				Panel p = new Panel
 				{
-					Tag = _tag,
-					BackColor = System.Drawing.Color.FromArgb(222, 205, 5),
+					BackColor = Color.FromArgb(222, 205, 5),
 					Location = new Point(0, 50),
-					ForeColor = System.Drawing.Color.White,
+					ForeColor = Color.White,
 					AutoSize = false,
 					Size = new Size(80, 95)
 				};
 				CropsFlowPanel.Controls.Add(p);
 				Label name = new Label
 				{
-					Tag = _tag,
 					Font = new Font("Arial", 10),
 					Text = CropText.Text,
 					Location = new Point(5, 76),
-					ForeColor = System.Drawing.Color.White
+					ForeColor = Color.White
 				};
 				p.Controls.Add(name);
 				PictureBox cropPic = new PictureBox
@@ -94,21 +93,19 @@ namespace PlowSense
 					SizeMode = PictureBoxSizeMode.AutoSize,
 					Location = new Point(3, 3)
 				};
+				#endregion
+
 				p.Controls.Add(cropPic);
 				p.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, p.Width, p.Height, 20, 20));
-				_tag++;
-				string fullEntry = NameText.Text + "," + LocationText.Text + "," + farmNameText.Text + "," + CropText.Text + "," + ShelfLifeText.Text;
-				string fileName = _directory + "\\N" + NameText.Text + "L" + LocationText.Text + "FN" + farmNameText.Text + ".csv";
-				StreamWriter csvWrite = new StreamWriter(@fileName, true);
-				csvWrite.WriteLine(fullEntry);
-				csvWrite.Close();
+
+				List<CropInfo> selectedFarmCrops = FarmsForm.Farms.First(f => f.Farm == farmNameText.Text).Crops;
+				selectedFarmCrops.Add(new CropInfo { Crop = CropText.Text, Farm = farmNameText.Text, ShelfLife = ShelfLifeText.Text });
 			}
 		}
 
 		private void confirmBtn_Click(object sender, EventArgs e)
 		{
 			Close();
-			
 		}
 
 		private void confirmFarmerInfBtn_Click(object sender, EventArgs e)
@@ -117,24 +114,8 @@ namespace PlowSense
 			NameText.Enabled = false;
 			LocationText.Enabled = false;
 			farmNameText.Enabled = false;
-			string fullEntry = NameText.Text + "," + LocationText.Text + "," + farmNameText.Text;
-			StreamWriter csvWrite = new StreamWriter(_directory+"\\FarmsCSV.csv", true);
-			csvWrite.WriteLine(fullEntry);
-			csvWrite.Close();
-		}
 
-		private void AddFarmForm_Load(object sender, EventArgs e)
-		{
-			if (Directory.Exists("D:\\"))
-			{
-				_folderPath = "D:\\";
-				_directory = Path.Combine(_folderPath, "PlowSenseFiles");
-			}
-			else if (Directory.Exists("C:\\"))
-			{
-				_folderPath = "C:\\";
-				_directory = Path.Combine(_folderPath, "PlowSenseFiles");
-			}
+			FarmsForm.Farms.Add(new FarmInfo { Crops = new List<CropInfo>(), Farm = farmNameText.Text, FarmRep = NameText.Text, Location = LocationText.Text });
 		}
 	}
 }

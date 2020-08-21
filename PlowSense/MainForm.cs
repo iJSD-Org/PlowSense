@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using Ganss.Excel;
 using PlowSense.Models;
 
 namespace PlowSense
@@ -17,7 +20,7 @@ namespace PlowSense
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			Statistics statistics = new Statistics()
+			Statistics statistics = new Statistics
 			{
 				MdiParent = this,
 				Parent = dashboardTabControl.TabPages[1]
@@ -29,7 +32,7 @@ namespace PlowSense
 				Parent = dashboardTabControl.TabPages[2]
 			};
 			staff.Show();
-			Farms farms = new Farms
+			FarmsForm farms = new FarmsForm
 			{
 				MdiParent = this,
 				Parent = dashboardTabControl.TabPages[0]
@@ -81,9 +84,16 @@ namespace PlowSense
 			sheetForm.ShowDialog();
 		}
 
-		private void guna2HtmlToolTip1_Popup(object sender, PopupEventArgs e)
+		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
-
+			List<CropInfo> crops = FarmsForm.Farms.SelectMany(f => f.Crops).ToList();
+			if (!File.Exists(@"D:\PlowSenseFiles\Farms.xlsx"))
+			{
+				File.Create(@"D:\PlowSenseFiles\Farms.xlsx").Dispose();
+			}
+			ExcelMapper excelFile = new ExcelMapper();
+			excelFile.Save(@"D:\PlowSenseFiles\Farms.xlsx", FarmsForm.Farms);
+			excelFile.Save(@"D:\PlowSenseFiles\Farms.xlsx", crops, 1);
 		}
 	}
 }
