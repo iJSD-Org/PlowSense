@@ -143,6 +143,7 @@ namespace PlowSense
 				{
 					new CustomMessageBox("Success", "Login successful!", CustomMessageBoxStatus.Check).ShowDialog();
 					//Temporary, should switch to WinForms
+					DialogResult = DialogResult.OK;
 					Close();
 				}
 				else

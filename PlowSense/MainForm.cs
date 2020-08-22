@@ -15,7 +15,10 @@ namespace PlowSense
 		internal static List<FarmInventory> FarmInventories = new List<FarmInventory>();
 		public MainForm()
 		{
-			InitializeComponent();
+			if (new LandingForm().ShowDialog() == DialogResult.OK)
+				InitializeComponent();
+			else
+				Close();
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
