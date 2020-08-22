@@ -53,6 +53,7 @@
             this.flowPanel.Name = "flowPanel";
             this.flowPanel.Size = new System.Drawing.Size(430, 101);
             this.flowPanel.TabIndex = 16;
+            this.flowPanel.WrapContents = false;
             // 
             // FarmName
             // 

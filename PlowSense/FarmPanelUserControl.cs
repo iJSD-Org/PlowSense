@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace PlowSense
 {
@@ -15,6 +16,6 @@ namespace PlowSense
 		public FarmPanelUserControl()
 		{
 			InitializeComponent();
-		}
+		}	
 	}
 }

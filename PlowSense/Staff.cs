@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using PlowSense.Models;
 using Point = System.Drawing.Point;
 using Size = System.Drawing.Size;
+using ICSharpCode.SharpZipLib.Core;
 
 namespace PlowSense
 {
@@ -18,7 +20,18 @@ namespace PlowSense
 		{
 			InitializeComponent();
 		}
-
+		#region P/Invoke
+		[DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+		private static extern IntPtr CreateRoundRectRgn
+		(
+			int nLeftRect,
+			int nTopRect,
+			int nRightRect,
+			int nBottomRect,
+			int nWidthEllipse,
+			int nHeightEllipse
+		);
+		#endregion
 		private void Staff_Load(object sender, EventArgs e)
 		{
 			LoadComboBoxChoices();
@@ -50,6 +63,12 @@ namespace PlowSense
 
 		void DisableControls()
 		{
+			nameTxtBox.Text = string.Empty;
+			amountTxtBox.Text = string.Empty;
+			farmCmbBox.SelectedItem = string.Empty;
+			taskCmbBox.SelectedItem = string.Empty;
+			cropCmbBox.SelectedItem = string.Empty;
+			amountTxtBox.Text = string.Empty;
 			nameTxtBox.Enabled = false;
 			amountTxtBox.Enabled = false;
 			farmCmbBox.Enabled = false;
@@ -88,15 +107,23 @@ namespace PlowSense
 			Panel p = new Panel
 			{
 				Tag = _tag,
-				BackColor = Color.FromArgb(222, 205, 5),
+				BackColor = System.Drawing.Color.White,
 				Location = new Point(0, 50),
 				ForeColor = Color.White,
 				AutoSize = false,
-				Size = new Size(80, 95)
+				Size = new Size(80, 80)
 			};
-
+			PictureBox staffPic = new PictureBox
+			{
+				Image = Properties.Resources.staff_96px,
+				SizeMode = PictureBoxSizeMode.CenterImage,
+				Dock = DockStyle.Fill,
+				BackColor = System.Drawing.Color.Transparent
+			};
+			p.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, p.Width, p.Height, 30, 30));
 			p.Click += panel1_Click;
 			staffPanel.Controls.Add(p);
+			p.Controls.Add(staffPic);
 			_tag++;
 
 		}

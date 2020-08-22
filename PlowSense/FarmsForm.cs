@@ -38,6 +38,7 @@ namespace PlowSense
 		private void Farms_Load(object sender, EventArgs e)
 		{
 			FarmLoad();
+			SetScrollBar();
 			LoadOwners();
 		}
 
@@ -64,6 +65,17 @@ namespace PlowSense
 			{
 				farm.Crops = crops.Where(c => c.Farm == farm.Farm).ToList();
 			}
+		}
+		void SetScrollBar()
+		{
+			myFarmsFlowPanel.AutoScroll = false;
+			myFarmsFlowPanel.VerticalScroll.Enabled = false;
+			myFarmsFlowPanel.VerticalScroll.Visible = false;
+			myFarmsFlowPanel.HorizontalScroll.Enabled = false;
+			myFarmsFlowPanel.HorizontalScroll.Visible = false;
+			myFarmsFlowPanel.HorizontalScroll.Maximum = 0;
+			myFarmsFlowPanel.AutoScroll = true;
+			myFarmsScroll.VerticalScroll.Maximum = myFarmsFlowPanel.VerticalScroll.Maximum;
 		}
 
 		void LoadOwners()
@@ -97,9 +109,6 @@ namespace PlowSense
 				_tag++;
 				farmPanel.Click += FarmPanelUserControl_Click;
 				farmPanel.AutoSize = false;
-				farmPanel.flowPanel.VerticalScroll.Enabled = false;
-				farmPanel.flowPanel.VerticalScroll.Visible = false;
-				farmPanel.flowPanel.HorizontalScroll.Visible = false;
 				farmPanel.FarmName.Text = farm.Farm;
 				myFarmsFlowPanel.Controls.Add(farmPanel);
 				#endregion
@@ -115,9 +124,19 @@ namespace PlowSense
 						Size = new Size(80, 95),
 					};
 					cp.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, cp.Width, cp.Height, 20, 20));
+					var cropImage = Properties.Resources.natural_food_80px;
+					if (crop.Crop.ToLower() == "potato") cropImage = Properties.Resources.potato_80px;
+					if (crop.Crop.ToLower() == "carrot") cropImage = Properties.Resources.carrot_80px;
+					if (crop.Crop.ToLower() == "apple") cropImage = Properties.Resources.apple_80px;
+					if (crop.Crop.ToLower() == "onion") cropImage = Properties.Resources.onion_80px;
+					if (crop.Crop.ToLower() == "garlic") cropImage = Properties.Resources.garlic_80px;
+					if (crop.Crop.ToLower() == "tomato") cropImage = Properties.Resources.tomato_80px;
+					if (crop.Crop.ToLower() == "rice") cropImage = Properties.Resources.rice_bowl_80px;
+					if (crop.Crop.ToLower() == "wheat") cropImage = Properties.Resources.wheat_80px;
+					if (crop.Crop.ToLower() == "bell pepper") cropImage = Properties.Resources.paprika_80px;
 					PictureBox cropPic = new PictureBox
 					{
-						Image = Properties.Resources.wfield_208px,
+						Image = cropImage,
 						SizeMode = PictureBoxSizeMode.StretchImage,
 						Size = new Size(70, 70),
 						Location = new Point(5, 10),
@@ -232,6 +251,12 @@ namespace PlowSense
 			LoadChart2();
 			chartLabel.Text = "Monthly Income";
 			cropCmbBox.Enabled = false;
+		}
+
+		private void myFarmsScroll_Scroll(object sender, ScrollEventArgs e)
+		{
+			myFarmsFlowPanel.VerticalScroll.Value = myFarmsScroll.Value;
+			if (myFarmsFlowPanel.VerticalScroll.Value != myFarmsScroll.Value) myFarmsFlowPanel.VerticalScroll.Value = myFarmsScroll.Value;
 		}
 	}
 }
