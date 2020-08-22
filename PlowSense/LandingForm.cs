@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PlowSense
@@ -46,8 +40,38 @@ namespace PlowSense
 
 		private void signUpLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			SignUpForm signUpForm = new SignUpForm();
-			signUpForm.ShowDialog();
+			// Take a screen shot of the form and darken it
+			Bitmap bmp = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
+			using (Graphics g = Graphics.FromImage(bmp))
+			{
+				g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+				g.CopyFromScreen(PointToScreen(new Point(0, 0)), new Point(0, 0), ClientRectangle.Size);
+				double percent = 0.60;
+				Color darken = Color.FromArgb((int)(255 * percent), Color.Black);
+				using (Brush brush = new SolidBrush(darken))
+				{
+					g.FillRectangle(brush, ClientRectangle);
+				}
+			}
+
+			// Put the darkened screen shot into a Panel and bring it to the front
+			using (Panel p = new Panel())
+			{
+				p.Location = new Point(0, 0);
+				p.Size = ClientRectangle.Size;
+				p.BackgroundImage = bmp;
+				Controls.Add(p);
+				p.BringToFront();
+
+				// Display dialog
+				SignUpForm signUpForm = new SignUpForm();
+				signUpForm.ShowDialog(this);
+			}
+		}
+
+		private void guna2ImageButton1_Click(object sender, EventArgs e)
+		{
+			Close();
 		}
 	}
 }

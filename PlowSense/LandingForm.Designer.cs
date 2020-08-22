@@ -33,13 +33,17 @@
 			this.logInLabel = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.leftPanel = new System.Windows.Forms.Panel();
+			this.verticalSeparatorPanel = new Guna.UI2.WinForms.Guna2Panel();
 			this.signUpLinkLabel = new System.Windows.Forms.LinkLabel();
 			this.rightPanel = new System.Windows.Forms.Panel();
 			this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+			this.formAnimateWindow = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+			this.form2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+			this.formDragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+			this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.passwordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
 			this.usernameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.verticalSeparatorPanel = new Guna.UI2.WinForms.Guna2Panel();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.leftPanel.SuspendLayout();
 			this.rightPanel.SuspendLayout();
@@ -75,7 +79,7 @@
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 1;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 436F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 395F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(764, 395);
 			this.tableLayoutPanel1.TabIndex = 3;
 			// 
@@ -91,6 +95,15 @@
 			this.leftPanel.Name = "leftPanel";
 			this.leftPanel.Size = new System.Drawing.Size(382, 395);
 			this.leftPanel.TabIndex = 0;
+			// 
+			// verticalSeparatorPanel
+			// 
+			this.verticalSeparatorPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(149)))), ((int)(((byte)(146)))));
+			this.verticalSeparatorPanel.Location = new System.Drawing.Point(379, 46);
+			this.verticalSeparatorPanel.Name = "verticalSeparatorPanel";
+			this.verticalSeparatorPanel.ShadowDecoration.Parent = this.verticalSeparatorPanel;
+			this.verticalSeparatorPanel.Size = new System.Drawing.Size(2, 275);
+			this.verticalSeparatorPanel.TabIndex = 3;
 			// 
 			// signUpLinkLabel
 			// 
@@ -109,6 +122,7 @@
 			// rightPanel
 			// 
 			this.rightPanel.BackColor = System.Drawing.Color.Transparent;
+			this.rightPanel.Controls.Add(this.guna2ImageButton1);
 			this.rightPanel.Controls.Add(this.guna2Button1);
 			this.rightPanel.Controls.Add(this.passwordTextBox);
 			this.rightPanel.Controls.Add(this.usernameTextBox);
@@ -142,6 +156,46 @@
 			this.guna2Button1.Size = new System.Drawing.Size(136, 33);
 			this.guna2Button1.TabIndex = 7;
 			this.guna2Button1.Text = "Login";
+			// 
+			// formAnimateWindow
+			// 
+			this.formAnimateWindow.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+			this.formAnimateWindow.TargetForm = this;
+			// 
+			// form2DragControl1
+			// 
+			this.form2DragControl1.TargetControl = this.leftPanel;
+			// 
+			// formDragControl2
+			// 
+			this.formDragControl2.TargetControl = this.rightPanel;
+			// 
+			// guna2ImageButton1
+			// 
+			this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
+			this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+			this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
+			this.guna2ImageButton1.Image = global::PlowSense.Properties.Resources.icons8_exit_208px;
+			this.guna2ImageButton1.ImageRotate = 0F;
+			this.guna2ImageButton1.ImageSize = new System.Drawing.Size(25, 25);
+			this.guna2ImageButton1.Location = new System.Drawing.Point(325, -10);
+			this.guna2ImageButton1.Name = "guna2ImageButton1";
+			this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(50, 50);
+			this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
+			this.guna2ImageButton1.Size = new System.Drawing.Size(67, 67);
+			this.guna2ImageButton1.TabIndex = 15;
+			this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::PlowSense.Properties.Resources.logo;
+			this.pictureBox1.Location = new System.Drawing.Point(84, 12);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(227, 141);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
 			// 
 			// passwordTextBox
 			// 
@@ -213,25 +267,6 @@
 			this.usernameTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
 			this.usernameTextBox.TabIndex = 5;
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::PlowSense.Properties.Resources.logo;
-			this.pictureBox1.Location = new System.Drawing.Point(84, 12);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(227, 141);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
-			// 
-			// verticalSeparatorPanel
-			// 
-			this.verticalSeparatorPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(149)))), ((int)(((byte)(146)))));
-			this.verticalSeparatorPanel.Location = new System.Drawing.Point(379, 46);
-			this.verticalSeparatorPanel.Name = "verticalSeparatorPanel";
-			this.verticalSeparatorPanel.ShadowDecoration.Parent = this.verticalSeparatorPanel;
-			this.verticalSeparatorPanel.Size = new System.Drawing.Size(2, 275);
-			this.verticalSeparatorPanel.TabIndex = 3;
-			// 
 			// LandingForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,5 +302,9 @@
 		private Guna.UI2.WinForms.Guna2Button guna2Button1;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private Guna.UI2.WinForms.Guna2Panel verticalSeparatorPanel;
+		private Guna.UI2.WinForms.Guna2AnimateWindow formAnimateWindow;
+		private Guna.UI2.WinForms.Guna2DragControl form2DragControl1;
+		private Guna.UI2.WinForms.Guna2DragControl formDragControl2;
+		private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
 	}
 }
