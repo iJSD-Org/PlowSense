@@ -30,24 +30,24 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.formElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-			this.logInLabel = new System.Windows.Forms.Label();
+			this.loginLabel = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.leftPanel = new System.Windows.Forms.Panel();
 			this.verticalSeparatorPanel = new Guna.UI2.WinForms.Guna2Panel();
 			this.signUpLinkLabel = new System.Windows.Forms.LinkLabel();
+			this.logoPictureBox = new System.Windows.Forms.PictureBox();
 			this.rightPanel = new System.Windows.Forms.Panel();
-			this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+			this.exitImageButton = new Guna.UI2.WinForms.Guna2ImageButton();
+			this.loginButton = new Guna.UI2.WinForms.Guna2Button();
+			this.passwordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+			this.usernameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
 			this.formAnimateWindow = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
 			this.form2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
 			this.formDragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-			this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.passwordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-			this.usernameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.leftPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
 			this.rightPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// formElipse
@@ -55,16 +55,16 @@
 			this.formElipse.BorderRadius = 25;
 			this.formElipse.TargetControl = this;
 			// 
-			// logInLabel
+			// loginLabel
 			// 
-			this.logInLabel.AutoSize = true;
-			this.logInLabel.Font = new System.Drawing.Font("Proxima Soft", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.logInLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(91)))));
-			this.logInLabel.Location = new System.Drawing.Point(37, 46);
-			this.logInLabel.Name = "logInLabel";
-			this.logInLabel.Size = new System.Drawing.Size(89, 31);
-			this.logInLabel.TabIndex = 2;
-			this.logInLabel.Text = "Log in";
+			this.loginLabel.AutoSize = true;
+			this.loginLabel.Font = new System.Drawing.Font("Proxima Soft", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.loginLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(91)))));
+			this.loginLabel.Location = new System.Drawing.Point(37, 46);
+			this.loginLabel.Name = "loginLabel";
+			this.loginLabel.Size = new System.Drawing.Size(89, 31);
+			this.loginLabel.TabIndex = 2;
+			this.loginLabel.Text = "Log in";
 			// 
 			// tableLayoutPanel1
 			// 
@@ -88,7 +88,7 @@
 			this.leftPanel.BackColor = System.Drawing.Color.Transparent;
 			this.leftPanel.Controls.Add(this.verticalSeparatorPanel);
 			this.leftPanel.Controls.Add(this.signUpLinkLabel);
-			this.leftPanel.Controls.Add(this.pictureBox1);
+			this.leftPanel.Controls.Add(this.logoPictureBox);
 			this.leftPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.leftPanel.Location = new System.Drawing.Point(0, 0);
 			this.leftPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -119,14 +119,24 @@
 			this.signUpLinkLabel.Text = "Create an account";
 			this.signUpLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.signUpLinkLabel_LinkClicked);
 			// 
+			// logoPictureBox
+			// 
+			this.logoPictureBox.Image = global::PlowSense.Properties.Resources.logo;
+			this.logoPictureBox.Location = new System.Drawing.Point(84, 12);
+			this.logoPictureBox.Name = "logoPictureBox";
+			this.logoPictureBox.Size = new System.Drawing.Size(227, 141);
+			this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.logoPictureBox.TabIndex = 0;
+			this.logoPictureBox.TabStop = false;
+			// 
 			// rightPanel
 			// 
 			this.rightPanel.BackColor = System.Drawing.Color.Transparent;
-			this.rightPanel.Controls.Add(this.guna2ImageButton1);
-			this.rightPanel.Controls.Add(this.guna2Button1);
+			this.rightPanel.Controls.Add(this.exitImageButton);
+			this.rightPanel.Controls.Add(this.loginButton);
 			this.rightPanel.Controls.Add(this.passwordTextBox);
 			this.rightPanel.Controls.Add(this.usernameTextBox);
-			this.rightPanel.Controls.Add(this.logInLabel);
+			this.rightPanel.Controls.Add(this.loginLabel);
 			this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.rightPanel.Location = new System.Drawing.Point(382, 0);
 			this.rightPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -134,68 +144,47 @@
 			this.rightPanel.Size = new System.Drawing.Size(382, 395);
 			this.rightPanel.TabIndex = 1;
 			// 
-			// guna2Button1
+			// exitImageButton
 			// 
-			this.guna2Button1.Animated = true;
-			this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(149)))), ((int)(((byte)(146)))));
-			this.guna2Button1.BorderRadius = 14;
-			this.guna2Button1.BorderThickness = 2;
-			this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-			this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-			this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(212)))));
-			this.guna2Button1.Font = new System.Drawing.Font("Proxima Soft", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(91)))));
-			this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Transparent;
-			this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(91)))));
-			this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Gainsboro;
-			this.guna2Button1.HoverState.Parent = this.guna2Button1;
-			this.guna2Button1.Location = new System.Drawing.Point(43, 264);
-			this.guna2Button1.Name = "guna2Button1";
-			this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-			this.guna2Button1.Size = new System.Drawing.Size(136, 33);
-			this.guna2Button1.TabIndex = 7;
-			this.guna2Button1.Text = "Login";
+			this.exitImageButton.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.exitImageButton.CheckedState.Parent = this.exitImageButton;
+			this.exitImageButton.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+			this.exitImageButton.HoverState.Parent = this.exitImageButton;
+			this.exitImageButton.Image = global::PlowSense.Properties.Resources.icons8_exit_208px;
+			this.exitImageButton.ImageRotate = 0F;
+			this.exitImageButton.ImageSize = new System.Drawing.Size(25, 25);
+			this.exitImageButton.Location = new System.Drawing.Point(325, -10);
+			this.exitImageButton.Name = "exitImageButton";
+			this.exitImageButton.PressedState.ImageSize = new System.Drawing.Size(50, 50);
+			this.exitImageButton.PressedState.Parent = this.exitImageButton;
+			this.exitImageButton.Size = new System.Drawing.Size(67, 67);
+			this.exitImageButton.TabIndex = 15;
+			this.exitImageButton.Click += new System.EventHandler(this.exitImageButton_Click);
 			// 
-			// formAnimateWindow
+			// loginButton
 			// 
-			this.formAnimateWindow.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
-			this.formAnimateWindow.TargetForm = this;
-			// 
-			// form2DragControl1
-			// 
-			this.form2DragControl1.TargetControl = this.leftPanel;
-			// 
-			// formDragControl2
-			// 
-			this.formDragControl2.TargetControl = this.rightPanel;
-			// 
-			// guna2ImageButton1
-			// 
-			this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-			this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
-			this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(35, 35);
-			this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-			this.guna2ImageButton1.Image = global::PlowSense.Properties.Resources.icons8_exit_208px;
-			this.guna2ImageButton1.ImageRotate = 0F;
-			this.guna2ImageButton1.ImageSize = new System.Drawing.Size(25, 25);
-			this.guna2ImageButton1.Location = new System.Drawing.Point(325, -10);
-			this.guna2ImageButton1.Name = "guna2ImageButton1";
-			this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(50, 50);
-			this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-			this.guna2ImageButton1.Size = new System.Drawing.Size(67, 67);
-			this.guna2ImageButton1.TabIndex = 15;
-			this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::PlowSense.Properties.Resources.logo;
-			this.pictureBox1.Location = new System.Drawing.Point(84, 12);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(227, 141);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			this.loginButton.Animated = true;
+			this.loginButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(149)))), ((int)(((byte)(146)))));
+			this.loginButton.BorderRadius = 14;
+			this.loginButton.BorderThickness = 2;
+			this.loginButton.CheckedState.Parent = this.loginButton;
+			this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.loginButton.CustomImages.Parent = this.loginButton;
+			this.loginButton.Enabled = false;
+			this.loginButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(212)))));
+			this.loginButton.Font = new System.Drawing.Font("Proxima Soft", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.loginButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(91)))));
+			this.loginButton.HoverState.BorderColor = System.Drawing.Color.Transparent;
+			this.loginButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(91)))));
+			this.loginButton.HoverState.ForeColor = System.Drawing.Color.Gainsboro;
+			this.loginButton.HoverState.Parent = this.loginButton;
+			this.loginButton.Location = new System.Drawing.Point(43, 264);
+			this.loginButton.Name = "loginButton";
+			this.loginButton.ShadowDecoration.Parent = this.loginButton;
+			this.loginButton.Size = new System.Drawing.Size(136, 33);
+			this.loginButton.TabIndex = 7;
+			this.loginButton.Text = "Login";
+			this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
 			// 
 			// passwordTextBox
 			// 
@@ -229,10 +218,13 @@
 			this.passwordTextBox.PlaceholderText = "Password";
 			this.passwordTextBox.SelectedText = "";
 			this.passwordTextBox.ShadowDecoration.Parent = this.passwordTextBox;
+			this.passwordTextBox.ShortcutsEnabled = false;
 			this.passwordTextBox.Size = new System.Drawing.Size(263, 44);
 			this.passwordTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
 			this.passwordTextBox.TabIndex = 6;
+			this.passwordTextBox.TextChanged += new System.EventHandler(this.loginTextBox_TextChanged);
 			this.passwordTextBox.IconRightClick += new System.EventHandler(this.passwordTextBox_IconRightClick);
+			this.passwordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
 			// 
 			// usernameTextBox
 			// 
@@ -263,9 +255,25 @@
 			this.usernameTextBox.PlaceholderText = "Username";
 			this.usernameTextBox.SelectedText = "";
 			this.usernameTextBox.ShadowDecoration.Parent = this.usernameTextBox;
+			this.usernameTextBox.ShortcutsEnabled = false;
 			this.usernameTextBox.Size = new System.Drawing.Size(263, 44);
 			this.usernameTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
 			this.usernameTextBox.TabIndex = 5;
+			this.usernameTextBox.TextChanged += new System.EventHandler(this.loginTextBox_TextChanged);
+			this.usernameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+			// 
+			// formAnimateWindow
+			// 
+			this.formAnimateWindow.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+			this.formAnimateWindow.TargetForm = this;
+			// 
+			// form2DragControl1
+			// 
+			this.form2DragControl1.TargetControl = this.leftPanel;
+			// 
+			// formDragControl2
+			// 
+			this.formDragControl2.TargetControl = this.rightPanel;
 			// 
 			// LandingForm
 			// 
@@ -279,12 +287,13 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "LandingForm";
 			this.Text = "LandingForm";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LandingForm_FormClosing);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.leftPanel.ResumeLayout(false);
 			this.leftPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
 			this.rightPanel.ResumeLayout(false);
 			this.rightPanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -295,16 +304,16 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Panel leftPanel;
 		private System.Windows.Forms.Panel rightPanel;
-		private System.Windows.Forms.Label logInLabel;
+		private System.Windows.Forms.Label loginLabel;
 		private System.Windows.Forms.LinkLabel signUpLinkLabel;
 		private Guna.UI2.WinForms.Guna2TextBox passwordTextBox;
 		private Guna.UI2.WinForms.Guna2TextBox usernameTextBox;
-		private Guna.UI2.WinForms.Guna2Button guna2Button1;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private Guna.UI2.WinForms.Guna2Button loginButton;
+		private System.Windows.Forms.PictureBox logoPictureBox;
 		private Guna.UI2.WinForms.Guna2Panel verticalSeparatorPanel;
 		private Guna.UI2.WinForms.Guna2AnimateWindow formAnimateWindow;
 		private Guna.UI2.WinForms.Guna2DragControl form2DragControl1;
 		private Guna.UI2.WinForms.Guna2DragControl formDragControl2;
-		private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+		private Guna.UI2.WinForms.Guna2ImageButton exitImageButton;
 	}
 }
