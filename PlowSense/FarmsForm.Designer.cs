@@ -32,8 +32,6 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rightPanel = new System.Windows.Forms.Panel();
-            this.chart2Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.chart1Btn = new Guna.UI2.WinForms.Guna2Button();
             this.cropCmbBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -44,12 +42,13 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chart2Btn = new Guna.UI2.WinForms.Guna2Button();
             this.chartLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.chart1Btn = new Guna.UI2.WinForms.Guna2Button();
             this.farmChart = new LiveCharts.WinForms.CartesianChart();
             this.guna2Separator4 = new Guna.UI2.WinForms.Guna2Separator();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.myFarmsScroll = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.refreshBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addFarmBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.myFarmsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -108,46 +107,6 @@
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(413, 562);
             this.rightPanel.TabIndex = 3;
-            // 
-            // chart2Btn
-            // 
-            this.chart2Btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.chart2Btn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.chart2Btn.CheckedState.Parent = this.chart2Btn;
-            this.chart2Btn.CustomImages.Parent = this.chart2Btn;
-            this.chart2Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(143)))), ((int)(((byte)(74)))));
-            this.chart2Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.chart2Btn.ForeColor = System.Drawing.Color.White;
-            this.chart2Btn.HoverState.Parent = this.chart2Btn;
-            this.chart2Btn.Location = new System.Drawing.Point(194, 198);
-            this.chart2Btn.Margin = new System.Windows.Forms.Padding(2);
-            this.chart2Btn.Name = "chart2Btn";
-            this.chart2Btn.ShadowDecoration.Parent = this.chart2Btn;
-            this.chart2Btn.Size = new System.Drawing.Size(100, 30);
-            this.chart2Btn.TabIndex = 16;
-            this.chart2Btn.Text = "Monthly Income";
-            this.chart2Btn.CheckedChanged += new System.EventHandler(this.chart2Btn_CheckedChanged);
-            this.chart2Btn.Click += new System.EventHandler(this.chart2Btn_Click);
-            // 
-            // chart1Btn
-            // 
-            this.chart1Btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.chart1Btn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.chart1Btn.CheckedState.Parent = this.chart1Btn;
-            this.chart1Btn.CustomImages.Parent = this.chart1Btn;
-            this.chart1Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(143)))), ((int)(((byte)(74)))));
-            this.chart1Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.chart1Btn.ForeColor = System.Drawing.Color.White;
-            this.chart1Btn.HoverState.Parent = this.chart1Btn;
-            this.chart1Btn.Location = new System.Drawing.Point(92, 198);
-            this.chart1Btn.Margin = new System.Windows.Forms.Padding(2);
-            this.chart1Btn.Name = "chart1Btn";
-            this.chart1Btn.ShadowDecoration.Parent = this.chart1Btn;
-            this.chart1Btn.Size = new System.Drawing.Size(100, 30);
-            this.chart1Btn.TabIndex = 16;
-            this.chart1Btn.Text = "Montly Harvest";
-            this.chart1Btn.CheckedChanged += new System.EventHandler(this.chart1Btn_CheckedChanged);
-            this.chart1Btn.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // cropCmbBox
             // 
@@ -278,6 +237,25 @@
             this.panel1.Size = new System.Drawing.Size(389, 237);
             this.panel1.TabIndex = 13;
             // 
+            // chart2Btn
+            // 
+            this.chart2Btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.chart2Btn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.chart2Btn.CheckedState.Parent = this.chart2Btn;
+            this.chart2Btn.CustomImages.Parent = this.chart2Btn;
+            this.chart2Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(143)))), ((int)(((byte)(74)))));
+            this.chart2Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.chart2Btn.ForeColor = System.Drawing.Color.White;
+            this.chart2Btn.HoverState.Parent = this.chart2Btn;
+            this.chart2Btn.Location = new System.Drawing.Point(194, 198);
+            this.chart2Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.chart2Btn.Name = "chart2Btn";
+            this.chart2Btn.ShadowDecoration.Parent = this.chart2Btn;
+            this.chart2Btn.Size = new System.Drawing.Size(100, 30);
+            this.chart2Btn.TabIndex = 16;
+            this.chart2Btn.Text = "Monthly Income";
+            this.chart2Btn.CheckedChanged += new System.EventHandler(this.chart2Btn_CheckedChanged);
+            // 
             // chartLabel
             // 
             this.chartLabel.BackColor = System.Drawing.Color.Transparent;
@@ -288,6 +266,25 @@
             this.chartLabel.Size = new System.Drawing.Size(188, 31);
             this.chartLabel.TabIndex = 10;
             this.chartLabel.Text = "Monthly Harvest";
+            // 
+            // chart1Btn
+            // 
+            this.chart1Btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.chart1Btn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
+            this.chart1Btn.CheckedState.Parent = this.chart1Btn;
+            this.chart1Btn.CustomImages.Parent = this.chart1Btn;
+            this.chart1Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(143)))), ((int)(((byte)(74)))));
+            this.chart1Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.chart1Btn.ForeColor = System.Drawing.Color.White;
+            this.chart1Btn.HoverState.Parent = this.chart1Btn;
+            this.chart1Btn.Location = new System.Drawing.Point(92, 198);
+            this.chart1Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.chart1Btn.Name = "chart1Btn";
+            this.chart1Btn.ShadowDecoration.Parent = this.chart1Btn;
+            this.chart1Btn.Size = new System.Drawing.Size(100, 30);
+            this.chart1Btn.TabIndex = 16;
+            this.chart1Btn.Text = "Montly Harvest";
+            this.chart1Btn.CheckedChanged += new System.EventHandler(this.chart1Btn_CheckedChanged);
             // 
             // farmChart
             // 
@@ -311,7 +308,6 @@
             // 
             this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
             this.leftPanel.Controls.Add(this.myFarmsScroll);
-            this.leftPanel.Controls.Add(this.refreshBtn);
             this.leftPanel.Controls.Add(this.addFarmBtn);
             this.leftPanel.Controls.Add(this.guna2VSeparator1);
             this.leftPanel.Controls.Add(this.myFarmsFlowPanel);
@@ -345,27 +341,6 @@
             this.myFarmsScroll.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(143)))), ((int)(((byte)(74)))));
             this.myFarmsScroll.Scroll += new System.Windows.Forms.ScrollEventHandler(this.myFarmsScroll_Scroll);
             // 
-            // refreshBtn
-            // 
-            this.refreshBtn.Animated = true;
-            this.refreshBtn.CheckedState.Parent = this.refreshBtn;
-            this.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refreshBtn.CustomImages.Parent = this.refreshBtn;
-            this.refreshBtn.FillColor = System.Drawing.Color.Transparent;
-            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.refreshBtn.HoverState.Parent = this.refreshBtn;
-            this.refreshBtn.Image = global::PlowSense.Properties.Resources.grefresh_480px;
-            this.refreshBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.refreshBtn.ImageSize = new System.Drawing.Size(40, 40);
-            this.refreshBtn.Location = new System.Drawing.Point(417, 32);
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.ShadowDecoration.Parent = this.refreshBtn;
-            this.refreshBtn.Size = new System.Drawing.Size(60, 40);
-            this.refreshBtn.TabIndex = 37;
-            this.refreshBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
             // addFarmBtn
             // 
             this.addFarmBtn.Animated = true;
@@ -379,7 +354,7 @@
             this.addFarmBtn.Image = global::PlowSense.Properties.Resources.gplus_math_208px;
             this.addFarmBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.addFarmBtn.ImageSize = new System.Drawing.Size(40, 40);
-            this.addFarmBtn.Location = new System.Drawing.Point(351, 32);
+            this.addFarmBtn.Location = new System.Drawing.Point(419, 34);
             this.addFarmBtn.Name = "addFarmBtn";
             this.addFarmBtn.ShadowDecoration.Parent = this.addFarmBtn;
             this.addFarmBtn.Size = new System.Drawing.Size(60, 40);
@@ -483,7 +458,6 @@
         private System.Windows.Forms.Panel leftPanel;
 		private System.Windows.Forms.Panel rightPanel;
 		private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
-		private System.Windows.Forms.FlowLayoutPanel myFarmsFlowPanel;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
 		private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
@@ -495,7 +469,6 @@
 		private System.Windows.Forms.Panel panel1;
 		private LiveCharts.WinForms.CartesianChart farmChart;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-		private Guna.UI2.WinForms.Guna2Button refreshBtn;
 		public Guna.UI2.WinForms.Guna2Button addFarmBtn;
 		private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
 		private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
@@ -509,5 +482,6 @@
 		private Guna.UI2.WinForms.Guna2ComboBox cropCmbBox;
 		private Guna.UI2.WinForms.Guna2Button chart2Btn;
 		private Guna.UI2.WinForms.Guna2Button chart1Btn;
+		private System.Windows.Forms.FlowLayoutPanel myFarmsFlowPanel;
 	}
 }

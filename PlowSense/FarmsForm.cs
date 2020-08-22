@@ -218,9 +218,6 @@ namespace PlowSense
 		{
 			AddFarmForm addFarmForm = new AddFarmForm();
 			addFarmForm.ShowDialog();
-		}
-		private void refreshBtn_Click(object sender, EventArgs e)
-		{
 			myFarmsFlowPanel.Controls.Clear();
 			FarmLoad();
 		}
@@ -229,16 +226,6 @@ namespace PlowSense
 		{
 			LoadChart1();
 			LoadCropData();
-		}
-
-		private void guna2Button1_Click(object sender, EventArgs e)
-		{
-			
-		}
-
-		private void chart2Btn_Click(object sender, EventArgs e)
-		{
-			
 		}
 
 		private void myFarmsScroll_Scroll(object sender, ScrollEventArgs e)
