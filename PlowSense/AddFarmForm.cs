@@ -101,6 +101,12 @@ namespace PlowSense
 				List<CropInfo> selectedFarmCrops = FarmsForm.Farms.First(f => f.Farm == farmNameText.Text).Crops;
 				selectedFarmCrops.Add(new CropInfo { Crop = CropText.Text, Farm = farmNameText.Text, ShelfLife = ShelfLifeText.Text });
 			}
+			else
+			{
+				CustomMessageBox msBox = new CustomMessageBox("Warning",
+					"Please fill out all spaces!", CustomMessageBoxStatus.Alert);
+				msBox.ShowDialog();
+			}
 		}
 
 		private void confirmBtn_Click(object sender, EventArgs e)
@@ -110,12 +116,21 @@ namespace PlowSense
 
 		private void confirmFarmerInfBtn_Click(object sender, EventArgs e)
 		{
-			confirmFarmerInfBtn.Enabled = false;
-			NameText.Enabled = false;
-			LocationText.Enabled = false;
-			farmNameText.Enabled = false;
+			if (!string.IsNullOrWhiteSpace(CropText.Text) && !string.IsNullOrWhiteSpace(LocationText.Text) && !string.IsNullOrWhiteSpace(farmNameText.Text))
+			{
+				confirmFarmerInfBtn.Enabled = false;
+				NameText.Enabled = false;
+				LocationText.Enabled = false;
+				farmNameText.Enabled = false;
 
-			FarmsForm.Farms.Add(new FarmInfo { Crops = new List<CropInfo>(), Farm = farmNameText.Text, FarmRep = NameText.Text, Location = LocationText.Text });
+				FarmsForm.Farms.Add(new FarmInfo { Crops = new List<CropInfo>(), Farm = farmNameText.Text, FarmRep = NameText.Text, Location = LocationText.Text });
+			}
+			else
+			{
+				CustomMessageBox msBox = new CustomMessageBox("Warning",
+					"Please fill out all spaces!", CustomMessageBoxStatus.Alert);
+				msBox.ShowDialog();
+			}
 		}
 	}
 }
