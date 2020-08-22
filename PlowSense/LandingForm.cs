@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PlowSense
 {
-	public partial class LandingForm : Form
+	public sealed partial class LandingForm : Form
 	{
 		public LandingForm()
 		{
@@ -29,19 +29,25 @@ namespace PlowSense
 			e.Graphics.DrawImage(Properties.Resources.landscape_png_95_images_in_collection_page_2_landscape_png_1024_232, rc);
 		}
 
-		private void passwoedTextBox_IconRightClick(object sender, EventArgs e)
+		private void passwordTextBox_IconRightClick(object sender, EventArgs e)
 		{
-			if (passwoedTextBox.PasswordChar == '*')
+			if (passwordTextBox.PasswordChar == '*')
 			{
-				passwoedTextBox.PasswordChar = '\0';
-				passwoedTextBox.IconRight = Properties.Resources.icons8_eye_512px;
+				passwordTextBox.PasswordChar = '\0';
+				passwordTextBox.IconRight = Properties.Resources.icons8_eye_512px;
 
 			}
 			else
 			{
-				passwoedTextBox.PasswordChar = '*';
-				passwoedTextBox.IconRight = Properties.Resources.icons8_hide_512px;
+				passwordTextBox.PasswordChar = '*';
+				passwordTextBox.IconRight = Properties.Resources.icons8_hide_512px;
 			}
+		}
+
+		private void signUpLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			SignUpForm signUpForm = new SignUpForm();
+			signUpForm.ShowDialog();
 		}
 	}
 }
