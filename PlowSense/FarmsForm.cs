@@ -67,7 +67,6 @@ namespace PlowSense
 			myFarmsFlowPanel.HorizontalScroll.Enabled = false;
 			myFarmsFlowPanel.HorizontalScroll.Visible = false;
 			myFarmsFlowPanel.HorizontalScroll.Maximum = 0;
-			myFarmsFlowPanel.AutoScroll = true;
 			myFarmsScroll.VerticalScroll.Maximum = myFarmsFlowPanel.VerticalScroll.Maximum;
 		}
 
