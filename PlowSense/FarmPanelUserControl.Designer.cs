@@ -51,7 +51,7 @@
             this.flowPanel.BackColor = System.Drawing.Color.White;
             this.flowPanel.Location = new System.Drawing.Point(12, 39);
             this.flowPanel.Name = "flowPanel";
-            this.flowPanel.Size = new System.Drawing.Size(430, 105);
+            this.flowPanel.Size = new System.Drawing.Size(430, 101);
             this.flowPanel.TabIndex = 16;
             // 
             // FarmName

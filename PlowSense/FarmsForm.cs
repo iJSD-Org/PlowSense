@@ -81,7 +81,7 @@ namespace PlowSense
 					#region Create Crop Panel
 					Panel cp = new Panel
 					{
-						BackColor = System.Drawing.Color.FromArgb(222, 205, 5),
+						BackColor = System.Drawing.Color.FromArgb(180, 9, 105, 54),
 						Location = new Point(0, 50),
 						ForeColor = System.Drawing.Color.White,
 						AutoSize = false,
@@ -93,7 +93,8 @@ namespace PlowSense
 						Image = Properties.Resources.wfield_208px,
 						SizeMode = PictureBoxSizeMode.StretchImage,
 						Size = new Size(70, 70),
-						Location = new Point(5, 10)
+						Location = new Point(5, 10),
+						BackColor = System.Drawing.Color.Transparent
 					};
 					Label nName = new Label
 					{
@@ -101,7 +102,8 @@ namespace PlowSense
 						Text = crop.Crop,
 						Location = new Point(3, 78),
 						ForeColor = System.Drawing.Color.White,
-						AutoSize = true
+						AutoSize = true,
+						BackColor = System.Drawing.Color.Transparent
 					};
 					#endregion
 
