@@ -7,16 +7,12 @@ using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
 using PlowSense.Models;
-using Brush = System.Windows.Media.Brush;
-using Brushes = System.Windows.Media.Brushes;
 using Color = System.Drawing.Color;
 
 namespace PlowSense
 {
 	public partial class Statistics : Form
 	{
-		private readonly BrushConverter _converter = new BrushConverter();
-		private readonly Func<ChartPoint, string> _labelPoint = chartPoint => $"{chartPoint.Participation:P}";
 
 		public Statistics()
 		{
@@ -26,7 +22,6 @@ namespace PlowSense
 		private void Statistics_Load(object sender, EventArgs e)
 		{
 			SetColors();
-		
 			CropsLoad();
 		}
 
@@ -38,13 +33,9 @@ namespace PlowSense
 			statsDataGrid.GridColor = Color.White;
 			statsDataGrid.DefaultCellStyle.SelectionBackColor = Color.LightGray;
 			statsDataGrid.Font = new Font("Proxima Soft", 11);
-			
+
 		}
 
-		void CalculatePrices()
-		{
-
-		} 
 		void PieLoad()
 		{
 
@@ -52,22 +43,20 @@ namespace PlowSense
 			foreach (var crop in MainForm.FarmInventories.Select(o => o.Crop).Distinct())
 			{
 				series.Add(new PieSeries()
-					{
-						Title = crop,
-						Values =
+				{
+					Title = crop,
+					Values =
 							new ChartValues<int>
 							{
 								MainForm.FarmInventories
 									.Where(o => o.Crop == crop).Select(o => o.Amount).Sum()
 							}
-					}
+				}
 				);
 
 			}
 
 			statsPie.Series = series;
-
-
 		}
 
 		void CropsLoad()
@@ -120,7 +109,7 @@ namespace PlowSense
 					item.Value.FarmRep, item.Value.Crop, item.Value.AmountSold);
 			}
 		}
-		
+
 		private void statsCmbBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			Dictionary<DateTime, TransactionHistory> filteredValues = MainForm.Transactions
@@ -129,16 +118,6 @@ namespace PlowSense
 
 			GenerateChartData(filteredValues);
 			GenerateTableData(filteredValues);
-		}
-
-		private void statsPie_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
-		{
-
-		}
-
-		private void statsChart_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
-		{
-
 		}
 	}
 }

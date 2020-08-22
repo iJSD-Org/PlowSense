@@ -44,7 +44,7 @@ namespace PlowSense
 				.AddConfigFor<FarmInventory>(cfg => cfg
 					.MapColumn(c => c.WithHeader("Crop").IsRequired().MapTo(o => o.Crop))
 					.MapColumn(c => c.WithHeader("Amount in Storage").IsRequired().MapTo(o => o.Amount))
-					.MapColumn(c => c.WithHeader("Time in Storage").IsRequired().MapTo(o =>o.TimeInStorage))
+					.MapColumn(c => c.WithHeader("Time in Storage").IsRequired().MapTo(o => o.TimeInStorage))
 					.MapColumn(c => c.WithHeader("Farm Representative").IsRequired().MapTo(o => o.FarmRep)));
 
 			GoogleSheetAdapter adapter = new GoogleSheetAdapter();
@@ -64,25 +64,25 @@ namespace PlowSense
 					.ParsedModels
 					.Select(o => o.Value).OrderBy(o => o.Crop).ToList();
 				List<DateTime> transDates = transactionSheet.Result.Rows
-					.Where(o => DateTime.TryParse((string) o.Cells[0].Value, out _) && o.Cells.Count != 1)
-					.Select(o => DateTime.Parse((string) o.Cells[0].Value)).ToList();
+					.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
+					.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
 
 				List<MonthlyHarvest> monthlyHarvestsInfo = sheetMapper.Map<MonthlyHarvest>(harvestSheet.Result)
 					.ParsedModels
 					.Select(o => o.Value).ToList();
 				List<DateTime> monthDates = harvestSheet.Result.Rows
-					.Where(o => DateTime.TryParse((string) o.Cells[0].Value, out _) && o.Cells.Count != 1)
-					.Select(o => DateTime.Parse((string) o.Cells[0].Value)).ToList();
+					.Where(o => DateTime.TryParse((string)o.Cells[0].Value, out _) && o.Cells.Count != 1)
+					.Select(o => DateTime.Parse((string)o.Cells[0].Value)).ToList();
 
 				MainForm.MonthlyHarvests = Enumerable.Range(0, monthDates.Count)
 					.ToDictionary(i => monthDates[i], i => monthlyHarvestsInfo[i]);
 				MainForm.Transactions = Enumerable.Range(0, transDates.Count)
 					.ToDictionary(i => transDates[i], i => tranInfo[i]);
 
-			MainForm.FarmInventories = sheetMapper.Map<FarmInventory>(inventorySheet.Result)
-					.ParsedModels
-					.Select(o => o.Value).ToList();
-			
+				MainForm.FarmInventories = sheetMapper.Map<FarmInventory>(inventorySheet.Result)
+						.ParsedModels
+						.Select(o => o.Value).ToList();
+
 			}
 
 			catch
@@ -98,11 +98,6 @@ namespace PlowSense
 				"Connected to sheet", CustomMessageBoxStatus.Check);
 			msSuccessBox.ShowDialog();
 			okBtn.Enabled = true;
-			Close();
-		}
-
-		private void guna2ImageButton1_Click(object sender, EventArgs e)
-		{
 			Close();
 		}
 	}

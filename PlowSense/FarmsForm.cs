@@ -7,9 +7,7 @@ using LiveCharts.Wpf;
 using System.Linq;
 using System.Drawing;
 using System.IO;
-using System.Net;
 using System.Runtime.InteropServices;
-using System.Threading;
 using Ganss.Excel;
 using PlowSense.Models;
 
@@ -20,19 +18,15 @@ namespace PlowSense
 	{
 		internal static List<FarmInfo> Farms;
 		internal static List<string> FarmOwners = new List<string>();
-		private int selectedPanel;
-		private int _tag = 0;
+		private int _selectedPanel;
+		private int _tag;
 		public FarmsForm()
 		{
 			InitializeComponent();
-			if (File.Exists(@"C:\PlowSenseFiles\Farms.xlsx"))
-			{
+			if (File.Exists(@"Spreadsheets\Farms.xlsx"))
 				GetFarmExcelData();
-			}
 			else
-			{
 				Farms = new List<FarmInfo>();
-			}
 		}
 
 		private void Farms_Load(object sender, EventArgs e)
@@ -58,7 +52,7 @@ namespace PlowSense
 		//should be only run once
 		private void GetFarmExcelData()
 		{
-			ExcelMapper excelFile = new ExcelMapper(@"C:\PlowSenseFiles\Farms.xlsx");
+			ExcelMapper excelFile = new ExcelMapper(@"Spreadsheets\Farms.xlsx");
 			Farms = excelFile.Fetch<FarmInfo>().ToList();
 			List<CropInfo> crops = excelFile.Fetch<CropInfo>(1).ToList();
 			foreach (FarmInfo farm in Farms)
@@ -86,18 +80,16 @@ namespace PlowSense
 				{
 					FarmOwners.Add(o);
 				}
-				selectedPanel = 0;
+				_selectedPanel = 0;
 			}
 		}
 
 		void LoadCropData()
 		{
-			amountLabel.Text = MainForm.FarmInventories
-				.Where(o => o.FarmRep == FarmOwners[selectedPanel] && o.Crop == cropCmbBox.SelectedItem.ToString())
-			     .Select(o => o.Amount).First().ToString() + "kg";
-			timeLabel.Text = MainForm.FarmInventories
-				.Where(o => o.FarmRep == FarmOwners[selectedPanel] && o.Crop == cropCmbBox.SelectedItem.ToString())
-				.Select(o => o.TimeInStorage).First().ToString() + "days";
+			amountLabel.Text =
+				$"{MainForm.FarmInventories.Where(o => o.FarmRep == FarmOwners[_selectedPanel] && o.Crop == cropCmbBox.SelectedItem.ToString()).Select(o => o.Amount).First()}kg";
+			timeLabel.Text =
+				$"{MainForm.FarmInventories.Where(o => o.FarmRep == FarmOwners[_selectedPanel] && o.Crop == cropCmbBox.SelectedItem.ToString()).Select(o => o.TimeInStorage).First()}days";
 		}
 		void FarmLoad()
 		{
@@ -163,7 +155,7 @@ namespace PlowSense
 		{
 			cropCmbBox.Items.Clear();
 			List<string> availableCrops = new List<string>();
-			foreach (var farm in MainForm.MonthlyHarvests.Values.Where(o => o.FarmRep == FarmOwners[selectedPanel]))
+			foreach (var farm in MainForm.MonthlyHarvests.Values.Where(o => o.FarmRep == FarmOwners[_selectedPanel]))
 			{
 				if (!availableCrops.Contains(farm.Crop))
 				{
@@ -175,7 +167,7 @@ namespace PlowSense
 			cropCmbBox.SelectedItem = availableCrops.First();
 		}
 
-		
+
 		void LoadChart1()
 		{
 			farmChart.Series.Clear();
@@ -186,7 +178,7 @@ namespace PlowSense
 					Title = cropCmbBox.SelectedItem.ToString(),
 					Values = new ChartValues<int>
 						(MainForm.MonthlyHarvests.Values.
-						Where(m => m.FarmRep == FarmOwners[Convert.ToInt32(selectedPanel)])
+						Where(m => m.FarmRep == FarmOwners[Convert.ToInt32(_selectedPanel)])
 						.Where(m => m.Crop == cropCmbBox.SelectedItem.ToString()).Select(m => m.AmountHarvest).ToList()),
 					Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80, 9, 105, 54)),
 					PointGeometry = DefaultGeometries.Square,
@@ -205,7 +197,7 @@ namespace PlowSense
 				{
 					Title = "Income",
 					Values = new ChartValues<int>
-					(MainForm.Transactions.Values.Where(t => t.FarmRep == FarmOwners[selectedPanel])
+					(MainForm.Transactions.Values.Where(t => t.FarmRep == FarmOwners[_selectedPanel])
 						.Select(t => t.Income).ToList()),
 					Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80, 9, 105, 54)),
 					PointGeometry = DefaultGeometries.Square,
@@ -216,12 +208,12 @@ namespace PlowSense
 		}
 		private void FarmPanelUserControl_Click(object o, EventArgs a)
 		{
-			FarmPanelUserControl p = (FarmPanelUserControl) o;
-			selectedPanel = Convert.ToInt32(p.Tag);
+			FarmPanelUserControl p = (FarmPanelUserControl)o;
+			_selectedPanel = Convert.ToInt32(p.Tag);
 			CropLoad();
 			LoadChart1();
 		}
-		
+
 		private void addFarmBtn_Click(object sender, EventArgs e)
 		{
 			AddFarmForm addFarmForm = new AddFarmForm();

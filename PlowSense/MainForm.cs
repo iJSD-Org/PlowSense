@@ -90,13 +90,15 @@ namespace PlowSense
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			List<CropInfo> crops = FarmsForm.Farms.SelectMany(f => f.Crops).ToList();
-			if (!File.Exists(@"C:\PlowSenseFiles\Farms.xlsx"))
+			if (!File.Exists(@"Spreadsheets\Farms.xlsx"))
 			{
-				File.Create(@"C:\PlowSenseFiles\Farms.xlsx").Dispose();
+				if (!Directory.Exists("Spreadsheets"))
+					Directory.CreateDirectory("Spreadsheets");
+				File.Create(@"Spreadsheets\Farms.xlsx").Dispose();
 			}
 			ExcelMapper excelFile = new ExcelMapper();
-			excelFile.Save(@"C:\PlowSenseFiles\Farms.xlsx", FarmsForm.Farms);
-			excelFile.Save(@"C:\PlowSenseFiles\Farms.xlsx", crops, 1);
+			excelFile.Save(@"Spreadsheets\Farms.xlsx", FarmsForm.Farms);
+			excelFile.Save(@"Spreadsheets\Farms.xlsx", crops, 1);
 		}
 	}
 }

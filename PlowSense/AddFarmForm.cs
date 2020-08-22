@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using System.Windows.Documents;
 using PlowSense.Models;
 
 namespace PlowSense
@@ -73,7 +71,7 @@ namespace PlowSense
 				#region Create Crop Item Panel
 				Panel p = new Panel
 				{
-					BackColor = System.Drawing.Color.FromArgb(180, 9, 105, 54),
+					BackColor = Color.FromArgb(180, 9, 105, 54),
 					Location = new Point(0, 50),
 					ForeColor = Color.White,
 					AutoSize = false,

@@ -13,7 +13,7 @@ namespace PlowSense
 			InitializeComponent();
 		}
 
-		private void guna2ImageButton1_Click(object sender, EventArgs e)
+		private void exitImageButton_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
@@ -27,7 +27,7 @@ namespace PlowSense
 		private void signUpTextBox_TextChanged(object sender, EventArgs e)
 		{
 			enterButton.Enabled = usernameTextBox.Text != string.Empty && passTextBox.Text != string.Empty &&
-			                      confirmPassTextBox.Text != string.Empty && passTextBox.Text == confirmPassTextBox.Text;
+								  confirmPassTextBox.Text != string.Empty && passTextBox.Text == confirmPassTextBox.Text;
 		}
 
 		private void enterButton_Click(object sender, EventArgs e)

@@ -71,7 +71,7 @@
 			this.exitImageButton.PressedState.Parent = this.exitImageButton;
 			this.exitImageButton.Size = new System.Drawing.Size(67, 67);
 			this.exitImageButton.TabIndex = 14;
-			this.exitImageButton.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+			this.exitImageButton.Click += new System.EventHandler(this.exitImageButton_Click);
 			// 
 			// confirmPassTextBox
 			// 

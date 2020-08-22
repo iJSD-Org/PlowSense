@@ -271,7 +271,6 @@
             this.statsPie.TabIndex = 2;
             this.statsPie.Text = "pieChart1";
             this.guna2HtmlToolTip1.SetToolTip(this.statsPie, "Crop Supply");
-            this.statsPie.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.statsPie_ChildChanged);
             // 
             // guna2Panel3
             // 
@@ -316,7 +315,6 @@
             this.statsChart.TabIndex = 11;
             this.statsChart.Text = "z";
             this.guna2HtmlToolTip1.SetToolTip(this.statsChart, "Crop Demand");
-            this.statsChart.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.statsChart_ChildChanged);
             // 
             // guna2HtmlLabel1
             // 

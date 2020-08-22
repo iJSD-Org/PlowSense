@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 using PlowSense.Models;
 using Point = System.Drawing.Point;
 using Size = System.Drawing.Size;
-using ICSharpCode.SharpZipLib.Core;
 
 namespace PlowSense
 {
