@@ -8,6 +8,7 @@
 
   <PropertyGroup>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <ApplicationIcon>plowsense.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

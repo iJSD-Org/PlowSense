@@ -49,9 +49,10 @@
             this.iconPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconPictureBox.ErrorImage = global::PlowSense.Properties.Resources.Check;
             this.iconPictureBox.Image = global::PlowSense.Properties.Resources.Cross;
-            this.iconPictureBox.Location = new System.Drawing.Point(142, 12);
+            this.iconPictureBox.Location = new System.Drawing.Point(189, 15);
+            this.iconPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBox.Name = "iconPictureBox";
-            this.iconPictureBox.Size = new System.Drawing.Size(109, 104);
+            this.iconPictureBox.Size = new System.Drawing.Size(145, 128);
             this.iconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox.TabIndex = 0;
             this.iconPictureBox.TabStop = false;
@@ -64,9 +65,10 @@
             // 
             this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.titleLabel.Location = new System.Drawing.Point(55, 119);
+            this.titleLabel.Location = new System.Drawing.Point(73, 146);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(278, 23);
+            this.titleLabel.Size = new System.Drawing.Size(371, 28);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "ERROR";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,9 +77,10 @@
             // 
             this.descLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.descLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.descLabel.Location = new System.Drawing.Point(56, 140);
+            this.descLabel.Location = new System.Drawing.Point(75, 172);
+            this.descLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.descLabel.Name = "descLabel";
-            this.descLabel.Size = new System.Drawing.Size(277, 53);
+            this.descLabel.Size = new System.Drawing.Size(369, 65);
             this.descLabel.TabIndex = 2;
             this.descLabel.Text = "System cannot find the file specified.";
             this.descLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -87,7 +90,7 @@
             this.continueButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.continueButton.Animated = true;
             this.continueButton.AutoRoundedCorners = true;
-            this.continueButton.BorderRadius = 14;
+            this.continueButton.BorderRadius = 17;
             this.continueButton.CheckedState.Parent = this.continueButton;
             this.continueButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.continueButton.CustomImages.Parent = this.continueButton;
@@ -95,10 +98,11 @@
             this.continueButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.continueButton.ForeColor = System.Drawing.Color.White;
             this.continueButton.HoverState.Parent = this.continueButton;
-            this.continueButton.Location = new System.Drawing.Point(119, 185);
+            this.continueButton.Location = new System.Drawing.Point(159, 228);
+            this.continueButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.continueButton.Name = "continueButton";
             this.continueButton.ShadowDecoration.Parent = this.continueButton;
-            this.continueButton.Size = new System.Drawing.Size(150, 30);
+            this.continueButton.Size = new System.Drawing.Size(200, 37);
             this.continueButton.TabIndex = 3;
             this.continueButton.Text = "Continue";
             this.continueButton.Click += new System.EventHandler(this.continueButton_Click);
@@ -111,16 +115,18 @@
             // 
             // CustomMessageBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(388, 227);
+            this.ClientSize = new System.Drawing.Size(517, 279);
             this.Controls.Add(this.continueButton);
             this.Controls.Add(this.descLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.iconPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CustomMessageBox";
+            this.ShowInTaskbar = false;
             this.Text = "CustomMessageBox";
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
             this.ResumeLayout(false);

@@ -50,7 +50,7 @@
             this.txtBoxSheetID.Animated = true;
             this.txtBoxSheetID.AutoRoundedCorners = true;
             this.txtBoxSheetID.BackColor = System.Drawing.Color.White;
-            this.txtBoxSheetID.BorderRadius = 13;
+            this.txtBoxSheetID.BorderRadius = 17;
             this.txtBoxSheetID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBoxSheetID.DefaultText = "";
             this.txtBoxSheetID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -63,14 +63,14 @@
             this.txtBoxSheetID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxSheetID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBoxSheetID.HoverState.Parent = this.txtBoxSheetID;
-            this.txtBoxSheetID.Location = new System.Drawing.Point(32, 197);
-            this.txtBoxSheetID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxSheetID.Location = new System.Drawing.Point(43, 242);
+            this.txtBoxSheetID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxSheetID.Name = "txtBoxSheetID";
             this.txtBoxSheetID.PasswordChar = '\0';
             this.txtBoxSheetID.PlaceholderText = "sheetID";
             this.txtBoxSheetID.SelectedText = "";
             this.txtBoxSheetID.ShadowDecoration.Parent = this.txtBoxSheetID;
-            this.txtBoxSheetID.Size = new System.Drawing.Size(252, 29);
+            this.txtBoxSheetID.Size = new System.Drawing.Size(336, 36);
             this.txtBoxSheetID.TabIndex = 0;
             // 
             // label1
@@ -79,10 +79,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(15, 162);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(20, 199);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 29);
+            this.label1.Size = new System.Drawing.Size(351, 33);
             this.label1.TabIndex = 1;
             this.label1.Text = "Please enter your sheetID";
             // 
@@ -91,7 +90,7 @@
             this.okBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.okBtn.Animated = true;
             this.okBtn.AutoRoundedCorners = true;
-            this.okBtn.BorderRadius = 14;
+            this.okBtn.BorderRadius = 17;
             this.okBtn.CheckedState.Parent = this.okBtn;
             this.okBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.okBtn.CustomImages.Parent = this.okBtn;
@@ -99,11 +98,11 @@
             this.okBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.okBtn.ForeColor = System.Drawing.Color.White;
             this.okBtn.HoverState.Parent = this.okBtn;
-            this.okBtn.Location = new System.Drawing.Point(104, 269);
-            this.okBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.okBtn.Location = new System.Drawing.Point(139, 331);
+            this.okBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.okBtn.Name = "okBtn";
             this.okBtn.ShadowDecoration.Parent = this.okBtn;
-            this.okBtn.Size = new System.Drawing.Size(110, 30);
+            this.okBtn.Size = new System.Drawing.Size(147, 37);
             this.okBtn.TabIndex = 2;
             this.okBtn.Text = "Ok";
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
@@ -112,10 +111,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::PlowSense.Properties.Resources.sun;
-            this.pictureBox1.Location = new System.Drawing.Point(94, 27);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(125, 33);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(131, 123);
+            this.pictureBox1.Size = new System.Drawing.Size(175, 151);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -130,26 +129,28 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.guna2ControlBox1.Location = new System.Drawing.Point(263, 10);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(351, 12);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(60, 36);
             this.guna2ControlBox1.TabIndex = 5;
             // 
             // LinkSheet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(320, 320);
+            this.ClientSize = new System.Drawing.Size(427, 394);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxSheetID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LinkSheet";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.LinkSheet_Load);
