@@ -26,7 +26,7 @@ namespace PlowSense
 		private void Statistics_Load(object sender, EventArgs e)
 		{
 			SetColors();
-			PieLoad();
+		
 			CropsLoad();
 		}
 
@@ -41,45 +41,38 @@ namespace PlowSense
 			
 		}
 
+		void CalculatePrices()
+		{
+
+		} 
 		void PieLoad()
 		{
-			statsPie.Series = new SeriesCollection
+
+			SeriesCollection series = new SeriesCollection();
+			foreach (var crop in MainForm.FarmInventories.Select(o => o.Crop).Distinct())
 			{
-				new PieSeries
-				{
-					Title = "Title 1",
-					Values = new ChartValues<double> {100},
-					Fill = (Brush)_converter.ConvertFromString("#9CE74C"),
-					DataLabels = true,
-					LabelPoint = _labelPoint,
-					StrokeThickness = 0,
-				},
-				new PieSeries
-				{
-					Title = "Title 2",
-					Values = new ChartValues<double> {300},
-					Fill = (Brush)_converter.ConvertFromString("#DECD05"),
-					DataLabels = true,
-					LabelPoint = _labelPoint,
-					StrokeThickness = 0
-				},
-				new PieSeries
-				{
-					Title = "Title 3",
-					Values = new ChartValues<double> {250},
-					Fill = (Brush)_converter.ConvertFromString("#BBB324"),
-					DataLabels = true,
-					LabelPoint = _labelPoint,
-					StrokeThickness = 0
-				},
-			};
-			DefaultLegend customLegend = new DefaultLegend { BulletSize = 10, Foreground = Brushes.White, FontSize = 15 };
-			statsPie.DefaultLegend = customLegend;
-			statsPie.LegendLocation = LegendLocation.Right;
+				series.Add(new PieSeries()
+					{
+						Title = crop,
+						Values =
+							new ChartValues<int>
+							{
+								MainForm.FarmInventories
+									.Where(o => o.Crop == crop).Select(o => o.Amount).Sum()
+							}
+					}
+				);
+
+			}
+
+			statsPie.Series = series;
+
+
 		}
 
 		void CropsLoad()
 		{
+			PieLoad();
 			List<string> availableCrops = new List<string>();
 			foreach (var farm in MainForm.Transactions.Values)
 			{
@@ -127,6 +120,7 @@ namespace PlowSense
 					item.Value.FarmRep, item.Value.Crop, item.Value.AmountSold);
 			}
 		}
+		
 		private void statsCmbBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			Dictionary<DateTime, TransactionHistory> filteredValues = MainForm.Transactions
@@ -137,8 +131,12 @@ namespace PlowSense
 			GenerateTableData(filteredValues);
 		}
 
+		private void statsPie_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+		{
 
-		private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+		}
+
+		private void statsChart_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
 		{
 
 		}
