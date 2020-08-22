@@ -88,7 +88,7 @@ namespace PlowSense
 						Size = new Size(80, 95),
 					};
 					cp.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, cp.Width, cp.Height, 20, 20));
-					var cropImage = Properties.Resources.wfield_208px;
+					var cropImage = Properties.Resources.natural_food_80px;
 					if (crop.Crop.ToLower() == "potato") cropImage = Properties.Resources.potato_80px;
 					if (crop.Crop.ToLower() == "carrot") cropImage = Properties.Resources.carrot_80px;
 					if (crop.Crop.ToLower() == "apple") cropImage = Properties.Resources.apple_80px;

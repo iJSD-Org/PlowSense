@@ -183,6 +183,16 @@ namespace PlowSense.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap natural_food_80px {
+            get {
+                object obj = ResourceManager.GetObject("natural_food_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap onion_80px {
             get {
                 object obj = ResourceManager.GetObject("onion_80px", resourceCulture);
@@ -213,9 +223,29 @@ namespace PlowSense.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap potted_plant_80px {
+            get {
+                object obj = ResourceManager.GetObject("potted_plant_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rice_bowl_80px {
             get {
                 object obj = ResourceManager.GetObject("rice_bowl_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sickle_80px {
+            get {
+                object obj = ResourceManager.GetObject("sickle_80px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
