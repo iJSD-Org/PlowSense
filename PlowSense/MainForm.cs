@@ -12,7 +12,7 @@ namespace PlowSense
 	{
 		internal static Dictionary<DateTime, TransactionHistory> Transactions = new Dictionary<DateTime, TransactionHistory>();
 		internal static Dictionary<DateTime, MonthlyHarvest> MonthlyHarvests = new Dictionary<DateTime, MonthlyHarvest>();
-
+		internal static List<FarmInventory> FarmInventories = new List<FarmInventory>();
 		public MainForm()
 		{
 			InitializeComponent();
@@ -87,13 +87,13 @@ namespace PlowSense
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			List<CropInfo> crops = FarmsForm.Farms.SelectMany(f => f.Crops).ToList();
-			if (!File.Exists(@"D:\PlowSenseFiles\Farms.xlsx"))
+			if (!File.Exists(@"C:\PlowSenseFiles\Farms.xlsx"))
 			{
-				File.Create(@"D:\PlowSenseFiles\Farms.xlsx").Dispose();
+				File.Create(@"C:\PlowSenseFiles\Farms.xlsx").Dispose();
 			}
 			ExcelMapper excelFile = new ExcelMapper();
-			excelFile.Save(@"D:\PlowSenseFiles\Farms.xlsx", FarmsForm.Farms);
-			excelFile.Save(@"D:\PlowSenseFiles\Farms.xlsx", crops, 1);
+			excelFile.Save(@"C:\PlowSenseFiles\Farms.xlsx", FarmsForm.Farms);
+			excelFile.Save(@"C:\PlowSenseFiles\Farms.xlsx", crops, 1);
 		}
 	}
 }

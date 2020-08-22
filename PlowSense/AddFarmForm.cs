@@ -12,6 +12,7 @@ namespace PlowSense
 {
 	public partial class AddFarmForm : Form
 	{
+	
 		public AddFarmForm()
 		{
 			InitializeComponent();
@@ -116,6 +117,7 @@ namespace PlowSense
 
 		private void confirmFarmerInfBtn_Click(object sender, EventArgs e)
 		{
+
 			if (!string.IsNullOrWhiteSpace(CropText.Text) && !string.IsNullOrWhiteSpace(LocationText.Text) && !string.IsNullOrWhiteSpace(farmNameText.Text))
 			{
 				confirmFarmerInfBtn.Enabled = false;

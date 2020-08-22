@@ -19,10 +19,13 @@ namespace PlowSense
 	public partial class FarmsForm : Form
 	{
 		internal static List<FarmInfo> Farms;
+		internal static List<string> FarmOwners = new List<string>();
+		private int selectedPanel;
+		private int _tag = 0;
 		public FarmsForm()
 		{
 			InitializeComponent();
-			if (File.Exists(@"D:\PlowSenseFiles\Farms.xlsx"))
+			if (File.Exists(@"C:\PlowSenseFiles\Farms.xlsx"))
 			{
 				GetFarmExcelData();
 			}
@@ -35,7 +38,7 @@ namespace PlowSense
 		private void Farms_Load(object sender, EventArgs e)
 		{
 			FarmLoad();
-			LineLoad();
+			LoadOwners();
 		}
 
 		#region P/Invoke
@@ -54,7 +57,7 @@ namespace PlowSense
 		//should be only run once
 		private void GetFarmExcelData()
 		{
-			ExcelMapper excelFile = new ExcelMapper(@"D:\PlowSenseFiles\Farms.xlsx");
+			ExcelMapper excelFile = new ExcelMapper(@"C:\PlowSenseFiles\Farms.xlsx");
 			Farms = excelFile.Fetch<FarmInfo>().ToList();
 			List<CropInfo> crops = excelFile.Fetch<CropInfo>(1).ToList();
 			foreach (FarmInfo farm in Farms)
@@ -63,12 +66,36 @@ namespace PlowSense
 			}
 		}
 
+		void LoadOwners()
+		{
+			if (Farms.Count != 0)
+			{
+				foreach (var o in Farms.Select(o => o.FarmRep))
+				{
+					FarmOwners.Add(o);
+				}
+				selectedPanel = 0;
+			}
+		}
+
+		void LoadCropData()
+		{
+			amountLabel.Text = MainForm.FarmInventories
+				.Where(o => o.FarmRep == FarmOwners[selectedPanel] && o.Crop == cropCmbBox.SelectedItem.ToString())
+			     .Select(o => o.Amount).First().ToString() + "kg";
+			timeLabel.Text = MainForm.FarmInventories
+				.Where(o => o.FarmRep == FarmOwners[selectedPanel] && o.Crop == cropCmbBox.SelectedItem.ToString())
+				.Select(o => o.TimeInStorage).First().ToString() + "days";
+		}
 		void FarmLoad()
 		{
 			foreach (FarmInfo farm in Farms)
 			{
 				#region Create Farm Panel
 				FarmPanelUserControl farmPanel = new FarmPanelUserControl();
+				farmPanel.Tag = _tag;
+				_tag++;
+				farmPanel.Click += FarmPanelUserControl_Click;
 				farmPanel.AutoSize = false;
 				farmPanel.flowPanel.VerticalScroll.Enabled = false;
 				farmPanel.flowPanel.VerticalScroll.Visible = false;
@@ -113,32 +140,69 @@ namespace PlowSense
 				}
 			}
 		}
-
-		void LineLoad()
+		void CropLoad()
 		{
+			cropCmbBox.Items.Clear();
+			List<string> availableCrops = new List<string>();
+			foreach (var farm in MainForm.MonthlyHarvests.Values.Where(o => o.FarmRep == FarmOwners[selectedPanel]))
+			{
+				if (!availableCrops.Contains(farm.Crop))
+				{
+					availableCrops.Add(farm.Crop);
+					cropCmbBox.Items.Add(farm.Crop);
+				}
+			}
+
+			cropCmbBox.SelectedItem = availableCrops.First();
+		}
+
+		
+		void LoadChart1()
+		{
+			farmChart.Series.Clear();
 			farmChart.Series = new SeriesCollection
 			{
 				new LineSeries
 				{
-					Title = "Line 1",
-					Values = new ChartValues<int> {56, 65, 77, 52, 65, 45, 35, 62, 74, 65},
-					Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80,9, 105, 54)),
-					PointGeometry = null,
+					Title = cropCmbBox.SelectedItem.ToString(),
+					Values = new ChartValues<int>
+						(MainForm.MonthlyHarvests.Values.
+						Where(m => m.FarmRep == FarmOwners[Convert.ToInt32(selectedPanel)])
+						.Where(m => m.Crop == cropCmbBox.SelectedItem.ToString()).Select(m => m.AmountHarvest).ToList()),
+					Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80, 9, 105, 54)),
+					PointGeometry = DefaultGeometries.Square,
 					LineSmoothness = 100,
 					Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(9, 105, 54))
 				},
 			};
-			List<string> l = new List<string> { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
-			farmChart.AxisX.Add(new Axis
-			{
-				Labels = l
-			});
-			farmChart.AxisY.Add(new Axis
-			{
-				MinValue = 0
-			});
 		}
 
+		void LoadChart2()
+		{
+			farmChart.Series.Clear();
+			farmChart.Series = new SeriesCollection
+			{
+				new LineSeries
+				{
+					Title = "Income",
+					Values = new ChartValues<int>
+					(MainForm.Transactions.Values.Where(t => t.FarmRep == FarmOwners[selectedPanel])
+						.Select(t => t.Income).ToList()),
+					Fill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(80, 9, 105, 54)),
+					PointGeometry = DefaultGeometries.Square,
+					LineSmoothness = 100,
+					Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(9, 105, 54))
+				},
+			};
+		}
+		private void FarmPanelUserControl_Click(object o, EventArgs a)
+		{
+			FarmPanelUserControl p = (FarmPanelUserControl) o;
+			selectedPanel = Convert.ToInt32(p.Tag);
+			CropLoad();
+			LoadChart1();
+		}
+		
 		private void addFarmBtn_Click(object sender, EventArgs e)
 		{
 			AddFarmForm addFarmForm = new AddFarmForm();
@@ -148,6 +212,26 @@ namespace PlowSense
 		{
 			myFarmsFlowPanel.Controls.Clear();
 			FarmLoad();
+		}
+
+		private void cropCmbBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			LoadChart1();
+			LoadCropData();
+		}
+
+		private void guna2Button1_Click(object sender, EventArgs e)
+		{
+			LoadChart1();
+			chartLabel.Text = "Monthly Harvest";
+			cropCmbBox.Enabled = true;
+		}
+
+		private void chart2Btn_Click(object sender, EventArgs e)
+		{
+			LoadChart2();
+			chartLabel.Text = "Monthly Income";
+			cropCmbBox.Enabled = false;
 		}
 	}
 }

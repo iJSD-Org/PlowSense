@@ -21,18 +21,22 @@ namespace PlowSense
 
 		private void Staff_Load(object sender, EventArgs e)
 		{
-			LoadOptions();
+			LoadComboBoxChoices();
 			SetColors();
 		}
 
-		void LoadOptions()
+		void LoadComboBoxChoices()
 		{
-			foreach (var item in MainForm.Transactions.Values.GroupBy(o => o.Crop))
+			foreach (var farm in FarmsForm.Farms)
 			{
-				cropCmbBox.Items.Add(item.Key);
+				farmCmbBox.Items.Add(farm.Farm);
+			}
+
+			foreach (var crop in MainForm.MonthlyHarvests.Values.Select(o => o.Crop).Distinct())
+			{
+				cropCmbBox.Items.Add(crop);
 			}
 		}
-
 		void EnableControls()
 		{
 			nameTxtBox.Enabled = true;
