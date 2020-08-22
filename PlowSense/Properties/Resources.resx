@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icons8_exit_208px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_exit_208px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wlink_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wlink_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,23 +133,23 @@
   <data name="wexit_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wexit_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="staff_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\staff_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="staff_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\staff_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Check.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="staff_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\staff_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wstaff_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wstaff_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="target" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\target.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wstatistics_208px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wstatistics_208px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sun.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cross.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +163,11 @@
   <data name="graph-line-screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\graph-line-screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_exit_208px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_exit_208px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sun.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="target" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\target.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="staff_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\staff_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sun_208px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sun_208px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +181,31 @@
   <data name="Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Alert.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="staff_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\staff_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="apple_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apple_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carrot_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carrot_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="garlic_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\garlic_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="onion_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\onion_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paprika_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paprika_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="potato_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\potato_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rice_bowl_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rice_bowl_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tomato_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tomato_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wheat_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wheat_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

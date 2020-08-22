@@ -129,7 +129,6 @@
             // 
             this.confirmFarmerInfBtn.AutoRoundedCorners = true;
             this.confirmFarmerInfBtn.BorderRadius = 14;
-            this.confirmFarmerInfBtn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.confirmFarmerInfBtn.CheckedState.Parent = this.confirmFarmerInfBtn;
             this.confirmFarmerInfBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmFarmerInfBtn.CustomImages.Parent = this.confirmFarmerInfBtn;

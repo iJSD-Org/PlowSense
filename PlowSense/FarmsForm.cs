@@ -88,9 +88,19 @@ namespace PlowSense
 						Size = new Size(80, 95),
 					};
 					cp.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, cp.Width, cp.Height, 20, 20));
+					var cropImage = Properties.Resources.wfield_208px;
+					if (crop.Crop.ToLower() == "potato") cropImage = Properties.Resources.potato_80px;
+					if (crop.Crop.ToLower() == "carrot") cropImage = Properties.Resources.carrot_80px;
+					if (crop.Crop.ToLower() == "apple") cropImage = Properties.Resources.apple_80px;
+					if (crop.Crop.ToLower() == "onion") cropImage = Properties.Resources.onion_80px;
+					if (crop.Crop.ToLower() == "garlic") cropImage = Properties.Resources.garlic_80px;
+					if (crop.Crop.ToLower() == "tomato") cropImage = Properties.Resources.tomato_80px;
+					if (crop.Crop.ToLower() == "rice") cropImage = Properties.Resources.rice_bowl_80px;
+					if (crop.Crop.ToLower() == "wheat") cropImage = Properties.Resources.wheat_80px;
+					if (crop.Crop.ToLower() == "bell pepper") cropImage = Properties.Resources.paprika_80px;
 					PictureBox cropPic = new PictureBox
 					{
-						Image = Properties.Resources.wfield_208px,
+						Image = cropImage,
 						SizeMode = PictureBoxSizeMode.StretchImage,
 						Size = new Size(70, 70),
 						Location = new Point(5, 10),

@@ -73,6 +73,26 @@ namespace PlowSense.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap apple_80px {
+            get {
+                object obj = ResourceManager.GetObject("apple_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carrot_80px {
+            get {
+                object obj = ResourceManager.GetObject("carrot_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Check {
             get {
                 object obj = ResourceManager.GetObject("Check", resourceCulture);
@@ -96,6 +116,16 @@ namespace PlowSense.Properties {
         internal static System.Drawing.Bitmap field {
             get {
                 object obj = ResourceManager.GetObject("field", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap garlic_80px {
+            get {
+                object obj = ResourceManager.GetObject("garlic_80px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +176,46 @@ namespace PlowSense.Properties {
         internal static System.Drawing.Bitmap minus_480px {
             get {
                 object obj = ResourceManager.GetObject("minus_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap onion_80px {
+            get {
+                object obj = ResourceManager.GetObject("onion_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paprika_80px {
+            get {
+                object obj = ResourceManager.GetObject("paprika_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap potato_80px {
+            get {
+                object obj = ResourceManager.GetObject("potato_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rice_bowl_80px {
+            get {
+                object obj = ResourceManager.GetObject("rice_bowl_80px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +283,16 @@ namespace PlowSense.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tomato_80px {
+            get {
+                object obj = ResourceManager.GetObject("tomato_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wexit_48px {
             get {
                 object obj = ResourceManager.GetObject("wexit_48px", resourceCulture);
@@ -236,6 +316,16 @@ namespace PlowSense.Properties {
         internal static System.Drawing.Bitmap wfield_26px {
             get {
                 object obj = ResourceManager.GetObject("wfield_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wheat_80px {
+            get {
+                object obj = ResourceManager.GetObject("wheat_80px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
