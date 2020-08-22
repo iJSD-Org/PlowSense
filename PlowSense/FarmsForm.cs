@@ -36,6 +36,7 @@ namespace PlowSense
 		{
 			FarmLoad();
 			LineLoad();
+			SetScrollBar();
 		}
 
 		#region P/Invoke
@@ -62,7 +63,17 @@ namespace PlowSense
 				farm.Crops = crops.Where(c => c.Farm == farm.Farm).ToList();
 			}
 		}
-
+		void SetScrollBar()
+		{
+			myFarmsFlowPanel.AutoScroll = false;
+			myFarmsFlowPanel.VerticalScroll.Enabled = false;
+			myFarmsFlowPanel.VerticalScroll.Visible = false;
+			myFarmsFlowPanel.HorizontalScroll.Enabled = false;
+			myFarmsFlowPanel.HorizontalScroll.Visible = false;
+			myFarmsFlowPanel.HorizontalScroll.Maximum = 0;
+			myFarmsFlowPanel.AutoScroll = true;
+			myFarmsScroll.VerticalScroll.Maximum = myFarmsFlowPanel.VerticalScroll.Maximum;
+		}
 		void FarmLoad()
 		{
 			foreach (FarmInfo farm in Farms)
@@ -70,9 +81,6 @@ namespace PlowSense
 				#region Create Farm Panel
 				FarmPanelUserControl farmPanel = new FarmPanelUserControl();
 				farmPanel.AutoSize = false;
-				farmPanel.flowPanel.VerticalScroll.Enabled = false;
-				farmPanel.flowPanel.VerticalScroll.Visible = false;
-				farmPanel.flowPanel.HorizontalScroll.Visible = false;
 				farmPanel.FarmName.Text = farm.Farm;
 				myFarmsFlowPanel.Controls.Add(farmPanel);
 				#endregion
@@ -159,5 +167,12 @@ namespace PlowSense
 			myFarmsFlowPanel.Controls.Clear();
 			FarmLoad();
 		}
+
+		private void myFarmsScroll_Scroll(object sender, ScrollEventArgs e)
+		{
+			myFarmsFlowPanel.VerticalScroll.Value = myFarmsScroll.Value;
+			if (myFarmsFlowPanel.VerticalScroll.Value != myFarmsScroll.Value) myFarmsFlowPanel.VerticalScroll.Value = myFarmsScroll.Value;
+		}
+
 	}
 }
