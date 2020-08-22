@@ -32,7 +32,6 @@ namespace PlowSense
 		private void Farms_Load(object sender, EventArgs e)
 		{
 			FarmLoad();
-			SetScrollBar();
 			LoadOwners();
 		}
 
@@ -150,6 +149,7 @@ namespace PlowSense
 					cp.Controls.Add(nName);
 				}
 			}
+			SetScrollBar();
 		}
 		void CropLoad()
 		{
@@ -233,22 +233,38 @@ namespace PlowSense
 
 		private void guna2Button1_Click(object sender, EventArgs e)
 		{
-			LoadChart1();
-			chartLabel.Text = "Monthly Harvest";
-			cropCmbBox.Enabled = true;
+			
 		}
 
 		private void chart2Btn_Click(object sender, EventArgs e)
 		{
-			LoadChart2();
-			chartLabel.Text = "Monthly Income";
-			cropCmbBox.Enabled = false;
+			
 		}
 
 		private void myFarmsScroll_Scroll(object sender, ScrollEventArgs e)
 		{
 			myFarmsFlowPanel.VerticalScroll.Value = myFarmsScroll.Value;
 			if (myFarmsFlowPanel.VerticalScroll.Value != myFarmsScroll.Value) myFarmsFlowPanel.VerticalScroll.Value = myFarmsScroll.Value;
+		}
+
+		private void chart1Btn_CheckedChanged(object sender, EventArgs e)
+		{
+			if(chart1Btn.Checked)
+			{
+				LoadChart1();
+				chartLabel.Text = "Monthly Harvest";
+				cropCmbBox.Enabled = true;
+			}
+		}
+
+		private void chart2Btn_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chart2Btn.Checked)
+			{
+				LoadChart2();
+				chartLabel.Text = "Monthly Income";
+				cropCmbBox.Enabled = false;
+			}
 		}
 	}
 }
