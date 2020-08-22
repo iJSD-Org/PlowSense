@@ -13,6 +13,8 @@ namespace PlowSense
 {
 	public partial class Statistics : Form
 	{
+		private readonly BrushConverter _converter = new BrushConverter();
+		private readonly Func<ChartPoint, string> _labelPoint = chartPoint => $"{chartPoint.Participation:P}";
 
 		public Statistics()
 		{
@@ -38,7 +40,8 @@ namespace PlowSense
 
 		void PieLoad()
 		{
-
+			string[] colors = new string[] { "#096936", "#71AA85", "#A5CAAC", "#B2D2B6", "#BFDAC0" };
+			int counter = 0;
 			SeriesCollection series = new SeriesCollection();
 			foreach (var crop in MainForm.FarmInventories.Select(o => o.Crop).Distinct())
 			{
@@ -50,10 +53,14 @@ namespace PlowSense
 							{
 								MainForm.FarmInventories
 									.Where(o => o.Crop == crop).Select(o => o.Amount).Sum()
-							}
+							},
+					DataLabels = true,
+					LabelPoint = _labelPoint,
+					StrokeThickness = 0,
+					Fill = (System.Windows.Media.Brush)_converter.ConvertFromString(colors[counter])
 				}
 				);
-
+				counter++;
 			}
 
 			statsPie.Series = series;
