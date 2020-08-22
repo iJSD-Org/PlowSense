@@ -70,9 +70,10 @@
             // 
             this.CropsFlowPanel.AutoScroll = true;
             this.CropsFlowPanel.BackColor = System.Drawing.Color.White;
-            this.CropsFlowPanel.Location = new System.Drawing.Point(8, 8);
+            this.CropsFlowPanel.Location = new System.Drawing.Point(11, 10);
+            this.CropsFlowPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CropsFlowPanel.Name = "CropsFlowPanel";
-            this.CropsFlowPanel.Size = new System.Drawing.Size(359, 100);
+            this.CropsFlowPanel.Size = new System.Drawing.Size(479, 123);
             this.CropsFlowPanel.TabIndex = 39;
             // 
             // panel1
@@ -82,8 +83,9 @@
             this.panel1.Controls.Add(this.guna2ControlBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 40);
+            this.panel1.Size = new System.Drawing.Size(533, 49);
             this.panel1.TabIndex = 43;
             // 
             // label6
@@ -91,9 +93,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(6, 8);
+            this.label6.Location = new System.Drawing.Point(8, 10);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 25);
+            this.label6.Size = new System.Drawing.Size(164, 31);
             this.label6.TabIndex = 30;
             this.label6.Text = "Add a Farm";
             // 
@@ -103,10 +106,11 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(359, 5);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(479, 6);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(30, 30);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(40, 37);
             this.guna2ControlBox1.TabIndex = 0;
             // 
             // guna2Panel1
@@ -119,16 +123,17 @@
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.NameText);
             this.guna2Panel1.Controls.Add(this.LocationText);
-            this.guna2Panel1.Location = new System.Drawing.Point(12, 52);
+            this.guna2Panel1.Location = new System.Drawing.Point(16, 64);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(376, 242);
+            this.guna2Panel1.Size = new System.Drawing.Size(501, 298);
             this.guna2Panel1.TabIndex = 42;
             // 
             // confirmFarmerInfBtn
             // 
             this.confirmFarmerInfBtn.AutoRoundedCorners = true;
-            this.confirmFarmerInfBtn.BorderRadius = 14;
+            this.confirmFarmerInfBtn.BorderRadius = 17;
             this.confirmFarmerInfBtn.CheckedState.Parent = this.confirmFarmerInfBtn;
             this.confirmFarmerInfBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmFarmerInfBtn.CustomImages.Parent = this.confirmFarmerInfBtn;
@@ -136,10 +141,11 @@
             this.confirmFarmerInfBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmFarmerInfBtn.ForeColor = System.Drawing.Color.White;
             this.confirmFarmerInfBtn.HoverState.Parent = this.confirmFarmerInfBtn;
-            this.confirmFarmerInfBtn.Location = new System.Drawing.Point(276, 202);
+            this.confirmFarmerInfBtn.Location = new System.Drawing.Point(368, 249);
+            this.confirmFarmerInfBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmFarmerInfBtn.Name = "confirmFarmerInfBtn";
             this.confirmFarmerInfBtn.ShadowDecoration.Parent = this.confirmFarmerInfBtn;
-            this.confirmFarmerInfBtn.Size = new System.Drawing.Size(85, 30);
+            this.confirmFarmerInfBtn.Size = new System.Drawing.Size(113, 37);
             this.confirmFarmerInfBtn.TabIndex = 41;
             this.confirmFarmerInfBtn.Text = "Confirm";
             this.confirmFarmerInfBtn.Click += new System.EventHandler(this.confirmFarmerInfBtn_Click);
@@ -149,9 +155,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label7.Location = new System.Drawing.Point(5, 135);
+            this.label7.Location = new System.Drawing.Point(7, 166);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 20);
+            this.label7.Size = new System.Drawing.Size(130, 25);
             this.label7.TabIndex = 33;
             this.label7.Text = "Farm Name:";
             // 
@@ -169,14 +176,14 @@
             this.farmNameText.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.farmNameText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.farmNameText.HoverState.Parent = this.farmNameText;
-            this.farmNameText.Location = new System.Drawing.Point(7, 159);
-            this.farmNameText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.farmNameText.Location = new System.Drawing.Point(9, 196);
+            this.farmNameText.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.farmNameText.Name = "farmNameText";
             this.farmNameText.PasswordChar = '\0';
             this.farmNameText.PlaceholderText = "Enter Farm\'s Name";
             this.farmNameText.SelectedText = "";
             this.farmNameText.ShadowDecoration.Parent = this.farmNameText;
-            this.farmNameText.Size = new System.Drawing.Size(365, 36);
+            this.farmNameText.Size = new System.Drawing.Size(487, 44);
             this.farmNameText.TabIndex = 32;
             this.farmNameText.Enter += new System.EventHandler(this.farmNameText_Enter);
             // 
@@ -185,9 +192,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label3.Location = new System.Drawing.Point(3, 71);
+            this.label3.Location = new System.Drawing.Point(4, 87);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 20);
+            this.label3.Size = new System.Drawing.Size(156, 25);
             this.label3.TabIndex = 31;
             this.label3.Text = "Farm Location:";
             // 
@@ -196,9 +204,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label1.Location = new System.Drawing.Point(5, 9);
+            this.label1.Location = new System.Drawing.Point(7, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.Size = new System.Drawing.Size(137, 25);
             this.label1.TabIndex = 30;
             this.label1.Text = "Farm Owner:";
             // 
@@ -216,14 +225,14 @@
             this.NameText.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.NameText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NameText.HoverState.Parent = this.NameText;
-            this.NameText.Location = new System.Drawing.Point(9, 33);
-            this.NameText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NameText.Location = new System.Drawing.Point(12, 41);
+            this.NameText.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.NameText.Name = "NameText";
             this.NameText.PasswordChar = '\0';
             this.NameText.PlaceholderText = "Enter Farmer Name";
             this.NameText.SelectedText = "";
             this.NameText.ShadowDecoration.Parent = this.NameText;
-            this.NameText.Size = new System.Drawing.Size(363, 36);
+            this.NameText.Size = new System.Drawing.Size(484, 44);
             this.NameText.TabIndex = 5;
             this.NameText.Enter += new System.EventHandler(this.NameText_Enter);
             // 
@@ -241,14 +250,14 @@
             this.LocationText.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.LocationText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LocationText.HoverState.Parent = this.LocationText;
-            this.LocationText.Location = new System.Drawing.Point(7, 95);
-            this.LocationText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LocationText.Location = new System.Drawing.Point(9, 117);
+            this.LocationText.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.LocationText.Name = "LocationText";
             this.LocationText.PasswordChar = '\0';
             this.LocationText.PlaceholderText = "Enter Location";
             this.LocationText.SelectedText = "";
             this.LocationText.ShadowDecoration.Parent = this.LocationText;
-            this.LocationText.Size = new System.Drawing.Size(365, 36);
+            this.LocationText.Size = new System.Drawing.Size(487, 44);
             this.LocationText.TabIndex = 6;
             this.LocationText.Enter += new System.EventHandler(this.LocationText_Enter);
             // 
@@ -261,16 +270,17 @@
             this.addCropPanel.Controls.Add(this.ShelfLifeText);
             this.addCropPanel.Controls.Add(this.CropText);
             this.addCropPanel.Controls.Add(this.addCropBtn);
-            this.addCropPanel.Location = new System.Drawing.Point(12, 455);
+            this.addCropPanel.Location = new System.Drawing.Point(16, 560);
+            this.addCropPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addCropPanel.Name = "addCropPanel";
             this.addCropPanel.ShadowDecoration.Parent = this.addCropPanel;
-            this.addCropPanel.Size = new System.Drawing.Size(376, 151);
+            this.addCropPanel.Size = new System.Drawing.Size(501, 186);
             this.addCropPanel.TabIndex = 41;
             // 
             // confirmBtn
             // 
             this.confirmBtn.AutoRoundedCorners = true;
-            this.confirmBtn.BorderRadius = 14;
+            this.confirmBtn.BorderRadius = 17;
             this.confirmBtn.CheckedState.Parent = this.confirmBtn;
             this.confirmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.confirmBtn.CustomImages.Parent = this.confirmBtn;
@@ -279,10 +289,11 @@
             this.confirmBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmBtn.ForeColor = System.Drawing.Color.White;
             this.confirmBtn.HoverState.Parent = this.confirmBtn;
-            this.confirmBtn.Location = new System.Drawing.Point(275, 113);
+            this.confirmBtn.Location = new System.Drawing.Point(367, 139);
+            this.confirmBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.ShadowDecoration.Parent = this.confirmBtn;
-            this.confirmBtn.Size = new System.Drawing.Size(85, 30);
+            this.confirmBtn.Size = new System.Drawing.Size(113, 37);
             this.confirmBtn.TabIndex = 40;
             this.confirmBtn.Text = "Confirm";
             this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
@@ -292,9 +303,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label5.Location = new System.Drawing.Point(5, 77);
+            this.label5.Location = new System.Drawing.Point(7, 95);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 20);
+            this.label5.Size = new System.Drawing.Size(110, 25);
             this.label5.TabIndex = 39;
             this.label5.Text = "Shelf Life:";
             // 
@@ -303,9 +315,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label4.Location = new System.Drawing.Point(5, 14);
+            this.label4.Location = new System.Drawing.Point(7, 17);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 20);
+            this.label4.Size = new System.Drawing.Size(128, 25);
             this.label4.TabIndex = 38;
             this.label4.Text = "Crop Name:";
             // 
@@ -324,14 +337,14 @@
             this.ShelfLifeText.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ShelfLifeText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ShelfLifeText.HoverState.Parent = this.ShelfLifeText;
-            this.ShelfLifeText.Location = new System.Drawing.Point(9, 100);
-            this.ShelfLifeText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ShelfLifeText.Location = new System.Drawing.Point(12, 123);
+            this.ShelfLifeText.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ShelfLifeText.Name = "ShelfLifeText";
             this.ShelfLifeText.PasswordChar = '\0';
             this.ShelfLifeText.PlaceholderText = "Enter Crop Shelf Life";
             this.ShelfLifeText.SelectedText = "";
             this.ShelfLifeText.ShadowDecoration.Parent = this.ShelfLifeText;
-            this.ShelfLifeText.Size = new System.Drawing.Size(259, 36);
+            this.ShelfLifeText.Size = new System.Drawing.Size(345, 44);
             this.ShelfLifeText.TabIndex = 37;
             this.ShelfLifeText.Enter += new System.EventHandler(this.ShelfLifeText_Enter);
             // 
@@ -350,14 +363,14 @@
             this.CropText.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.CropText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CropText.HoverState.Parent = this.CropText;
-            this.CropText.Location = new System.Drawing.Point(9, 37);
-            this.CropText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CropText.Location = new System.Drawing.Point(12, 46);
+            this.CropText.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.CropText.Name = "CropText";
             this.CropText.PasswordChar = '\0';
             this.CropText.PlaceholderText = "Enter Crop Name";
             this.CropText.SelectedText = "";
             this.CropText.ShadowDecoration.Parent = this.CropText;
-            this.CropText.Size = new System.Drawing.Size(259, 36);
+            this.CropText.Size = new System.Drawing.Size(345, 44);
             this.CropText.TabIndex = 36;
             this.CropText.Enter += new System.EventHandler(this.CropText_Enter);
             // 
@@ -375,10 +388,11 @@
             this.addCropBtn.Image = global::PlowSense.Properties.Resources.gplus_math_208px;
             this.addCropBtn.ImageOffset = new System.Drawing.Point(0, 3);
             this.addCropBtn.ImageSize = new System.Drawing.Size(50, 50);
-            this.addCropBtn.Location = new System.Drawing.Point(275, 7);
+            this.addCropBtn.Location = new System.Drawing.Point(367, 9);
+            this.addCropBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addCropBtn.Name = "addCropBtn";
             this.addCropBtn.ShadowDecoration.Parent = this.addCropBtn;
-            this.addCropBtn.Size = new System.Drawing.Size(85, 100);
+            this.addCropBtn.Size = new System.Drawing.Size(113, 123);
             this.addCropBtn.TabIndex = 35;
             this.addCropBtn.Text = "Add Crop";
             this.addCropBtn.TextOffset = new System.Drawing.Point(0, 5);
@@ -389,9 +403,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(105)))), ((int)(((byte)(54)))));
-            this.label2.Location = new System.Drawing.Point(7, 305);
+            this.label2.Location = new System.Drawing.Point(9, 375);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 25);
+            this.label2.Size = new System.Drawing.Size(182, 31);
             this.label2.TabIndex = 39;
             this.label2.Text = "Select Crops";
             // 
@@ -413,9 +428,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(151)))), ((int)(((byte)(77)))));
             this.panel2.Controls.Add(this.CropsFlowPanel);
-            this.panel2.Location = new System.Drawing.Point(12, 333);
+            this.panel2.Location = new System.Drawing.Point(16, 410);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(376, 116);
+            this.panel2.Size = new System.Drawing.Size(501, 143);
             this.panel2.TabIndex = 44;
             // 
             // guna2Elipse3
@@ -425,16 +441,18 @@
             // 
             // AddFarmForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 620);
+            this.ClientSize = new System.Drawing.Size(533, 763);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.addCropPanel);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddFarmForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddFarmForm";
             this.panel1.ResumeLayout(false);
