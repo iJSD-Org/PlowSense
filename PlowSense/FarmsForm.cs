@@ -144,7 +144,8 @@ namespace PlowSense
 		}
 		private void refreshBtn_Click(object sender, EventArgs e)
 		{
-			Refresh();
+			myFarmsFlowPanel.Controls.Clear();
+			FarmLoad();
 		}
 	}
 }
